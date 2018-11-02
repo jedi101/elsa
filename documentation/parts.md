@@ -35,10 +35,15 @@
 | ------------------- | ------- | ----------- | ----------- | ------------- | ----- |
 | Adafruit LoRa Modul | LoRa    | Mouser      | 485-3072    | SPI           | 1     |
 
+### Power Supply
+
+| Description                                            | Note            | Distributor | Article No. | Count |
+| ------------------------------------------------------ | --------------- | ----------- | ----------- | ----- |
+| Conrad energy Modellbau-Akkupack (NiMh) 7.2 V 3000 mAh | motor batteries | Mouser      | 206028 - 62 | 1     |
+
 ### Miscellaneous
 
-- Batteries?
-
-- GPS Antenna?
-
-- Casing?
+| Description                          | Note                              | Distributor | Article No. | Count |
+| ------------------------------------ | --------------------------------- | ----------- | ----------- | ----- |
+| GPS Antenna                          | to be determined                  |             |             |       |
+| Casing                               | to be determined                  |             |             | 1     |
