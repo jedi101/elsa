@@ -39,11 +39,11 @@
 
 | Description                                            | Note            | Distributor | Article No. | Count |
 | ------------------------------------------------------ | --------------- | ----------- | ----------- | ----- |
-| Conrad energy Modellbau-Akkupack (NiMh) 7.2 V 3000 mAh | motor batteries | Mouser      | 206028 - 62 | 1     |
+| Conrad energy Modellbau-Akkupack (NiMh) 7.2 V 3000 mAh | motor batteries | Conrad      | 206028 - 62 | 1     |
 
 ### Miscellaneous
 
 | Description                          | Note                              | Distributor | Article No. | Count |
 | ------------------------------------ | --------------------------------- | ----------- | ----------- | ----- |
 | GPS Antenna                          | to be determined                  |             |             |       |
-| Casing                               | to be determined                  |             |             | 1     |
+| Casing                               | to be determined                  |             |             |       |
