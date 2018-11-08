@@ -15,11 +15,52 @@
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_kWBFIOOjEeiMpJR9a7MJcw" name="" client="_akm1cOOjEeiMpJR9a7MJcw" supplier="_Rlb7AOOjEeiMpJR9a7MJcw"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_lfFmAOOjEeiMpJR9a7MJcw" name="" client="_fAvCgOOjEeiMpJR9a7MJcw" supplier="_Rlb7AOOjEeiMpJR9a7MJcw"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_wjLbAOOiEeiMpJR9a7MJcw" name="req [package] Mechanische Anforderungen"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="_1L8V4OOiEeiMpJR9a7MJcw" name="req [package] Mobilität"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="_6JE-QOOiEeiMpJR9a7MJcw" name="req [package] Funktionsbereitschaft"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="_8fjGYOOiEeiMpJR9a7MJcw" name="req [package] Allgemeine Anforderung"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="__iUT0OOiEeiMpJR9a7MJcw" name="req [package] Ausweichen von Hindernissen"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wjLbAOOiEeiMpJR9a7MJcw" name="req [package] Mechanische Anforderungen">
+      <packagedElement xmi:type="uml:Class" xmi:id="_iRM7cOOoEeiMpJR9a7MJcw" name="Abmaße"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mWBbwOOoEeiMpJR9a7MJcw" name="Geländegängigkeit"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rY2ccOOoEeiMpJR9a7MJcw" name="Chassis-Aufbau"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_vENT4OOoEeiMpJR9a7MJcw" name="" client="_rY2ccOOoEeiMpJR9a7MJcw" supplier="_mWBbwOOoEeiMpJR9a7MJcw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_1L8V4OOiEeiMpJR9a7MJcw" name="req [package] Mobilität">
+      <packagedElement xmi:type="uml:Class" xmi:id="_tGPV4OOpEeiMpJR9a7MJcw" name="Mobilität"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0nVIwOOpEeiMpJR9a7MJcw" name="Richtungsänderung"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_5n-_MOOpEeiMpJR9a7MJcw" name="steuerbare Geschwindigkeit"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_CTmrgOOqEeiMpJR9a7MJcw" name="Gegenläufigkeit Laufketten"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DsmewOOqEeiMpJR9a7MJcw" name="Differenzgeschwindigkeit Laufketten"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_JzYPwOOqEeiMpJR9a7MJcw" name="" client="_5n-_MOOpEeiMpJR9a7MJcw" supplier="_tGPV4OOpEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_LNW6cOOqEeiMpJR9a7MJcw" name="" client="_CTmrgOOqEeiMpJR9a7MJcw" supplier="_0nVIwOOpEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_MzNd8OOqEeiMpJR9a7MJcw" name="" client="_DsmewOOqEeiMpJR9a7MJcw" supplier="_0nVIwOOpEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_NuxHQOOqEeiMpJR9a7MJcw" name="" client="_0nVIwOOpEeiMpJR9a7MJcw" supplier="_tGPV4OOpEeiMpJR9a7MJcw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_6JE-QOOiEeiMpJR9a7MJcw" name="req [package] Funktionsbereitschaft">
+      <packagedElement xmi:type="uml:Class" xmi:id="_YFwwQOOqEeiMpJR9a7MJcw" name="Erkennung von Funktionsbereitschaft"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_s7m9wOOqEeiMpJR9a7MJcw" name="Bewegungserkennung"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_uF9RAOOqEeiMpJR9a7MJcw" name="Überschlagserkennung"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_vIlLoOOqEeiMpJR9a7MJcw" name="Ladezustandsüberwachung"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_wsywYOOqEeiMpJR9a7MJcw" name="Kommunikationsüberwachung"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_AICWYOOrEeiMpJR9a7MJcw" name="" client="_s7m9wOOqEeiMpJR9a7MJcw" supplier="_YFwwQOOqEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_AvNEEOOrEeiMpJR9a7MJcw" name="" client="_uF9RAOOqEeiMpJR9a7MJcw" supplier="_YFwwQOOqEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_BJXQgOOrEeiMpJR9a7MJcw" name="" client="_vIlLoOOqEeiMpJR9a7MJcw" supplier="_YFwwQOOqEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_BfkKAOOrEeiMpJR9a7MJcw" name="" client="_wsywYOOqEeiMpJR9a7MJcw" supplier="_YFwwQOOqEeiMpJR9a7MJcw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_8fjGYOOiEeiMpJR9a7MJcw" name="req [package] Allgemeine Anforderung">
+      <packagedElement xmi:type="uml:Class" xmi:id="_P2B5QOOrEeiMpJR9a7MJcw" name="Wegpunkte anfahren"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_VxhnUOOrEeiMpJR9a7MJcw" name="Kommunikation"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Zf5WgOOrEeiMpJR9a7MJcw" name="Bestätigung der übermittelten Befehle"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_hKH3QOOrEeiMpJR9a7MJcw" name="Position des Roboters"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_rbL3YOOrEeiMpJR9a7MJcw" name="" client="_hKH3QOOrEeiMpJR9a7MJcw" supplier="_Zf5WgOOrEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_r4VGYOOrEeiMpJR9a7MJcw" name="" client="_Zf5WgOOrEeiMpJR9a7MJcw" supplier="_VxhnUOOrEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_s_TVgOOrEeiMpJR9a7MJcw" name="" client="_VxhnUOOrEeiMpJR9a7MJcw" supplier="_P2B5QOOrEeiMpJR9a7MJcw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="__iUT0OOiEeiMpJR9a7MJcw" name="req [package] Ausweichen von Hindernissen">
+      <packagedElement xmi:type="uml:Class" xmi:id="_3ZIQEOOrEeiMpJR9a7MJcw" name="Ausweichen von Hindernissen"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_48s7oOOrEeiMpJR9a7MJcw" name="Erkennen von Hindernissen"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_53dTsOOrEeiMpJR9a7MJcw" name="Erfassung eines Objekts"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7_hMYOOrEeiMpJR9a7MJcw" name="Erfassung eines Abgrunds"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_9sRCEOOrEeiMpJR9a7MJcw" name="" client="_48s7oOOrEeiMpJR9a7MJcw" supplier="_3ZIQEOOrEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_AJYkwOOsEeiMpJR9a7MJcw" name="" client="_7_hMYOOrEeiMpJR9a7MJcw" supplier="_48s7oOOrEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_BKUdUOOsEeiMpJR9a7MJcw" name="" client="_53dTsOOrEeiMpJR9a7MJcw" supplier="_48s7oOOrEeiMpJR9a7MJcw"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_d-k_wOOUEeiMpJR9a7MJcw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_d-qfUOOUEeiMpJR9a7MJcw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
@@ -91,4 +132,40 @@
   <Requirements:Requirement xmi:id="_fAxewOOjEeiMpJR9a7MJcw" base_Class="_fAvCgOOjEeiMpJR9a7MJcw" id="REQ3.3" text="Der Roboter soll über die Kommunikationsverbindung zum Operator seinen Status bekannt geben."/>
   <Requirements:DeriveReqt xmi:id="_kWDhYOOjEeiMpJR9a7MJcw" base_DirectedRelationship="_kWBFIOOjEeiMpJR9a7MJcw" base_Abstraction="_kWBFIOOjEeiMpJR9a7MJcw"/>
   <Requirements:DeriveReqt xmi:id="_lfHbMOOjEeiMpJR9a7MJcw" base_DirectedRelationship="_lfFmAOOjEeiMpJR9a7MJcw" base_Abstraction="_lfFmAOOjEeiMpJR9a7MJcw"/>
+  <Requirements:Requirement xmi:id="_iRPXsOOoEeiMpJR9a7MJcw" base_Class="_iRM7cOOoEeiMpJR9a7MJcw" id="REQ6.1" text="Das Chassis muss die gesamte Elektronik beherbergen können.&#xD;&#xA;"/>
+  <Requirements:Requirement xmi:id="_mWDQ8OOoEeiMpJR9a7MJcw" base_Class="_mWBbwOOoEeiMpJR9a7MJcw" id="REQ6.2" text="Das Chassis muss unwegsames Gelände durchqueren können."/>
+  <Requirements:Requirement xmi:id="_rY44sOOoEeiMpJR9a7MJcw" base_Class="_rY2ccOOoEeiMpJR9a7MJcw" id="REQ6.3" text="Das Chassis soll Laufketten besitzen.&#xD;&#xA;"/>
+  <Requirements:DeriveReqt xmi:id="_vEPJEOOoEeiMpJR9a7MJcw" base_DirectedRelationship="_vENT4OOoEeiMpJR9a7MJcw" base_Abstraction="_vENT4OOoEeiMpJR9a7MJcw"/>
+  <Requirements:Requirement xmi:id="_tGRLEOOpEeiMpJR9a7MJcw" base_Class="_tGPV4OOpEeiMpJR9a7MJcw" id="REQ4.1" text="Der Roboter soll mobil sein."/>
+  <Requirements:Requirement xmi:id="_0nXlAOOpEeiMpJR9a7MJcw" base_Class="_0nVIwOOpEeiMpJR9a7MJcw" id="REQ4.2" text="Der Roboter soll seine Ausrichtung bezogen auf die Hochachse ändern können."/>
+  <Requirements:Requirement xmi:id="_5oA0YOOpEeiMpJR9a7MJcw" base_Class="_5n-_MOOpEeiMpJR9a7MJcw" id="REQ4.3" text="Der Roboter soll seine Geschwindigkeit erhöhen und verlangsamen können."/>
+  <Requirements:Requirement xmi:id="_CUVrUOOqEeiMpJR9a7MJcw" base_Class="_CTmrgOOqEeiMpJR9a7MJcw" id="REQ4.4" text="Die Bewegungsrichtung soll unabhängig voneinander steuerbar sein."/>
+  <Requirements:Requirement xmi:id="_DsoT8OOqEeiMpJR9a7MJcw" base_Class="_DsmewOOqEeiMpJR9a7MJcw" id="REQ4.5" text="Die Geschwindigkeit für die Laufketten soll unabhängig voneinander einstellbar sein."/>
+  <Requirements:DeriveReqt xmi:id="_JzasAOOqEeiMpJR9a7MJcw" base_DirectedRelationship="_JzYPwOOqEeiMpJR9a7MJcw" base_Abstraction="_JzYPwOOqEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_LNYvoOOqEeiMpJR9a7MJcw" base_DirectedRelationship="_LNW6cOOqEeiMpJR9a7MJcw" base_Abstraction="_LNW6cOOqEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_MzPTIOOqEeiMpJR9a7MJcw" base_DirectedRelationship="_MzNd8OOqEeiMpJR9a7MJcw" base_Abstraction="_MzNd8OOqEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_Nuy8cOOqEeiMpJR9a7MJcw" base_DirectedRelationship="_NuxHQOOqEeiMpJR9a7MJcw" base_Abstraction="_NuxHQOOqEeiMpJR9a7MJcw"/>
+  <Requirements:Requirement xmi:id="_YFylcOOqEeiMpJR9a7MJcw" base_Class="_YFwwQOOqEeiMpJR9a7MJcw" id="REQ2.1" text="Der Roboter soll seine Einsatzfähigkeit selbstständig erkennen können.&#xD;&#xA;"/>
+  <Requirements:Requirement xmi:id="_s7oy8OOqEeiMpJR9a7MJcw" base_Class="_s7m9wOOqEeiMpJR9a7MJcw" id="REQ2.2" text="Der Roboter soll seine Bewegung in Abhängigkeit von der Ansteuerung der Motoren überwachen."/>
+  <Requirements:Requirement xmi:id="_uF_GMOOqEeiMpJR9a7MJcw" base_Class="_uF9RAOOqEeiMpJR9a7MJcw" id="REQ2.3" text="Der Roboter soll erkennen, wenn er auf der Seite oder auf dem Kopf liegt."/>
+  <Requirements:Requirement xmi:id="_vInA0OOqEeiMpJR9a7MJcw" base_Class="_vIlLoOOqEeiMpJR9a7MJcw" id="REQ2.4" text="Der Roboter soll den Zustand seiner Akkus überwachen."/>
+  <Requirements:Requirement xmi:id="_ws1MoOOqEeiMpJR9a7MJcw" base_Class="_wsywYOOqEeiMpJR9a7MJcw" id="REQ2.5" text="Der Roboter soll erkennen, wenn seine Kommunikation abgeschnitten ist."/>
+  <Requirements:DeriveReqt xmi:id="_AIDkgOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_AICWYOOrEeiMpJR9a7MJcw" base_Abstraction="_AICWYOOrEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_AvO5QOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_AvNEEOOrEeiMpJR9a7MJcw" base_Abstraction="_AvNEEOOrEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_BJZFsOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_BJXQgOOrEeiMpJR9a7MJcw" base_Abstraction="_BJXQgOOrEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_Bfl_MOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_BfkKAOOrEeiMpJR9a7MJcw" base_Abstraction="_BfkKAOOrEeiMpJR9a7MJcw"/>
+  <Requirements:Requirement xmi:id="_P2DucOOrEeiMpJR9a7MJcw" base_Class="_P2B5QOOrEeiMpJR9a7MJcw" id="REQ1.1" text="Der Roboter soll ihm aus der Ferne übermittelte Wegpunkte anfahren können und dabei auch dynamisch auf das Gelände reagieren können."/>
+  <Requirements:Requirement xmi:id="_VxkDkOOrEeiMpJR9a7MJcw" base_Class="_VxhnUOOrEeiMpJR9a7MJcw" id="REQ1.4" text="Der Roboter soll Befehle entgegen nehmen können."/>
+  <Requirements:Requirement xmi:id="_Zf7LsOOrEeiMpJR9a7MJcw" base_Class="_Zf5WgOOrEeiMpJR9a7MJcw" id="REQ1.2" text="Der Roboter soll die vom Operator erteilten Befehle bestätigen und den Vollzug melden."/>
+  <Requirements:Requirement xmi:id="_hKKTgOOrEeiMpJR9a7MJcw" base_Class="_hKH3QOOrEeiMpJR9a7MJcw" id="REQ1.3" text="Der Roboter soll die vom Operator erteilten Befehle bestätigen und den Vollzug melden."/>
+  <Requirements:Trace xmi:id="_rbNskOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_rbL3YOOrEeiMpJR9a7MJcw" base_Abstraction="_rbL3YOOrEeiMpJR9a7MJcw"/>
+  <Requirements:Trace xmi:id="_r4WUgOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_r4VGYOOrEeiMpJR9a7MJcw" base_Abstraction="_r4VGYOOrEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_s_VKsOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_s_TVgOOrEeiMpJR9a7MJcw" base_Abstraction="_s_TVgOOrEeiMpJR9a7MJcw"/>
+  <Requirements:Requirement xmi:id="_3ZKFQOOrEeiMpJR9a7MJcw" base_Class="_3ZIQEOOrEeiMpJR9a7MJcw" id="REQ5.1" text="Der Roboter soll Hindernisse ausweichen."/>
+  <Requirements:Requirement xmi:id="_48uw0OOrEeiMpJR9a7MJcw" base_Class="_48s7oOOrEeiMpJR9a7MJcw" id="REQ5.2" text="Der Roboter soll Hindernisse erkennen."/>
+  <Requirements:Requirement xmi:id="_53fv8OOrEeiMpJR9a7MJcw" base_Class="_53dTsOOrEeiMpJR9a7MJcw" id="REQ5.4" text="Der Roboter soll Objekte erfassen können."/>
+  <Requirements:Requirement xmi:id="_7_jooOOrEeiMpJR9a7MJcw" base_Class="_7_hMYOOrEeiMpJR9a7MJcw" id="REQ5.3" text="Der Roboter soll Abgründe erkennen."/>
+  <Requirements:DeriveReqt xmi:id="_9sS3QOOrEeiMpJR9a7MJcw" base_DirectedRelationship="_9sRCEOOrEeiMpJR9a7MJcw" base_Abstraction="_9sRCEOOrEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_AJaZ8OOsEeiMpJR9a7MJcw" base_DirectedRelationship="_AJYkwOOsEeiMpJR9a7MJcw" base_Abstraction="_AJYkwOOsEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_BKVrcOOsEeiMpJR9a7MJcw" base_DirectedRelationship="_BKUdUOOsEeiMpJR9a7MJcw" base_Abstraction="_BKUdUOOsEeiMpJR9a7MJcw"/>
 </xmi:XMI>
