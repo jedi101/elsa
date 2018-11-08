@@ -4,11 +4,17 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_V8gKQOOVEeiMpJR9a7MJcw" name="req [package] Umgebungseinflüsse">
       <packagedElement xmi:type="uml:Class" xmi:id="_i8KeoOOVEeiMpJR9a7MJcw" name="Schutz vor Witterung"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_Cj7VkOOhEeiMpJR9a7MJcw" name="Schutz vor Schmutz und Feuchtigkeit des Untergrunds"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_NJZfcOOhEeiMpJR9a7MJcw" name="Schutz vor Regen"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_brjhUOOhEeiMpJR9a7MJcw" client="_NJZfcOOhEeiMpJR9a7MJcw" supplier="_i8KeoOOVEeiMpJR9a7MJcw"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_icozkOOhEeiMpJR9a7MJcw" client="_Cj7VkOOhEeiMpJR9a7MJcw" supplier="_i8KeoOOVEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_NJZfcOOhEeiMpJR9a7MJcw" name="Schutz vor Regen"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_tfCUkOOiEeiMpJR9a7MJcw" name="req [package] Störungsmeldungen"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_tfCUkOOiEeiMpJR9a7MJcw" name="req [package] Störungsmeldungen">
+      <packagedElement xmi:type="uml:Class" xmi:id="_Rlb7AOOjEeiMpJR9a7MJcw" name="Störungsmeldung"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_akm1cOOjEeiMpJR9a7MJcw" name="Akustische Meldung und optische Meldung"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_fAvCgOOjEeiMpJR9a7MJcw" name="Meldung zum Operator"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_kWBFIOOjEeiMpJR9a7MJcw" name="" client="_akm1cOOjEeiMpJR9a7MJcw" supplier="_Rlb7AOOjEeiMpJR9a7MJcw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_lfFmAOOjEeiMpJR9a7MJcw" name="" client="_fAvCgOOjEeiMpJR9a7MJcw" supplier="_Rlb7AOOjEeiMpJR9a7MJcw"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_wjLbAOOiEeiMpJR9a7MJcw" name="req [package] Mechanische Anforderungen"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_1L8V4OOiEeiMpJR9a7MJcw" name="req [package] Mobilität"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_6JE-QOOiEeiMpJR9a7MJcw" name="req [package] Funktionsbereitschaft"/>
@@ -80,4 +86,9 @@
   <Requirements:Requirement xmi:id="_NJciwOOhEeiMpJR9a7MJcw" base_Class="_NJZfcOOhEeiMpJR9a7MJcw" id="REQ7.3" text="Das Chassis des Fahrzeugs soll in der Art abgedichtet, dass mäßiger Regenfall, die mechanischen und elektrischen Funktionen des Fahrzeugs nicht beeinflussen."/>
   <Requirements:DeriveReqt xmi:id="_broZ0OOhEeiMpJR9a7MJcw" base_DirectedRelationship="_brjhUOOhEeiMpJR9a7MJcw" base_Abstraction="_brjhUOOhEeiMpJR9a7MJcw"/>
   <Requirements:DeriveReqt xmi:id="_icrP0OOhEeiMpJR9a7MJcw" base_DirectedRelationship="_icozkOOhEeiMpJR9a7MJcw" base_Abstraction="_icozkOOhEeiMpJR9a7MJcw"/>
+  <Requirements:Requirement xmi:id="_RleXQOOjEeiMpJR9a7MJcw" base_Class="_Rlb7AOOjEeiMpJR9a7MJcw" id="REQ3.1" text="Der Roboter soll auf Störungen reagieren."/>
+  <Requirements:Requirement xmi:id="_akoqoOOjEeiMpJR9a7MJcw" base_Class="_akm1cOOjEeiMpJR9a7MJcw" id="REQ3.2" text="Der Roboter soll akustische und optische Signale wiedergeben."/>
+  <Requirements:Requirement xmi:id="_fAxewOOjEeiMpJR9a7MJcw" base_Class="_fAvCgOOjEeiMpJR9a7MJcw" id="REQ3.3" text="Der Roboter soll über die Kommunikationsverbindung zum Operator seinen Status bekannt geben."/>
+  <Requirements:DeriveReqt xmi:id="_kWDhYOOjEeiMpJR9a7MJcw" base_DirectedRelationship="_kWBFIOOjEeiMpJR9a7MJcw" base_Abstraction="_kWBFIOOjEeiMpJR9a7MJcw"/>
+  <Requirements:DeriveReqt xmi:id="_lfHbMOOjEeiMpJR9a7MJcw" base_DirectedRelationship="_lfFmAOOjEeiMpJR9a7MJcw" base_Abstraction="_lfFmAOOjEeiMpJR9a7MJcw"/>
 </xmi:XMI>
