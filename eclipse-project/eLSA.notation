@@ -27,7 +27,7 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i8i5MOOVEeiMpJR9a7MJcw"/>
         </children>
         <element xmi:type="uml:Class" href="eLSA.uml#_i8KeoOOVEeiMpJR9a7MJcw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i8iSEeOVEeiMpJR9a7MJcw" x="314" y="12"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i8iSEeOVEeiMpJR9a7MJcw" x="314" y="12" height="141"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_i9JWEOOVEeiMpJR9a7MJcw" type="StereotypeComment">
         <styles xmi:type="notation:TitleStyle" xmi:id="_i9JWEeOVEeiMpJR9a7MJcw"/>
@@ -195,7 +195,7 @@
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_ic1n4uOhEeiMpJR9a7MJcw" type="Abstraction_StereotypeLabel">
       <styles xmi:type="notation:BooleanValueStyle" xmi:id="_i5egkOOhEeiMpJR9a7MJcw" name="IS_UPDATED_POSITION" booleanValue="true"/>
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_ic1n4-OhEeiMpJR9a7MJcw" x="-30" y="-33"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ic1n4-OhEeiMpJR9a7MJcw" x="-53" y="-33"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_ic1A0eOhEeiMpJR9a7MJcw"/>
     <element xmi:type="uml:Abstraction" href="eLSA.uml#_icozkOOhEeiMpJR9a7MJcw"/>
