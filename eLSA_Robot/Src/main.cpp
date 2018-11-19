@@ -8,7 +8,6 @@ extern "C" {
 	#include "ssd1306/ssd1306_tests.h"
 }
 
-#include "comDevices/ELSA_I2C_Device.hpp"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
