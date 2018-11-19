@@ -28,3 +28,18 @@ Temporary Items
 
 # Directories
 eLSA_Robot/Debug
+
+# Files
+*.rar
+*.o
+*.d
+*.crf
+*.htm
+*.dep
+*.map
+*.bak
+*.axf
+*.lnp
+*.lst
+*.ini
+*.hex
