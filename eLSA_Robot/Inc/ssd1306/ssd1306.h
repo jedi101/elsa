@@ -8,6 +8,9 @@
 #ifndef __SSD1306_H__
 #define __SSD1306_H__
 
+#define STM32F4
+#define SSD1306_USE_I2C
+
 #if defined(STM32F1)
 #include "stm32f1xx_hal.h"
 #elif defined(STM32F4)
