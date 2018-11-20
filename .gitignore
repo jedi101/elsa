@@ -1,3 +1,9 @@
+#### General ####
+
+# Directories
+eLSA_Robot/Debug
+
+#### Apple specific ####
 # General
 .DS_Store
 .AppleDouble
@@ -5,7 +11,6 @@
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -26,20 +31,70 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Directories
-eLSA_Robot/Debug
-
-# Files
-*.rar
-*.o
-*.d
-*.crf
-*.htm
-*.dep
-*.map
+#### Eclipse specific ####
+.metadata
+bin/
+tmp/
+*.tmp
 *.bak
-*.axf
-*.lnp
-*.lst
-*.ini
-*.hex
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+
+#### C++ specific #####
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
