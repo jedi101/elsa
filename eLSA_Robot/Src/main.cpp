@@ -27,8 +27,6 @@ int main(void)
 
 	display->setCursor(30, 20);
 	display->writeString(text_eLSA, eLSA::DISPLAY::Font_16x26, eLSA::DISPLAY::White);
-	//display->setCursor(15, 25);
-	//display->writeString("Evomation", eLSA::Font_11x18, eLSA::White);
 	display->updateScreen();
 	HAL_Delay(2000);
 	display->fill(eLSA::DISPLAY::Black);
