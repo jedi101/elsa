@@ -21,7 +21,7 @@ int main(void)
 {
 
 	/*initialize mcu system and peripherals*/
-	msp_system_init();
+	stm_system_init();
 
 	eLSA::DISPLAY::Display_SSD1306* display = new eLSA::DISPLAY::Display_SSD1306(&hi2c1, 0x3C << 1);
 

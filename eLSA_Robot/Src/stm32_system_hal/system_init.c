@@ -16,7 +16,7 @@
  * @brief This function bundles all init functions for the system and HAL
  * @retval none
  */
-void msp_system_init(void){
+void stm_system_init(void){
 
 	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
 	HAL_Init();

@@ -6,7 +6,7 @@
 #endif
 
 /*function prototypes*/
- void msp_system_init(void);
+void stm_system_init(void);
 void SystemClock_Config(void);
 
 #ifdef __cplusplus
