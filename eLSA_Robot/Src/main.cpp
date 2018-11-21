@@ -36,6 +36,9 @@ int main(void)
 	display->writeString(text_welcome, eLSA::DISPLAY::Font_11x18, eLSA::DISPLAY::White);
 	display->updateScreen();
 	HAL_Delay(2000);
+	display->testFps();
+	HAL_Delay(2000);
+
 
 	/* Infinite loop */
 	while (1)
