@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=D:/programming/embedded/eLSA_Robot/Inc
+HeaderPath=D:/programming/embedded/eLSA_GIT/eLSA_Robot/Inc
 HeaderFiles=gpio.h;adc.h;i2c.h;spi.h;usart.h;stm32f4xx_it.h;stm32f4xx_hal_conf.h;main.h;
-SourcePath=D:/programming/embedded/eLSA_Robot/Src
+SourcePath=D:/programming/embedded/eLSA_GIT/eLSA_Robot/Src
 SourceFiles=gpio.c;adc.c;i2c.c;spi.c;usart.c;stm32f4xx_it.c;stm32f4xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]
