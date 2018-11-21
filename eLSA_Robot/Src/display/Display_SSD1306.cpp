@@ -6,6 +6,7 @@
  */
 
 #include "display/DisplaySSD1306.h"
+#include <cstring>
 
 eLSA::DISPLAY::Display_SSD1306::Display_SSD1306(I2C_HandleTypeDef* i2c_port, uint16_t device_address)
 	:_i2c_port{i2c_port}, _i2c_address{device_address}
@@ -155,6 +156,41 @@ char eLSA::DISPLAY::Display_SSD1306::writeString(char* str, FontDef Font, DISPLA
 void eLSA::DISPLAY::Display_SSD1306::setCursor(uint8_t x, uint8_t y) {
 	screen_object.CurrentX = x;
 	screen_object.CurrentY = y;
+}
+
+void eLSA::DISPLAY::Display_SSD1306::testFps(void) {
+	eLSA::DISPLAY::Display_SSD1306::fill(eLSA::DISPLAY::White);
+
+    uint32_t start = HAL_GetTick();
+    uint32_t end = start;
+    int fps = 0;
+    char message[] = "ABCDEFGHIJK";
+    char initText[] = "Testing...";
+
+    eLSA::DISPLAY::Display_SSD1306::setCursor(2,0);
+    eLSA::DISPLAY::Display_SSD1306::writeString(initText, eLSA::DISPLAY::Font_11x18, eLSA::DISPLAY::Black);
+
+    do {
+    	eLSA::DISPLAY::Display_SSD1306::setCursor(2, 18);
+    	eLSA::DISPLAY::Display_SSD1306::writeString(message, eLSA::DISPLAY::Font_11x18, eLSA::DISPLAY::Black);
+    	eLSA::DISPLAY::Display_SSD1306::updateScreen();
+
+        char ch = message[0];
+        memmove(message, message+1, sizeof(message)-2);
+        message[sizeof(message)-2] = ch;
+
+        fps++;
+        end = HAL_GetTick();
+    } while((end - start) < 5000);
+
+    char buff[64];
+    fps = (float)fps / ((end - start) / 1000.0);
+    snprintf(buff, sizeof(buff), "~%d FPS", fps);
+
+    eLSA::DISPLAY::Display_SSD1306::fill(eLSA::DISPLAY::White);
+    eLSA::DISPLAY::Display_SSD1306::setCursor(2, 18);
+    eLSA::DISPLAY::Display_SSD1306::writeString(buff, eLSA::DISPLAY::Font_11x18, eLSA::DISPLAY::Black);
+    eLSA::DISPLAY::Display_SSD1306::updateScreen();
 }
 
 /* private methods*/

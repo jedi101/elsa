@@ -53,6 +53,7 @@ public:
 	char writeChar(char ch, FontDef font, DISPLAY_SSD1306_COLOR color);
 	char writeString(char* str, FontDef font, DISPLAY_SSD1306_COLOR color);
 	void setCursor(uint8_t x, uint8_t y);
+	void testFps(void);
 
 private:
 	unsigned int _write_i2c_command(uint8_t command);
