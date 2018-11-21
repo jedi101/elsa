@@ -71,7 +71,7 @@ void eLSA::DISPLAY::Display_SSD1306::fill(DISPLAY_SSD1306_COLOR color)
 	uint32_t i;
 
 	for(i = 0; i < sizeof(screenBuffer); i++) {
-		screenBuffer[i] = color;
+		screenBuffer[i] = (color == eLSA::DISPLAY::Black) ? 0x00 : 0xFF;;
 	}
 }
 
