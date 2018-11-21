@@ -44,7 +44,6 @@
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
 									<listOptionValue builtIn="false" value="../Inc/ssd1306"/>
-									<listOptionValue builtIn="false" value="../comDevices"/>
 									<listOptionValue builtIn="false" value="../Inc/stm32_system_hal"/>
 								</option>
 								<option id="com.atollic.truestudio.gcc.symbols.defined.1670122205" name="Defined symbols" superClass="com.atollic.truestudio.gcc.symbols.defined" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -103,8 +102,8 @@
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
 									<listOptionValue builtIn="false" value="../Inc/ssd1306"/>
-									<listOptionValue builtIn="false" value="../Inc/comDevices"/>
 									<listOptionValue builtIn="false" value="../Inc/stm32_system_hal"/>
+									<listOptionValue builtIn="false" value="../Inc/devices"/>
 								</option>
 								<option id="com.atollic.truestudio.gpp.cppstandard.1795201807" name="C++ standard" superClass="com.atollic.truestudio.gpp.cppstandard" useByScannerDiscovery="false" value="com.atollic.truestudio.gpp.cppstandard.gnupp14" valueType="enumerated"/>
 								<inputType id="com.atollic.truestudio.gpp.input.1198050560" superClass="com.atollic.truestudio.gpp.input"/>
