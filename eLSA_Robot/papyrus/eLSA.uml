@@ -262,7 +262,7 @@
   <Requirements:Requirement xmi:id="_0feUIO6oEeird8zelFYFig" base_Class="_0fRf0u6oEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_0fzEQO6oEeird8zelFYFig" base_Class="_0fRf0e6oEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_0gHNUO6oEeird8zelFYFig" base_Class="_0fRf0O6oEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
-  <Requirements:Requirement xmi:id="_0gavUO6oEeird8zelFYFig" base_Class="_0fQ4wO6oEeird8zelFYFig" id="4.4" text="The tracks shall be able to controlled independently."/>
+  <Requirements:Requirement xmi:id="_0gavUO6oEeird8zelFYFig" base_Class="_0fQ4wO6oEeird8zelFYFig" id="4.4" text="The tracks shall be able to be controlled independently."/>
   <Requirements:Requirement xmi:id="_hDEJUO6pEeird8zelFYFig" base_Class="_hC4jI-6pEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_hDXEQO6pEeird8zelFYFig" base_Class="_hC4jIu6pEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_hDqmQO6pEeird8zelFYFig" base_Class="_hC4jIe6pEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
