@@ -72,7 +72,7 @@
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_aK-XgO6mEeird8zelFYFig" name="" client="_7JZ84O6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_ayhfsO6mEeird8zelFYFig" name="" client="_Fe04kO6mEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_6KvfwO6mEeird8zelFYFig" name="Mechanical requirements" URI="">
+    <packagedElement xmi:type="uml:Package" xmi:id="_6KvfwO6mEeird8zelFYFig" name="req [package] Mechanical requirements" URI="">
       <packagedElement xmi:type="uml:Class" xmi:id="_6Kvfwe6mEeird8zelFYFig" name="Dimensions">
         <nestedClassifier xmi:type="uml:Class" xmi:id="_6Kvfwu6mEeird8zelFYFig" name="Evasion of obstacles"/>
         <nestedClassifier xmi:type="uml:Class" xmi:id="_6Kvfw-6mEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
