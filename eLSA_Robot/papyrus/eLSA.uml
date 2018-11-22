@@ -130,19 +130,19 @@
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_9sox0O6pEeird8zelFYFig" name="" client="_f97isO6oEeird8zelFYFig" supplier="_NuXa8e6oEeird8zelFYFig"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_zlJH8O6qEeird8zelFYFig" name="req [package] Malfunctional report" URI="">
-      <packagedElement xmi:type="uml:Class" xmi:id="_zlJH-e6qEeird8zelFYFig" name="Malfunctional report">
+      <packagedElement xmi:type="uml:Class" xmi:id="_zlJH-e6qEeird8zelFYFig" name="Protection from weather">
         <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJH-u6qEeird8zelFYFig" name="Evasion of obstacles"/>
         <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJH--6qEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
           <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJH_O6qEeird8zelFYFig" name="Evasion of obstacles"/>
         </nestedClassifier>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_zlJH_e6qEeird8zelFYFig" name="Acoustical and optical reports">
+      <packagedElement xmi:type="uml:Class" xmi:id="_zlJH_e6qEeird8zelFYFig" name="Protection from dirt and moisture of soil">
         <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJH_u6qEeird8zelFYFig" name="Evasion of obstacles"/>
         <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJH_-6qEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
           <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJIAO6qEeird8zelFYFig" name="Evasion of obstacles"/>
         </nestedClassifier>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_zlJIAe6qEeird8zelFYFig" name="Report to the operator">
+      <packagedElement xmi:type="uml:Class" xmi:id="_zlJIAe6qEeird8zelFYFig" name="Protection from rain">
         <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJIAu6qEeird8zelFYFig" name="Evasion of obstacles"/>
         <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJIA-6qEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
           <nestedClassifier xmi:type="uml:Class" xmi:id="_zlJIBO6qEeird8zelFYFig" name="Evasion of obstacles"/>
@@ -150,6 +150,28 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_zlJIBe6qEeird8zelFYFig" name="" client="_zlJH_e6qEeird8zelFYFig _zlJH_e6qEeird8zelFYFig _zlJH_e6qEeird8zelFYFig _zlJH_e6qEeird8zelFYFig" supplier="_zlJH-e6qEeird8zelFYFig _zlJH-e6qEeird8zelFYFig _zlJH-e6qEeird8zelFYFig _zlJH-e6qEeird8zelFYFig"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_zlJIBu6qEeird8zelFYFig" name="" client="_zlJIAe6qEeird8zelFYFig _zlJIAe6qEeird8zelFYFig _zlJIAe6qEeird8zelFYFig _zlJIAe6qEeird8zelFYFig" supplier="_zlJH-e6qEeird8zelFYFig _zlJH-e6qEeird8zelFYFig _zlJH-e6qEeird8zelFYFig _zlJH-e6qEeird8zelFYFig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_mixoYO6rEeird8zelFYFig" name="req [package] Environmental factors" URI="">
+      <packagedElement xmi:type="uml:Class" xmi:id="_mixoYe6rEeird8zelFYFig" name="Malfunctional report">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoYu6rEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoY-6rEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoZO6rEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mixoZe6rEeird8zelFYFig" name="Acoustical and optical reports">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoZu6rEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoZ-6rEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoaO6rEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mixoae6rEeird8zelFYFig" name="Report to the operator">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoau6rEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_mixoa-6rEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_mixobO6rEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_mixobe6rEeird8zelFYFig" name="" client="_mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig _mixoZe6rEeird8zelFYFig" supplier="_mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_mixobu6rEeird8zelFYFig" name="" client="_mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig _mixoae6rEeird8zelFYFig" supplier="_mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig _mixoYe6rEeird8zelFYFig"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q7IL8O3rEeiCCOAWHxp8TA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7XcgO3rEeiCCOAWHxp8TA" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -293,18 +315,32 @@
   <Requirements:DeriveReqt xmi:id="_8Opw4O6pEeird8zelFYFig" base_DirectedRelationship="_8OfY0O6pEeird8zelFYFig" base_Abstraction="_8OfY0O6pEeird8zelFYFig"/>
   <Requirements:DeriveReqt xmi:id="_9ACKgO6pEeird8zelFYFig" base_DirectedRelationship="_8_3ycO6pEeird8zelFYFig" base_Abstraction="_8_3ycO6pEeird8zelFYFig"/>
   <Requirements:DeriveReqt xmi:id="_9syi0O6pEeird8zelFYFig" base_DirectedRelationship="_9sox0O6pEeird8zelFYFig" base_Abstraction="_9sox0O6pEeird8zelFYFig"/>
-  <Requirements:Requirement xmi:id="_zojoUO6qEeird8zelFYFig" base_Class="_zlJH-e6qEeird8zelFYFig" id="3.1" text="The roboter shall react to malfunction."/>
+  <Requirements:Requirement xmi:id="_zojoUO6qEeird8zelFYFig" base_Class="_zlJH-e6qEeird8zelFYFig" id="7.1" text="The roboter shall be able to function in moist and dirty soil and rain."/>
   <Requirements:Requirement xmi:id="_zo4YcO6qEeird8zelFYFig" base_Class="_zlJH-u6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_zpNIkO6qEeird8zelFYFig" base_Class="_zlJH--6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_zphRoO6qEeird8zelFYFig" base_Class="_zlJH_O6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
-  <Requirements:Requirement xmi:id="_zp2BwO6qEeird8zelFYFig" base_Class="_zlJH_e6qEeird8zelFYFig" id="3.2" text="The tracks shall release acoustical and optical signals."/>
+  <Requirements:Requirement xmi:id="_zp2BwO6qEeird8zelFYFig" base_Class="_zlJH_e6qEeird8zelFYFig" id="7.2" text="The chassis of the vehicle shall be sealed such, that simple dirt and moisture stay away from the  interior."/>
   <Requirements:Requirement xmi:id="_zqKx4O6qEeird8zelFYFig" base_Class="_zlJH_u6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_zqfiAO6qEeird8zelFYFig" base_Class="_zlJH_-6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_zq0SIO6qEeird8zelFYFig" base_Class="_zlJIAO6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
-  <Requirements:Requirement xmi:id="_zrJCQO6qEeird8zelFYFig" base_Class="_zlJIAe6qEeird8zelFYFig" id="3.3" text="The robot shall report his state over the communication link to the operator."/>
+  <Requirements:Requirement xmi:id="_zrJCQO6qEeird8zelFYFig" base_Class="_zlJIAe6qEeird8zelFYFig" id="7.3" text="The chassis of the vehicle shall be sealed such that moderate rain doesn't influence the mechanical and electrical functions of the vehicle."/>
   <Requirements:Requirement xmi:id="_zrdyYO6qEeird8zelFYFig" base_Class="_zlJIAu6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_zryigO6qEeird8zelFYFig" base_Class="_zlJIA-6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:Requirement xmi:id="_zsH5sO6qEeird8zelFYFig" base_Class="_zlJIBO6qEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
   <Requirements:DeriveReqt xmi:id="_zsd38O6qEeird8zelFYFig" base_DirectedRelationship="_zlJIBe6qEeird8zelFYFig" base_Abstraction="_zlJIBe6qEeird8zelFYFig"/>
   <Requirements:DeriveReqt xmi:id="_zs6j4O6qEeird8zelFYFig" base_DirectedRelationship="_zlJIBu6qEeird8zelFYFig" base_Abstraction="_zlJIBu6qEeird8zelFYFig"/>
+  <Requirements:Requirement xmi:id="_mjJb0O6rEeird8zelFYFig" base_Class="_mixoYe6rEeird8zelFYFig" id="3.1" text="The roboter shall react to malfunction."/>
+  <Requirements:Requirement xmi:id="_mjhPQO6rEeird8zelFYFig" base_Class="_mixoYu6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_mj3NgO6rEeird8zelFYFig" base_Class="_mixoY-6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_mkNLwO6rEeird8zelFYFig" base_Class="_mixoZO6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_mkjKAO6rEeird8zelFYFig" base_Class="_mixoZe6rEeird8zelFYFig" id="3.2" text="The tracks shall release acoustical and optical signals."/>
+  <Requirements:Requirement xmi:id="_mk5IQO6rEeird8zelFYFig" base_Class="_mixoZu6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_mlPtkO6rEeird8zelFYFig" base_Class="_mixoZ-6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_mlm58O6rEeird8zelFYFig" base_Class="_mixoaO6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_ml84MO6rEeird8zelFYFig" base_Class="_mixoae6rEeird8zelFYFig" id="3.3" text="The robot shall report his state over the communication link to the operator."/>
+  <Requirements:Requirement xmi:id="_mmS2cO6rEeird8zelFYFig" base_Class="_mixoau6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_mmoNoO6rEeird8zelFYFig" base_Class="_mixoa-6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_mm89wO6rEeird8zelFYFig" base_Class="_mixobO6rEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:DeriveReqt xmi:id="_mnRt4O6rEeird8zelFYFig" base_DirectedRelationship="_mixobe6rEeird8zelFYFig" base_Abstraction="_mixobe6rEeird8zelFYFig"/>
+  <Requirements:DeriveReqt xmi:id="_mn3jwO6rEeird8zelFYFig" base_DirectedRelationship="_mixobu6rEeird8zelFYFig" base_Abstraction="_mixobu6rEeird8zelFYFig"/>
 </xmi:XMI>
