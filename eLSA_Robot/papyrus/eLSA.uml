@@ -26,7 +26,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_2MOOAu6hEeird8zelFYFig" name="Percieving of obstacles">
         <nestedClassifier xmi:type="uml:Class" xmi:id="_uJDW4O6jEeird8zelFYFig" name="Percieving of obstacles"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Abstraction" xmi:id="_2MOOBe6hEeird8zelFYFig" client="_2MOOAu6hEeird8zelFYFig _2MOOAu6hEeird8zelFYFig _2MOOAu6hEeird8zelFYFig _2MOOAu6hEeird8zelFYFig" supplier="_2MOOAe6hEeird8zelFYFig _2MOOAe6hEeird8zelFYFig _2MOOAe6hEeird8zelFYFig _2MOOAe6hEeird8zelFYFig"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_2MOOBe6hEeird8zelFYFig" client="_2MOOAu6hEeird8zelFYFig" supplier="_2MOOAe6hEeird8zelFYFig"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_2AfNMO6jEeird8zelFYFig" name="Detection of bottomless pit">
         <nestedClassifier xmi:type="uml:Class" xmi:id="_2AfNMe6jEeird8zelFYFig" name="Percieving of obstacles"/>
       </packagedElement>
@@ -71,6 +71,27 @@
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_Zmz6gO6mEeird8zelFYFig" name="" client="_ohBFcO6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_aK-XgO6mEeird8zelFYFig" name="" client="_7JZ84O6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_ayhfsO6mEeird8zelFYFig" name="" client="_Fe04kO6mEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_6KvfwO6mEeird8zelFYFig" name="Mechanical requirements" URI="">
+      <packagedElement xmi:type="uml:Class" xmi:id="_6Kvfwe6mEeird8zelFYFig" name="Dimensions">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_6Kvfwu6mEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_6Kvfw-6mEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_6KvfxO6mEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_c9DoIO6nEeird8zelFYFig" name="Terrain mobility">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_c9DoIe6nEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_c9DoIu6nEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_c9DoI-6nEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sGo2YO6nEeird8zelFYFig" name="Chassis structure">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_sGo2Ye6nEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_sGo2Yu6nEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_sGo2Y-6nEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_zKqSwO6nEeird8zelFYFig" name="" client="_sGo2YO6nEeird8zelFYFig" supplier="_c9DoIO6nEeird8zelFYFig"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q7IL8O3rEeiCCOAWHxp8TA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7XcgO3rEeiCCOAWHxp8TA" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -177,4 +198,17 @@
   <Requirements:DeriveReqt xmi:id="_Zm-5oO6mEeird8zelFYFig" base_DirectedRelationship="_Zmz6gO6mEeird8zelFYFig" base_Abstraction="_Zmz6gO6mEeird8zelFYFig"/>
   <Requirements:DeriveReqt xmi:id="_aLIvkO6mEeird8zelFYFig" base_DirectedRelationship="_aK-XgO6mEeird8zelFYFig" base_Abstraction="_aK-XgO6mEeird8zelFYFig"/>
   <Requirements:DeriveReqt xmi:id="_ayrQsO6mEeird8zelFYFig" base_DirectedRelationship="_ayhfsO6mEeird8zelFYFig" base_Abstraction="_ayhfsO6mEeird8zelFYFig"/>
+  <Requirements:Requirement xmi:id="_6LP2EO6mEeird8zelFYFig" base_Class="_6Kvfwe6mEeird8zelFYFig" id="6.1" text="The chassis shall hide every electrical component."/>
+  <Requirements:Requirement xmi:id="_6LnpgO6mEeird8zelFYFig" base_Class="_6Kvfwu6mEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_6L8ZoO6mEeird8zelFYFig" base_Class="_6Kvfw-6mEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_6MRJwO6mEeird8zelFYFig" base_Class="_6KvfxO6mEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_c_kJkO6nEeird8zelFYFig" base_Class="_c9DoIe6nEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_c_45sO6nEeird8zelFYFig" base_Class="_c9DoIu6nEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_dAKmgO6nEeird8zelFYFig" base_Class="_c9DoIO6nEeird8zelFYFig" id="6.2" text="The chassis shall be able to pass through rough terrain."/>
+  <Requirements:Requirement xmi:id="_dAbsQO6nEeird8zelFYFig" base_Class="_c9DoI-6nEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_sGwyMO6nEeird8zelFYFig" base_Class="_sGo2YO6nEeird8zelFYFig" id="6.3" text="The chassis shall have a track."/>
+  <Requirements:Requirement xmi:id="_sHCfAO6nEeird8zelFYFig" base_Class="_sGo2Yu6nEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_sHS9sO6nEeird8zelFYFig" base_Class="_sGo2Ye6nEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_sHkqgO6nEeird8zelFYFig" base_Class="_sGo2Y-6nEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:DeriveReqt xmi:id="_zQVc8O6nEeird8zelFYFig" base_DirectedRelationship="_zKqSwO6nEeird8zelFYFig" base_Abstraction="_zKqSwO6nEeird8zelFYFig"/>
 </xmi:XMI>
