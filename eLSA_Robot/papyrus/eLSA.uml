@@ -36,6 +36,42 @@
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_PHwMkO6kEeird8zelFYFig" name="" client="_2AfNMO6jEeird8zelFYFig" supplier="_2MOOAu6hEeird8zelFYFig"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_P5NesO6kEeird8zelFYFig" name="" client="_DeEzsO6kEeird8zelFYFig" supplier="_2MOOAu6hEeird8zelFYFig"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_pr9EAO6kEeird8zelFYFig" name="req [package] Functional attendance" URI="">
+      <packagedElement xmi:type="uml:Class" xmi:id="_pr9EAe6kEeird8zelFYFig" name="Detection of functional attendance">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_pr9EAu6kEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_pr9EA-6kEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_pr9EBO6kEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_RMJ30O6lEeird8zelFYFig" name="Movement detection">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_RMJ30e6lEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_RMJ30u6lEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_RMJ30-6lEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ohBFcO6lEeird8zelFYFig" name="Detection of rollover">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_ohBFce6lEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_ohBFcu6lEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_ohBFc-6lEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7JZ84O6lEeird8zelFYFig" name="Observation of battery level">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_7JZ84e6lEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_7JZ84u6lEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_7JZ84-6lEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Fe04kO6mEeird8zelFYFig" name="Observation of communication">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_Fe04ke6mEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_Fe04ku6mEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_Fe04k-6mEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Yn9FkO6mEeird8zelFYFig" name="" client="_RMJ30O6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Zmz6gO6mEeird8zelFYFig" name="" client="_ohBFcO6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_aK-XgO6mEeird8zelFYFig" name="" client="_7JZ84O6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_ayhfsO6mEeird8zelFYFig" name="" client="_Fe04kO6mEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q7IL8O3rEeiCCOAWHxp8TA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7XcgO3rEeiCCOAWHxp8TA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
@@ -117,4 +153,28 @@
   <Requirements:Requirement xmi:id="_DegRgO6kEeird8zelFYFig" base_Class="_DeEzse6kEeird8zelFYFig" id="5.2" text="The robot shall percieve obstacles.&#xD;&#xA;"/>
   <Requirements:DeriveReqt xmi:id="_PH9n8O6kEeird8zelFYFig" base_DirectedRelationship="_PHwMkO6kEeird8zelFYFig" base_Abstraction="_PHwMkO6kEeird8zelFYFig"/>
   <Requirements:DeriveReqt xmi:id="_P5Yd0O6kEeird8zelFYFig" base_DirectedRelationship="_P5NesO6kEeird8zelFYFig" base_Abstraction="_P5NesO6kEeird8zelFYFig"/>
+  <Requirements:Requirement xmi:id="_psSbMO6kEeird8zelFYFig" base_Class="_pr9EAe6kEeird8zelFYFig" id="2.1" text="The robot shall recognize his own availability."/>
+  <Requirements:Requirement xmi:id="_pslWIO6kEeird8zelFYFig" base_Class="_pr9EAu6kEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_ps4REO6kEeird8zelFYFig" base_Class="_pr9EA-6kEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_ptLzEO6kEeird8zelFYFig" base_Class="_pr9EBO6kEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_RMTo0O6lEeird8zelFYFig" base_Class="_RMJ30O6lEeird8zelFYFig" id="2.2" text="The robot shall observe his motions dependend from the control of the motors."/>
+  <Requirements:Requirement xmi:id="_RMkukO6lEeird8zelFYFig" base_Class="_RMJ30u6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_RM2bYO6lEeird8zelFYFig" base_Class="_RMJ30e6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_RNJWUO6lEeird8zelFYFig" base_Class="_RMJ30-6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_ohNSsO6lEeird8zelFYFig" base_Class="_ohBFce6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_ohgNoO6lEeird8zelFYFig" base_Class="_ohBFcO6lEeird8zelFYFig" id="2.3" text="The robot shall detect, if it is lying at the side or head."/>
+  <Requirements:Requirement xmi:id="_ohzIkO6lEeird8zelFYFig" base_Class="_ohBFc-6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_oiFccO6lEeird8zelFYFig" base_Class="_ohBFcu6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_7Jjt4O6lEeird8zelFYFig" base_Class="_7JZ84e6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_7KBA4O6lEeird8zelFYFig" base_Class="_7JZ84-6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_7KTUwO6lEeird8zelFYFig" base_Class="_7JZ84O6lEeird8zelFYFig" id="2.4" text="The robot shall observe the state of the accumulators."/>
+  <Requirements:Requirement xmi:id="_7KlBkO6lEeird8zelFYFig" base_Class="_7JZ84u6lEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_Fe-CgO6mEeird8zelFYFig" base_Class="_Fe04ke6mEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_FfQWYO6mEeird8zelFYFig" base_Class="_Fe04k-6mEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_FfhcIO6mEeird8zelFYFig" base_Class="_Fe04ku6mEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_Ffyh4O6mEeird8zelFYFig" base_Class="_Fe04kO6mEeird8zelFYFig" id="2.5" text="The robot shall detect, if the communication is cut off."/>
+  <Requirements:DeriveReqt xmi:id="_YoJ54O6mEeird8zelFYFig" base_DirectedRelationship="_Yn9FkO6mEeird8zelFYFig" base_Abstraction="_Yn9FkO6mEeird8zelFYFig"/>
+  <Requirements:DeriveReqt xmi:id="_Zm-5oO6mEeird8zelFYFig" base_DirectedRelationship="_Zmz6gO6mEeird8zelFYFig" base_Abstraction="_Zmz6gO6mEeird8zelFYFig"/>
+  <Requirements:DeriveReqt xmi:id="_aLIvkO6mEeird8zelFYFig" base_DirectedRelationship="_aK-XgO6mEeird8zelFYFig" base_Abstraction="_aK-XgO6mEeird8zelFYFig"/>
+  <Requirements:DeriveReqt xmi:id="_ayrQsO6mEeird8zelFYFig" base_DirectedRelationship="_ayhfsO6mEeird8zelFYFig" base_Abstraction="_ayhfsO6mEeird8zelFYFig"/>
 </xmi:XMI>
