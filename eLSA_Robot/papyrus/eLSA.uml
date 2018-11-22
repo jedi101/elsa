@@ -16,6 +16,26 @@
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_pmVRUO3tEeiCCOAWHxp8TA" name="" client="_ScH0gO3tEeiCCOAWHxp8TA" supplier="_PfDmcO3tEeiCCOAWHxp8TA"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_qqHpkO3tEeiCCOAWHxp8TA" name="" client="_TLy98O3tEeiCCOAWHxp8TA" supplier="_ScH0gO3tEeiCCOAWHxp8TA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_2MOOAO6hEeird8zelFYFig" name="req [package] Evasion of obstacles" URI="">
+      <packagedElement xmi:type="uml:Class" xmi:id="_2MOOAe6hEeird8zelFYFig" name="Evasion of obstacles">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_Ta9ZEO6iEeird8zelFYFig" name="Evasion of obstacles"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_Wss2oO6iEeird8zelFYFig" name="CopyOf_Evasion of obstacles_1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_Wss2oe6iEeird8zelFYFig" name="Evasion of obstacles"/>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2MOOAu6hEeird8zelFYFig" name="Percieving of obstacles">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_uJDW4O6jEeird8zelFYFig" name="Percieving of obstacles"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_2MOOBe6hEeird8zelFYFig" client="_2MOOAu6hEeird8zelFYFig _2MOOAu6hEeird8zelFYFig _2MOOAu6hEeird8zelFYFig _2MOOAu6hEeird8zelFYFig" supplier="_2MOOAe6hEeird8zelFYFig _2MOOAe6hEeird8zelFYFig _2MOOAe6hEeird8zelFYFig _2MOOAe6hEeird8zelFYFig"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2AfNMO6jEeird8zelFYFig" name="Detection of bottomless pit">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_2AfNMe6jEeird8zelFYFig" name="Percieving of obstacles"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DeEzsO6kEeird8zelFYFig" name="Detection of object">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_DeEzse6kEeird8zelFYFig" name="Percieving of obstacles"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_PHwMkO6kEeird8zelFYFig" name="" client="_2AfNMO6jEeird8zelFYFig" supplier="_2MOOAu6hEeird8zelFYFig"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_P5NesO6kEeird8zelFYFig" name="" client="_DeEzsO6kEeird8zelFYFig" supplier="_2MOOAu6hEeird8zelFYFig"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q7IL8O3rEeiCCOAWHxp8TA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7XcgO3rEeiCCOAWHxp8TA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
@@ -84,4 +104,17 @@
   <Requirements:DeriveReqt xmi:id="_mCmE0O3tEeiCCOAWHxp8TA" base_DirectedRelationship="_mCW0QO3tEeiCCOAWHxp8TA" base_Abstraction="_mCW0QO3tEeiCCOAWHxp8TA"/>
   <Requirements:Trace xmi:id="_pmg3gO3tEeiCCOAWHxp8TA" base_DirectedRelationship="_pmVRUO3tEeiCCOAWHxp8TA" base_Abstraction="_pmVRUO3tEeiCCOAWHxp8TA"/>
   <Requirements:Trace xmi:id="_qqRakO3tEeiCCOAWHxp8TA" base_DirectedRelationship="_qqHpkO3tEeiCCOAWHxp8TA" base_Abstraction="_qqHpkO3tEeiCCOAWHxp8TA"/>
+  <Requirements:Requirement xmi:id="_2MWw4O6hEeird8zelFYFig" base_Class="_2MOOAe6hEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_2MmogO6hEeird8zelFYFig" base_Class="_2MOOAu6hEeird8zelFYFig" id="5.2" text="The robot shall percieve obstacles.&#xD;&#xA;"/>
+  <Requirements:DeriveReqt xmi:id="_2NVoUO6hEeird8zelFYFig" base_DirectedRelationship="_2MOOBe6hEeird8zelFYFig" base_Abstraction="_2MOOBe6hEeird8zelFYFig"/>
+  <Requirements:Requirement xmi:id="_TbGjAO6iEeird8zelFYFig" base_Class="_Ta9ZEO6iEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_Ws0LYO6iEeird8zelFYFig" base_Class="_Wss2oe6iEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_WtEqEO6iEeird8zelFYFig" base_Class="_Wss2oO6iEeird8zelFYFig" id="5.1" text="The robot shall evade obstacles."/>
+  <Requirements:Requirement xmi:id="_uJWR0O6jEeird8zelFYFig" base_Class="_uJDW4O6jEeird8zelFYFig" id="5.2" text="The robot shall percieve obstacles.&#xD;&#xA;"/>
+  <Requirements:Requirement xmi:id="_2AnJAO6jEeird8zelFYFig" base_Class="_2AfNMO6jEeird8zelFYFig" id="5.3" text="The robot shall detect bottomless pits."/>
+  <Requirements:Requirement xmi:id="_2A4OwO6jEeird8zelFYFig" base_Class="_2AfNMe6jEeird8zelFYFig" id="5.2" text="The robot shall percieve obstacles.&#xD;&#xA;"/>
+  <Requirements:Requirement xmi:id="_DeN9oO6kEeird8zelFYFig" base_Class="_DeEzsO6kEeird8zelFYFig" id="5.4" text="The robot shall detect objects."/>
+  <Requirements:Requirement xmi:id="_DegRgO6kEeird8zelFYFig" base_Class="_DeEzse6kEeird8zelFYFig" id="5.2" text="The robot shall percieve obstacles.&#xD;&#xA;"/>
+  <Requirements:DeriveReqt xmi:id="_PH9n8O6kEeird8zelFYFig" base_DirectedRelationship="_PHwMkO6kEeird8zelFYFig" base_Abstraction="_PHwMkO6kEeird8zelFYFig"/>
+  <Requirements:DeriveReqt xmi:id="_P5Yd0O6kEeird8zelFYFig" base_DirectedRelationship="_P5NesO6kEeird8zelFYFig" base_Abstraction="_P5NesO6kEeird8zelFYFig"/>
 </xmi:XMI>
