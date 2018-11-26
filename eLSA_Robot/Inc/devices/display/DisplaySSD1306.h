@@ -45,7 +45,6 @@ typedef struct {
 class Display_SSD1306 {
 public:
 	Display_SSD1306(I2C_HandleTypeDef* i2c_port, uint16_t i2c_address);
-	Display_SSD1306(I2C_HandleTypeDef* i2c_port, uint16_t device_address, unsigned int width, unsigned height);
 	virtual ~Display_SSD1306();
 	void fill(DISPLAY_SSD1306_COLOR color);
 	void updateScreen(void);
