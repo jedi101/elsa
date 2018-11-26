@@ -10,16 +10,20 @@
 
 namespace eLSA {
 
+	//constructor for I2C device
 	STM_I2C_Device::STM_I2C_Device(I2C_HandleTypeDef* i2c_port, uint16_t device_address)
 		:_i2c_port{i2c_port}, _device_address{device_address}{}
 
+	//destructor for I2C device
 	STM_I2C_Device::~STM_I2C_Device(){};
 
+	// write command to I2C device
 	unsigned int STM_I2C_Device::writeCommand(uint16_t pAddressCommand, uint16_t sizeAddressCommand, uint8_t* pCommand, uint16_t sizeCommand, uint32_t timeout)
 	{
 		return STM_I2C_Device::writeData(pAddressCommand, sizeAddressCommand, pCommand, sizeCommand, timeout);
 	}
 
+	// write data to I2C device
 	unsigned int STM_I2C_Device::writeData(uint16_t pAddressDataRegister, uint16_t sizeAddressData, uint8_t* pData, uint16_t sizeData, uint32_t timeout)
 	{
 		HAL_StatusTypeDef _status = HAL_BUSY;
@@ -39,6 +43,7 @@ namespace eLSA {
 		return _status;
 	}
 
+	// read data from I2C device
 	unsigned int STM_I2C_Device::readData(uint16_t pAddressDataRegister, uint16_t sizeAddressData, uint8_t* pData, uint16_t sizeData, uint32_t timeout)
 	{
 		HAL_StatusTypeDef _status = HAL_BUSY;
