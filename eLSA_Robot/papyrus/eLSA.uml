@@ -179,7 +179,25 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="__BCL0PMxEeiiSsYhVkpzog" name="derive" client="_2MOOAO6hEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_Ee7-8PMyEeiiSsYhVkpzog" name="derive" client="_NuXa8O6oEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_HwUSUPNBEeinMocA2TwWlQ" name="Activity package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_HwUSUPNBEeinMocA2TwWlQ" name="Activity package" visibility="public">
+      <packagedElement xmi:type="uml:Activity" xmi:id="_P5ZSQPNBEeinMocA2TwWlQ" name="Runtime" node="_WJFusPNBEeinMocA2TwWlQ _YyvmoPNDEeinMocA2TwWlQ _7TVs4PNDEeinMocA2TwWlQ _LZjQkPNGEeinMocA2TwWlQ _Z-7lkPNGEeinMocA2TwWlQ _khqkgPNGEeinMocA2TwWlQ">
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_db0DgPNDEeinMocA2TwWlQ" name="System initialization"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_8FvaMPNDEeinMocA2TwWlQ" name="Run test program"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_b2mR0PNGEeinMocA2TwWlQ" name="Report malfunction"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_yECkYPNGEeinMocA2TwWlQ" name="Run main program"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_hz3B0PNDEeinMocA2TwWlQ" target="_YyvmoPNDEeinMocA2TwWlQ" source="_WJFusPNBEeinMocA2TwWlQ"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_CaGUMPNEEeinMocA2TwWlQ" target="_7TVs4PNDEeinMocA2TwWlQ" source="_YyvmoPNDEeinMocA2TwWlQ"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_NCFUoPNGEeinMocA2TwWlQ" target="_LZjQkPNGEeinMocA2TwWlQ" source="_7TVs4PNDEeinMocA2TwWlQ"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_gM6KwPNGEeinMocA2TwWlQ" name="[testProgrammSuccessful = false]" target="_Z-7lkPNGEeinMocA2TwWlQ" source="_LZjQkPNGEeinMocA2TwWlQ"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_2MSzMPNGEeinMocA2TwWlQ" name="[testProgrammSuccessful = true]" target="_khqkgPNGEeinMocA2TwWlQ" source="_LZjQkPNGEeinMocA2TwWlQ"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_WJFusPNBEeinMocA2TwWlQ" name="" outgoing="_hz3B0PNDEeinMocA2TwWlQ"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_YyvmoPNDEeinMocA2TwWlQ" name="System initialization" incoming="_hz3B0PNDEeinMocA2TwWlQ" outgoing="_CaGUMPNEEeinMocA2TwWlQ" behavior="_db0DgPNDEeinMocA2TwWlQ"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_7TVs4PNDEeinMocA2TwWlQ" name="Run test program" incoming="_CaGUMPNEEeinMocA2TwWlQ" outgoing="_NCFUoPNGEeinMocA2TwWlQ" behavior="_8FvaMPNDEeinMocA2TwWlQ"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_LZjQkPNGEeinMocA2TwWlQ" name="" incoming="_NCFUoPNGEeinMocA2TwWlQ" outgoing="_gM6KwPNGEeinMocA2TwWlQ _2MSzMPNGEeinMocA2TwWlQ"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_Z-7lkPNGEeinMocA2TwWlQ" name="Report malfunction" incoming="_gM6KwPNGEeinMocA2TwWlQ" behavior="_b2mR0PNGEeinMocA2TwWlQ"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_khqkgPNGEeinMocA2TwWlQ" name="Run main program" incoming="_2MSzMPNGEeinMocA2TwWlQ" behavior="_yECkYPNGEeinMocA2TwWlQ"/>
+      </packagedElement>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q7IL8O3rEeiCCOAWHxp8TA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7XcgO3rEeiCCOAWHxp8TA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
