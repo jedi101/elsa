@@ -179,6 +179,7 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="__BCL0PMxEeiiSsYhVkpzog" name="derive" client="_2MOOAO6hEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_Ee7-8PMyEeiiSsYhVkpzog" name="derive" client="_NuXa8O6oEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_HwUSUPNBEeinMocA2TwWlQ" name="Activity package"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q7IL8O3rEeiCCOAWHxp8TA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7XcgO3rEeiCCOAWHxp8TA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#/"/>
