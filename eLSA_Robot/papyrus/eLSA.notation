@@ -3680,6 +3680,9 @@
     <children xmi:type="notation:Shape" xmi:id="_xkADIPMqEeiiSsYhVkpzog" type="Package_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_xkADIvMqEeiiSsYhVkpzog" type="Package_NameLabel"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_xkADI_MqEeiiSsYhVkpzog" type="Package_PackagedElementCompartment">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bv_qoPMyEeiiSsYhVkpzog" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bwARsPMyEeiiSsYhVkpzog" key="collapsed" value="true"/>
+        </eAnnotations>
         <children xmi:type="notation:Shape" xmi:id="_4MDVMPMqEeiiSsYhVkpzog" type="Package_Shape_CN">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PDSLoPMrEeiiSsYhVkpzog" source="PapyrusHyperLink_Page" references="_gQNPcO3tEeiCCOAWHxp8TA">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PDSLofMrEeiiSsYhVkpzog" key="tooltip_text" value="General requirements"/>
@@ -3703,7 +3706,7 @@
           <element xmi:type="uml:Package" href="eLSA.uml#_2MOOAO6hEeird8zelFYFig"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Mc90fMqEeiiSsYhVkpzog" x="568" y="219" width="226"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_4MmHwPMqEeiiSsYhVkpzog" type="Package_Shape_CN">
+        <children xmi:type="notation:Shape" xmi:id="_4MmHwPMqEeiiSsYhVkpzog" type="Package_Shape_CN" gradient="16777215, -1, 1">
           <children xmi:type="notation:DecorationNode" xmi:id="_4Mmu0PMqEeiiSsYhVkpzog" type="Package_NameLabel_CN"/>
           <children xmi:type="notation:BasicCompartment" xmi:id="_4Mmu0fMqEeiiSsYhVkpzog" type="Package_PackagedElementCompartment_CN">
             <styles xmi:type="notation:TitleStyle" xmi:id="_4Mmu0vMqEeiiSsYhVkpzog"/>
@@ -3715,6 +3718,9 @@
         <children xmi:type="notation:Shape" xmi:id="_4Mwf0PMqEeiiSsYhVkpzog" type="Package_Shape_CN">
           <children xmi:type="notation:DecorationNode" xmi:id="_4Mwf0vMqEeiiSsYhVkpzog" type="Package_NameLabel_CN"/>
           <children xmi:type="notation:BasicCompartment" xmi:id="_4MxG4PMqEeiiSsYhVkpzog" type="Package_PackagedElementCompartment_CN">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dL4Z0PMyEeiiSsYhVkpzog" source="PapyrusCSSForceValue">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dL4Z0fMyEeiiSsYhVkpzog" key="collapsed" value="true"/>
+            </eAnnotations>
             <styles xmi:type="notation:TitleStyle" xmi:id="_4MxG4fMqEeiiSsYhVkpzog"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4MxG4vMqEeiiSsYhVkpzog"/>
           </children>
@@ -3782,7 +3788,7 @@
     <edges xmi:type="notation:Connector" xmi:id="_7SjH4PMxEeiiSsYhVkpzog" type="Dependency_Edge" source="_4MmHwPMqEeiiSsYhVkpzog" target="_4MDVMPMqEeiiSsYhVkpzog">
       <children xmi:type="notation:DecorationNode" xmi:id="_7Sju8PMxEeiiSsYhVkpzog" type="Dependency_NameLabel">
         <styles xmi:type="notation:BooleanValueStyle" xmi:id="_9v8-cPMxEeiiSsYhVkpzog" name="IS_UPDATED_POSITION" booleanValue="true"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Sju8fMxEeiiSsYhVkpzog" x="-36" y="-38"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7Sju8fMxEeiiSsYhVkpzog" x="-36" y="-20"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_7Sju8vMxEeiiSsYhVkpzog" type="Dependency_StereotypeLabel">
         <styles xmi:type="notation:BooleanValueStyle" xmi:id="_9wDsIPMxEeiiSsYhVkpzog" name="IS_UPDATED_POSITION" booleanValue="true"/>
