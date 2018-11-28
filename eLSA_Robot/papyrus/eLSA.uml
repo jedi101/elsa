@@ -36,7 +36,7 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_PHwMkO6kEeird8zelFYFig" name="" client="_2AfNMO6jEeird8zelFYFig" supplier="_2MOOAu6hEeird8zelFYFig"/>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_P5NesO6kEeird8zelFYFig" name="" client="_DeEzsO6kEeird8zelFYFig" supplier="_2MOOAu6hEeird8zelFYFig"/>
-        <packagedElement xmi:type="uml:Abstraction" xmi:id="_CJ-hcPMsEeiiSsYhVkpzog" client="_2MOOAO6hEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="__BCL0PMxEeiiSsYhVkpzog" name="derive" client="_2MOOAO6hEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_pr9EAO6kEeird8zelFYFig" name="req [package] Functional attendance" URI="">
         <packagedElement xmi:type="uml:Class" xmi:id="_pr9EAe6kEeird8zelFYFig" name="Detection of functional attendance">
@@ -73,7 +73,7 @@
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_Zmz6gO6mEeird8zelFYFig" name="" client="_ohBFcO6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_aK-XgO6mEeird8zelFYFig" name="" client="_7JZ84O6lEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_ayhfsO6mEeird8zelFYFig" name="" client="_Fe04kO6mEeird8zelFYFig" supplier="_pr9EAe6kEeird8zelFYFig"/>
-        <packagedElement xmi:type="uml:Abstraction" xmi:id="_BLwlsPMsEeiiSsYhVkpzog" client="_pr9EAO6kEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_7RWOAPMxEeiiSsYhVkpzog" name="derive" client="_pr9EAO6kEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_6KvfwO6mEeird8zelFYFig" name="req [package] Mechanical requirements" URI="">
         <packagedElement xmi:type="uml:Class" xmi:id="_6Kvfwe6mEeird8zelFYFig" name="Dimensions">
@@ -131,7 +131,7 @@
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_8OfY0O6pEeird8zelFYFig" name="" client="_hC4jIO6pEeird8zelFYFig" supplier="_lj3QcO6oEeird8zelFYFig"/>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_8_3ycO6pEeird8zelFYFig" name="" client="_lj3QcO6oEeird8zelFYFig" supplier="_NuXa8e6oEeird8zelFYFig"/>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_9sox0O6pEeird8zelFYFig" name="" client="_f97isO6oEeird8zelFYFig" supplier="_NuXa8e6oEeird8zelFYFig"/>
-        <packagedElement xmi:type="uml:Abstraction" xmi:id="_CvisoPMsEeiiSsYhVkpzog" client="_NuXa8O6oEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_Ee7-8PMyEeiiSsYhVkpzog" name="derive" client="_NuXa8O6oEeird8zelFYFig" supplier="_6M-v8O3sEeiCCOAWHxp8TA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_zlJH8O6qEeird8zelFYFig" name="req [package] Environmental factors" URI="">
         <packagedElement xmi:type="uml:Class" xmi:id="_zlJH-e6qEeird8zelFYFig" name="Protection from weather">
@@ -176,7 +176,7 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_mixobe6rEeird8zelFYFig" name="" client="_mixoZe6rEeird8zelFYFig" supplier="_mixoYe6rEeird8zelFYFig"/>
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_mixobu6rEeird8zelFYFig" name="" client="_mixoae6rEeird8zelFYFig" supplier="_mixoYe6rEeird8zelFYFig"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_QBbZcPMsEeiiSsYhVkpzog" client="_mixoYO6rEeird8zelFYFig" supplier="_pr9EAO6kEeird8zelFYFig"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_QBbZcPMsEeiiSsYhVkpzog" name="trace" client="_mixoYO6rEeird8zelFYFig" supplier="_pr9EAO6kEeird8zelFYFig"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q7IL8O3rEeiCCOAWHxp8TA">
