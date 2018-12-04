@@ -15,6 +15,11 @@
 													* For the Adafruit 128x32 Display the value 64 has to be used since it seems
 													* that on this display every second row is used.
 													*/
+#define DISPLAY_SSD1306_I2C_ADDRESS_LENGTH		1 /**< The length of the register addresses of the ssd1306 controller in byte.
+													* The ssd1306 uses 7Bit addressing -> 1 Byte
+													*/
+#define DISPLAY_SSD1306_I2C_COMMAND_LENGTH		1 /**< The length of the commands used by the ssd1306
+													*/
 
 namespace eLSA {
 
@@ -109,8 +114,8 @@ public:
 	void testFps(void);
 
 private:
-	unsigned int _write_i2c_command(uint8_t command);
-	unsigned int _write_i2c_data(uint8_t* data, uint16_t data_size);
+	unsigned int _writeI2cCommand(uint8_t command);
+	unsigned int _writeI2cData(uint8_t* data, uint16_t data_size);
 
 	eLSA::STM_I2C_Device* _i2c_interface;
 	I2C_HandleTypeDef* _i2c_port;
