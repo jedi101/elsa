@@ -3,7 +3,7 @@
 #ifndef DISPLAY_SSD1306_H_
 #define DISPLAY_SSD1306_H_
 
-#include <comDevices/STM_I2C_Device.h>
+#include <comDevices/StmI2cDevice.h>
 #include "display/DisplayFonts.h"
 
 #define DISPLAY_SSD1306_I2C_DEFAULT_ADDR        (0x3C << 1) ///< The standard i2c address used for the display

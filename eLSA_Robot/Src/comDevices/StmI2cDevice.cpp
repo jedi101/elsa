@@ -5,7 +5,7 @@
  *      Author: Tobias
  */
 
-#include <comDevices/STM_I2C_Device.h>
+#include <comDevices/StmI2cDevice.h>
 #include <cstdint>
 
 namespace eLSA {
