@@ -27,6 +27,38 @@ namespace DISPLAY {
 static const FontDef Font_7x10  = {7, 10, Font7x10};
 static const FontDef Font_11x18 = {11, 18, Font11x18};
 static const FontDef Font_16x26 = {16, 26, Font16x26};
+static const uint8_t ssd1306InitCommands[] = {
+	0xAE, //display off
+	0x20, //Set Memory Addressing Mode
+	0x10, // 00,Horizontal Addressing Mode; 01,Vertical Addressing Mode;
+							  // 10,Page Addressing Mode (RESET); 11,Invalid
+	0xB0, //Set Page Start Address for Page Addressing Mode,0-7
+	0xC8, //Set COM Output Scan Direction
+	0x00, //---set low column address
+	0x10, //---set high column address
+	0x40, //--set start line address - CHECK
+	0x81, //--set contrast control register - CHECK
+	0xFF,
+	0xA1, //--set segment re-map 0 to 127 - CHECK
+	0xA6, //--set normal color
+	0xA8, //--set multiplex ratio(1 to 64) - CHECK
+	0x3F, //
+	0xA4, //0xa4,Output follows RAM content;0xa5,Output ignores RAM content
+	0xD3, //-set display offset - CHECK
+	0x00, //-not offset
+	0xD5, //--set display clock divide ratio/oscillator frequency
+	0xF0, //--set divide ratio
+	0xD9, //--set pre-charge period
+	0x22, //
+	0xDA, //--set com pins hardware configuration - CHECK
+	0x12,
+	0xDB, //--set vcomh
+	0x20, //0x20,0.77xVcc
+	0x8D, //--set DC-DC enable
+	0x14, //
+	0xAF //--turn on SSD1306 panel
+};
+
 
 typedef enum {
     Black = 0x00, ///< Black color, no pixel

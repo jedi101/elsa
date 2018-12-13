@@ -21,36 +21,11 @@ eLSA::DISPLAY::DisplaySSD1306::DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16
 			//set display standard timeout for i2c device
 			_i2cInterface->setConnectionTimeout(DISPLAY_SSD1306_I2C_TIMEOUT);
 
-			// Init OLED
-			_writeI2cCommand(0xAE); //display off
-			_writeI2cCommand(0x20); //Set Memory Addressing Mode
-			_writeI2cCommand(0x10); // 00,Horizontal Addressing Mode; 01,Vertical Addressing Mode;
-									  // 10,Page Addressing Mode (RESET); 11,Invalid
-			_writeI2cCommand(0xB0); //Set Page Start Address for Page Addressing Mode,0-7
-			_writeI2cCommand(0xC8); //Set COM Output Scan Direction
-			_writeI2cCommand(0x00); //---set low column address
-			_writeI2cCommand(0x10); //---set high column address
-			_writeI2cCommand(0x40); //--set start line address - CHECK
-			_writeI2cCommand(0x81); //--set contrast control register - CHECK
-			_writeI2cCommand(0xFF);
-			_writeI2cCommand(0xA1); //--set segment re-map 0 to 127 - CHECK
-			_writeI2cCommand(0xA6); //--set normal color
-			_writeI2cCommand(0xA8); //--set multiplex ratio(1 to 64) - CHECK
-			_writeI2cCommand(0x3F); //
-			_writeI2cCommand(0xA4); //0xa4,Output follows RAM content;0xa5,Output ignores RAM content
-			_writeI2cCommand(0xD3); //-set display offset - CHECK
-			_writeI2cCommand(0x00); //-not offset
-			_writeI2cCommand(0xD5); //--set display clock divide ratio/oscillator frequency
-			_writeI2cCommand(0xF0); //--set divide ratio
-			_writeI2cCommand(0xD9); //--set pre-charge period
-			_writeI2cCommand(0x22); //
-			_writeI2cCommand(0xDA); //--set com pins hardware configuration - CHECK
-			_writeI2cCommand(0x12);
-			_writeI2cCommand(0xDB); //--set vcomh
-			_writeI2cCommand(0x20); //0x20,0.77xVcc
-			_writeI2cCommand(0x8D); //--set DC-DC enable
-			_writeI2cCommand(0x14); //
-			_writeI2cCommand(0xAF); //--turn on SSD1306 panel
+			// Init OLED by writing all commands in ssd1306InitCommands
+			for(unsigned int i = 0; i < (sizeof(ssd1306InitCommands)/sizeof(ssd1306InitCommands[0])); i++)
+			{
+				_writeI2cCommand(ssd1306InitCommands[i]);
+			}
 
 			// Clear screen
 			fill(Black);
