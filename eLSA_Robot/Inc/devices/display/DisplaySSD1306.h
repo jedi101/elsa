@@ -51,18 +51,18 @@ typedef struct {
  *  Additionally the class provides convenient methods to draw single pixels, characters and even strings on the screen.
  *  DISCLAIMER: The used methods are heavily based on the stm32-ssd1306 C library by Aleksander Alekseev (https://github.com/afiskon/stm32-ssd1306)
  */
-class Display_SSD1306 {
+class DisplaySSD1306 {
 public:
 	/**
 	 * @param i2c_port A STM32 HAL handle describing the used I2C interface
 	 * @param i2c_address The I2C address of the display controller
 	 */
-	Display_SSD1306(I2C_HandleTypeDef* i2cPort, uint16_t i2cAddress);
+	DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16_t i2cAddress);
 
 	/**
 	 * The Destructor deletes the internally used STM_I2C_Device
 	 */
-	virtual ~Display_SSD1306();
+	virtual ~DisplaySSD1306();
 
 	/**
 	 * @brief This method fills the whole display with one given color
@@ -117,7 +117,7 @@ private:
 	unsigned int _writeI2cCommand(uint8_t command);
 	unsigned int _writeI2cData(uint8_t* data, uint16_t data_size);
 
-	eLSA::hwInterfaces::STM_I2C_Device* _i2cInterface;
+	eLSA::hwInterfaces::StmI2cDevice* _i2cInterface;
 	I2C_HandleTypeDef* _i2cPort;
 	uint16_t _i2cAddress = DISPLAY_SSD1306_I2C_DEFAULT_ADDR;
 	uint8_t _screenBuffer[(DISPLAY_SSD1306_WIDTH * DISPLAY_SSD1306_HEIGHT)/8];
