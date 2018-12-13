@@ -57,7 +57,7 @@ public:
 	 * @param i2c_port A STM32 HAL handle describing the used I2C interface
 	 * @param i2c_address The I2C address of the display controller
 	 */
-	Display_SSD1306(I2C_HandleTypeDef* i2c_port, uint16_t i2c_address);
+	Display_SSD1306(I2C_HandleTypeDef* i2cPort, uint16_t i2cAddress);
 
 	/**
 	 * The Destructor deletes the internally used STM_I2C_Device
@@ -117,11 +117,11 @@ private:
 	unsigned int _writeI2cCommand(uint8_t command);
 	unsigned int _writeI2cData(uint8_t* data, uint16_t data_size);
 
-	eLSA::STM_I2C_Device* _i2c_interface;
-	I2C_HandleTypeDef* _i2c_port;
-	uint16_t _i2c_address = DISPLAY_SSD1306_I2C_DEFAULT_ADDR;
-	uint8_t screenBuffer[(DISPLAY_SSD1306_WIDTH * DISPLAY_SSD1306_HEIGHT)/8];
-	eLSA::DISPLAY::DISPLAY_SSD1306_t screen_object;
+	eLSA::hwInterfaces::STM_I2C_Device* _i2cInterface;
+	I2C_HandleTypeDef* _i2cPort;
+	uint16_t _i2cAddress = DISPLAY_SSD1306_I2C_DEFAULT_ADDR;
+	uint8_t _screenBuffer[(DISPLAY_SSD1306_WIDTH * DISPLAY_SSD1306_HEIGHT)/8];
+	eLSA::DISPLAY::DISPLAY_SSD1306_t _screenObject;
 
 };
 

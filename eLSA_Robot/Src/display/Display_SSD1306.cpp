@@ -8,18 +8,18 @@
 #include "display/DisplaySSD1306.h"
 #include <cstring>
 
-eLSA::DISPLAY::Display_SSD1306::Display_SSD1306(I2C_HandleTypeDef* i2c_port, uint16_t device_address)
-	:_i2c_port{i2c_port}, _i2c_address{device_address}
+eLSA::DISPLAY::Display_SSD1306::Display_SSD1306(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)
+	:_i2cPort{i2cPort}, _i2cAddress{deviceAddress}
 {
-	if(i2c_port && device_address) {
+	if(_i2cPort && _i2cAddress) {
 
 		//retrieve new i2c interface object
-		_i2c_interface = new eLSA::STM_I2C_Device(_i2c_port, _i2c_address);
+		_i2cInterface = new eLSA::hwInterfaces::STM_I2C_Device(_i2cPort, _i2cAddress);
 
-		if(_i2c_interface) {
+		if(_i2cInterface) {
 
 			//set display standard timeout for i2c device
-			_i2c_interface->setConnectionTimeout(DISPLAY_SSD1306_I2C_TIMEOUT);
+			_i2cInterface->setConnectionTimeout(DISPLAY_SSD1306_I2C_TIMEOUT);
 
 			// Init OLED
 			_writeI2cCommand(0xAE); //display off
@@ -59,17 +59,17 @@ eLSA::DISPLAY::Display_SSD1306::Display_SSD1306(I2C_HandleTypeDef* i2c_port, uin
 			updateScreen();
 
 			// Set default values for screen object
-			screen_object.CurrentX = 0;
-			screen_object.CurrentY = 0;
+			_screenObject.CurrentX = 0;
+			_screenObject.CurrentY = 0;
 
-			screen_object.Initialized = 1;
+			_screenObject.Initialized = 1;
 		}
 	}
 }
 
 eLSA::DISPLAY::Display_SSD1306::~Display_SSD1306()
 {
-	delete _i2c_interface;
+	delete _i2cInterface;
 }
 
 /*public methods*/
@@ -80,8 +80,8 @@ void eLSA::DISPLAY::Display_SSD1306::fill(DISPLAY_SSD1306_COLOR color)
 	/* Set complete screen to one color */
 	uint32_t i;
 
-	for(i = 0; i < sizeof(screenBuffer); i++) {
-		screenBuffer[i] = (color == eLSA::DISPLAY::Black) ? 0x00 : 0xFF;;
+	for(i = 0; i < sizeof(_screenBuffer); i++) {
+		_screenBuffer[i] = (color == eLSA::DISPLAY::Black) ? 0x00 : 0xFF;;
 	}
 }
 
@@ -92,7 +92,7 @@ void eLSA::DISPLAY::Display_SSD1306::updateScreen(void) {
     	_writeI2cCommand(0xB0 + i);
     	_writeI2cCommand(0x00);
     	_writeI2cCommand(0x10);
-    	_writeI2cData(&screenBuffer[DISPLAY_SSD1306_WIDTH*i],DISPLAY_SSD1306_WIDTH);
+    	_writeI2cData(&_screenBuffer[DISPLAY_SSD1306_WIDTH*i],DISPLAY_SSD1306_WIDTH);
     }
 }
 
@@ -104,15 +104,15 @@ void eLSA::DISPLAY::Display_SSD1306::drawPixel(uint8_t x, uint8_t y, DISPLAY_SSD
     }
 
     // Check if pixel should be inverted
-    if(screen_object.Inverted) {
+    if(_screenObject.Inverted) {
         color = (DISPLAY_SSD1306_COLOR)!color;
     }
 
     // Draw in the right color
     if(color == White) {
-    	screenBuffer[x + (y / 8) * DISPLAY_SSD1306_WIDTH] |= 1 << (y % 8);
+    	_screenBuffer[x + (y / 8) * DISPLAY_SSD1306_WIDTH] |= 1 << (y % 8);
     } else {
-    	screenBuffer[x + (y / 8) * DISPLAY_SSD1306_WIDTH] &= ~(1 << (y % 8));
+    	_screenBuffer[x + (y / 8) * DISPLAY_SSD1306_WIDTH] &= ~(1 << (y % 8));
     }
 }
 
@@ -121,8 +121,8 @@ char eLSA::DISPLAY::Display_SSD1306::writeChar(char ch, FontDef Font, DISPLAY_SS
     uint32_t i, b, j;
 
     // Check remaining space on current line
-    if (DISPLAY_SSD1306_WIDTH <= (screen_object.CurrentX + Font.FontWidth) ||
-    		DISPLAY_SSD1306_HEIGHT <= (screen_object.CurrentY + Font.FontHeight))
+    if (DISPLAY_SSD1306_WIDTH <= (_screenObject.CurrentX + Font.FontWidth) ||
+    		DISPLAY_SSD1306_HEIGHT <= (_screenObject.CurrentY + Font.FontHeight))
     {
         // Not enough space on current line
         return 0;
@@ -133,15 +133,15 @@ char eLSA::DISPLAY::Display_SSD1306::writeChar(char ch, FontDef Font, DISPLAY_SS
         b = Font.data[(ch - 32) * Font.FontHeight + i];
         for(j = 0; j < Font.FontWidth; j++) {
             if((b << j) & 0x8000)  {
-            	drawPixel(screen_object.CurrentX + j, (screen_object.CurrentY + i), (DISPLAY_SSD1306_COLOR) color);
+            	drawPixel(_screenObject.CurrentX + j, (_screenObject.CurrentY + i), (DISPLAY_SSD1306_COLOR) color);
             } else {
-            	drawPixel(screen_object.CurrentX + j, (screen_object.CurrentY + i), (DISPLAY_SSD1306_COLOR)!color);
+            	drawPixel(_screenObject.CurrentX + j, (_screenObject.CurrentY + i), (DISPLAY_SSD1306_COLOR)!color);
             }
         }
     }
 
     // The current space is now taken
-    screen_object.CurrentX += Font.FontWidth;
+    _screenObject.CurrentX += Font.FontWidth;
 
     // Return written char for validation
     return ch;
@@ -166,8 +166,8 @@ char eLSA::DISPLAY::Display_SSD1306::writeString(char* str, FontDef Font, DISPLA
 
 // Position the cursor
 void eLSA::DISPLAY::Display_SSD1306::setCursor(uint8_t x, uint8_t y) {
-	screen_object.CurrentX = x;
-	screen_object.CurrentY = y;
+	_screenObject.CurrentX = x;
+	_screenObject.CurrentY = y;
 }
 
 // test the possible screen refresh rate
@@ -214,15 +214,15 @@ void eLSA::DISPLAY::Display_SSD1306::testFps(void) {
 // write a I2C command to the controller
 unsigned int eLSA::DISPLAY::Display_SSD1306::_writeI2cCommand(uint8_t command)
 {
-	_i2c_interface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_COMMAND_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
-	return _i2c_interface->writeData(&command, DISPLAY_SSD1306_I2C_COMMAND_LENGTH);
+	_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_COMMAND_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
+	return _i2cInterface->writeData(&command, DISPLAY_SSD1306_I2C_COMMAND_LENGTH);
 }
 
 // write data via I2C to the display
 unsigned int eLSA::DISPLAY::Display_SSD1306::_writeI2cData(uint8_t* p_data, uint16_t data_size)
 {
-	_i2c_interface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_DATA_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
-	return _i2c_interface->writeData(p_data, data_size);
+	_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_DATA_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
+	return _i2cInterface->writeData(p_data, data_size);
 }
 
 
