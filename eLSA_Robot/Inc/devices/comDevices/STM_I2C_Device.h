@@ -7,6 +7,7 @@
 #include "i2c.h"
 
 namespace eLSA {
+namespace hwInterfaces{
 
 /**
  * @author Tobias Koppmann
@@ -16,22 +17,22 @@ namespace eLSA {
  *  A device object is bound to a specific bus address and therefore representing a single device.
  *  The class provides standard read/write methods for common I2C operations.
  */
-class STM_I2C_Device : public hwInterfaces::IComDriver {
+class StmI2cDevice : public hwInterfaces::IComDriver {
 public:
 
 	//delete the standard constructor, so that it is impossible to create unusable objects
-	STM_I2C_Device() = delete;
+	StmI2cDevice() = delete;
 
 	/**
 	 * @param i2c_port A STM32 HAL handle describing the device
 	 * @param device_address The bus address of the device which an object of this class is representing
 	 */
-	STM_I2C_Device(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
+	StmI2cDevice(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
 
 	/**
 	 * Just a standard deconstructor
 	 */
-	virtual ~STM_I2C_Device();
+	virtual ~StmI2cDevice();
 
 	/**
 	 * @param pRegisterAddress Pointer to a variable containing the address value to which is written
@@ -64,6 +65,7 @@ private:
 	uint32_t _timeout = 100;
 };
 
+} /* namespace hwInterfaces */
 } /* namespace eLSA */
 
 #endif /* ELSA_I2CDEVICE_H_ */

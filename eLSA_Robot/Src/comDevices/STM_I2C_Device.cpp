@@ -9,16 +9,17 @@
 #include <cstdint>
 
 namespace eLSA {
+namespace hwInterfaces {
 
 	//constructor for I2C device
-	STM_I2C_Device::STM_I2C_Device(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)
+	StmI2cDevice::StmI2cDevice(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)
 		:_i2cPort{i2cPort}, _deviceAddress{deviceAddress}{}
 
 	//destructor for I2C device
-	STM_I2C_Device::~STM_I2C_Device(){};
+	StmI2cDevice::~StmI2cDevice(){}
 
 	//set register address used for writing or reading
-	int STM_I2C_Device::setDeviceRegisterParams(uint16_t pRegisterAddress, uint16_t sizeRegisterAddress){
+	int StmI2cDevice::setDeviceRegisterParams(uint16_t pRegisterAddress, uint16_t sizeRegisterAddress){
 		int returnValue = -1;
 
 		if(pRegisterAddress && sizeRegisterAddress) {
@@ -31,14 +32,14 @@ namespace eLSA {
 	}
 
 	//set connection timeout
-	void STM_I2C_Device::setConnectionTimeout(uint32_t time){
+	void StmI2cDevice::setConnectionTimeout(uint32_t time){
 		if(time) {
 			this->_timeout = time;
 		}
 	}
 
 	// write data to I2C device
-	int STM_I2C_Device::writeData(uint8_t* pData, uint16_t sizeData)
+	int StmI2cDevice::writeData(uint8_t* pData, uint16_t sizeData)
 	{
 		HAL_StatusTypeDef _status = HAL_BUSY;
 
@@ -58,7 +59,7 @@ namespace eLSA {
 	}
 
 	// read data from I2C device
-	int STM_I2C_Device::readData(uint8_t* pData, uint16_t sizeData)
+	int StmI2cDevice::readData(uint8_t* pData, uint16_t sizeData)
 	{
 		HAL_StatusTypeDef _status = HAL_BUSY;
 
@@ -77,5 +78,5 @@ namespace eLSA {
 		return (int)_status;
 	}
 
-
+} /* namespace hw_interfaces*/
 } /* namespace eLSA */
