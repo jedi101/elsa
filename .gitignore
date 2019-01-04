@@ -52,7 +52,7 @@ local.properties
 .externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+*.elf.launch
 
 # CDT-specific (C/C++ Development Tooling)
 .cproject
