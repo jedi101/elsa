@@ -5,7 +5,7 @@
  *      Author: Richard
  */
 
-#include "devices/GPSInterface/GPSPacket.h"
+#include "sensors/GPSPacket.h"
 
 #ifndef IGPSSENSOR_H_
 #define IGPSSENSOR_H_

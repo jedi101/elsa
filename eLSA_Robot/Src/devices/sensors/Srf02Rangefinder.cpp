@@ -12,7 +12,7 @@
 namespace eLSA {
 namespace sensors {
 
-Srf02RangefinderI2c::Srf02RangefinderI2c(eLSA::hwInterfaces::StmI2cDevice* hwInterface)
+Srf02RangefinderI2c::Srf02RangefinderI2c(eLSA::comDevices::StmI2cDevice* hwInterface)
 	: _i2cInterface{hwInterface}
 {
 	//check which kind of hardware interface is used and if pointer exists at all
@@ -71,7 +71,7 @@ int Srf02RangefinderI2c::emitBurst40kHz()
 	return 0;
 }
 
-int Srf02RangefinderI2c::setHwInterface(eLSA::hwInterfaces::StmI2cDevice* hwInterface)
+int Srf02RangefinderI2c::setHwInterface(eLSA::comDevices::StmI2cDevice* hwInterface)
 {
 	return 0;
 }

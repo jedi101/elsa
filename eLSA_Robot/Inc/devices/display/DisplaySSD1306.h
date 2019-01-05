@@ -23,7 +23,7 @@
 
 namespace eLSA {
 
-namespace DISPLAY {
+namespace display {
 static const FontDef Font_7x10  = {7, 10, Font7x10};
 static const FontDef Font_11x18 = {11, 18, Font11x18};
 static const FontDef Font_16x26 = {16, 26, Font16x26};
@@ -153,7 +153,7 @@ private:
 	I2C_HandleTypeDef* _i2cPort;
 	uint16_t _i2cAddress = DISPLAY_SSD1306_I2C_DEFAULT_ADDR;
 	uint8_t _screenBuffer[(DISPLAY_SSD1306_WIDTH * DISPLAY_SSD1306_HEIGHT)/8];
-	eLSA::DISPLAY::DISPLAY_SSD1306_t _screenObject;
+	eLSA::display::DISPLAY_SSD1306_t _screenObject;
 
 };
 
