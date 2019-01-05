@@ -8,8 +8,8 @@
  */
 
 
-#include <nmeaparse/GPSService.h>
-#include <nmeaparse/NumberConversion.h>
+#include <lib/nematode/nmeaparse/GPSService.h>
+#include <lib/nematode/nmeaparse/NumberConversion.h>
 
 #include <iostream>
 #include <cmath>

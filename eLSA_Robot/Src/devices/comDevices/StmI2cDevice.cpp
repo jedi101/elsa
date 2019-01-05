@@ -9,7 +9,7 @@
 #include <cstdint>
 
 namespace eLSA {
-namespace hwInterfaces {
+namespace comDevices {
 
 	//constructor for I2C device
 	StmI2cDevice::StmI2cDevice(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)

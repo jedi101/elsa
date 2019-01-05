@@ -149,7 +149,7 @@ private:
 	unsigned int _writeI2cCommand(uint8_t command);
 	unsigned int _writeI2cData(uint8_t* data, uint16_t data_size);
 
-	eLSA::hwInterfaces::StmI2cDevice* _i2cInterface;
+	eLSA::comDevices::StmI2cDevice* _i2cInterface;
 	I2C_HandleTypeDef* _i2cPort;
 	uint16_t _i2cAddress = DISPLAY_SSD1306_I2C_DEFAULT_ADDR;
 	uint8_t _screenBuffer[(DISPLAY_SSD1306_WIDTH * DISPLAY_SSD1306_HEIGHT)/8];

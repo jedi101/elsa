@@ -75,7 +75,7 @@ private:
 	Motorcontroller(const Motorcontroller&);
 	~Motorcontroller();
 
-	eLSA::hwInterfaces::StmI2cDevice* _i2cInterface;
+	eLSA::comDevices::StmI2cDevice* _i2cInterface;
 	struct MotorDC _motor[4];
 
 };

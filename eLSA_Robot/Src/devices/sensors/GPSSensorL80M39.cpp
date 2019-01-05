@@ -10,7 +10,8 @@
 #include <sstream>
 #include <iomanip>
 
-namespace device {
+namespace eLSA {
+namespace sensors {
 
 GPSSensorL80M39::GPSSensorL80M39(UART_HandleTypeDef* handle) {
 	this->handle = handle;
@@ -63,7 +64,7 @@ std::string GPSSensorL80M39::recieve() {
 	return data;
 }
 
-eLSA::GPSPacket GPSSensorL80M39::getGPSPacket() {
+eLSA::sensors::GPSPacket GPSSensorL80M39::getGPSPacket() {
 
 	nmea::NMEAParser parser;
 	nmea::GPSService gpsservice(parser);
@@ -73,8 +74,9 @@ eLSA::GPSPacket GPSSensorL80M39::getGPSPacket() {
 	float longitude = 0.0f;
 	float latitude = 0.0f;
 
-	eLSA::GPSPacket packet(longitude, latitude);
+	eLSA::sensors::GPSPacket packet(longitude, latitude);
 	return packet;
 }
 
-} /* namespace eLSA */
+}//namespace sensors
+}//namespace eLSA

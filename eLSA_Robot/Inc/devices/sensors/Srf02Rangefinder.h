@@ -83,13 +83,13 @@ public:
 class Srf02RangefinderI2c : public ISrf02Rangefinder{
 
 public:
-	Srf02RangefinderI2c(eLSA::hwInterfaces::StmI2cDevice* hwInterface);
+	Srf02RangefinderI2c(eLSA::comDevices::StmI2cDevice* hwInterface);
 	int getDistanceInches();
 	int getDistanceCentimeters();
 	int getDistanceMicroseconds();
 	int forceAutotune();
 	int emitBurst40kHz();
-	int setHwInterface(eLSA::hwInterfaces::StmI2cDevice* hwInterface);
+	int setHwInterface(eLSA::comDevices::StmI2cDevice* hwInterface);
 	int isDistanceLowerInches(int threshold);
 	int isDistanceLowerCentimeters(int threshold);
 	int isDistanceLowerMicroseconds(int threshold);
@@ -101,7 +101,7 @@ private:
 
 	int getDistance(const uint8_t* queryType);
 
-	eLSA::hwInterfaces::StmI2cDevice* _i2cInterface;
+	eLSA::comDevices::StmI2cDevice* _i2cInterface;
 };
 
 } /* namespace sensors */

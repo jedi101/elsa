@@ -9,6 +9,7 @@
 #define GPSPACKET_H_
 
 namespace eLSA {
+namespace sensors {
 
 class GPSPacket {
 	public:
@@ -21,6 +22,7 @@ class GPSPacket {
 		float latitude;
 };
 
-}
+}//namespace sensors
+}//namespace eLSA
 
 #endif /* GPSPACKET_H_ */

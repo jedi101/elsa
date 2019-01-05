@@ -7,7 +7,7 @@
  *  See the license file included with this source.
  */
 
-#include <nmeaparse/NMEACommand.h>
+#include <lib/nematode/nmeaparse/NMEACommand.h>
 #include <iomanip>
 #include <sstream>
 
