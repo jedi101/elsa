@@ -68,6 +68,8 @@ eLSA::GPSPacket GPSSensorL80M39::getGPSPacket() {
 	nmea::NMEAParser parser;
 	nmea::GPSService gpsservice(parser);
 
+
+
 	float longitude = 0.0f;
 	float latitude = 0.0f;
 
