@@ -6,6 +6,7 @@
  */
 
 #include "devices/GPSSensor/GPSSensorL80M39.h"
+#include "lib/nematode/nmeaparse/nmea.h"
 #include <sstream>
 #include <iomanip>
 
@@ -63,6 +64,10 @@ std::string GPSSensorL80M39::recieve() {
 }
 
 eLSA::GPSPacket GPSSensorL80M39::getGPSPacket() {
+
+	nmea::NMEAParser parser;
+	nmea::GPSService gpsservice(parser);
+
 	float longitude = 0.0f;
 	float latitude = 0.0f;
 
