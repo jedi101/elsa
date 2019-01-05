@@ -8,8 +8,8 @@
 #ifndef GPSSENSORL80M39_H_
 #define GPSSENSORL80M39_H_
 
-#include "devices/GPSInterface/GPSPacket.h"
-#include "devices/GPSInterface/IGPSSensor.h"
+#include "sensors/GPSPacket.h"
+#include "sensors/IGPSSensor.h"
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_uart.h"
 #include <string>
