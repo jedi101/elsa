@@ -14,13 +14,14 @@
 #include "stm32f4xx_hal_uart.h"
 #include <string>
 
-namespace device {
+namespace eLSA {
+namespace sensors {
 
-class GPSSensorL80M39 : public eLSA::IGPSSensor {
+class GPSSensorL80M39 : public eLSA::sensors::IGPSSensor {
 	public:
 		GPSSensorL80M39(UART_HandleTypeDef* handle);
 		virtual ~GPSSensorL80M39();
-		eLSA::GPSPacket getGPSPacket();
+		eLSA::sensors::GPSPacket getGPSPacket();
 		std::string recieve();
 		void send(std::string dataString);
 
@@ -28,6 +29,7 @@ class GPSSensorL80M39 : public eLSA::IGPSSensor {
 		UART_HandleTypeDef* handle;
 };
 
-}
+}//namespace sensors
+}//namespace eLSA
 
 #endif /* GPSSENSORL80M39_H_ */

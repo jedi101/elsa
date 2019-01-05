@@ -11,7 +11,7 @@
 #define NMEAPARSER_H_
 
 
-#include <nmeaparse/Event.h>
+#include <lib/nematode/nmeaparse/Event.h>
 #include <string>
 #include <functional>
 #include <unordered_map>

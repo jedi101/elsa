@@ -13,9 +13,9 @@
 #include <string>
 #include <chrono>
 #include <functional>
-#include <nmeaparse/GPSFix.h>
-#include <nmeaparse/NMEAParser.h>
-#include <nmeaparse/Event.h>
+#include <lib/nematode/nmeaparse/GPSFix.h>
+#include <lib/nematode/nmeaparse/NMEAParser.h>
+#include <lib/nematode/nmeaparse/Event.h>
 
 namespace nmea {
 

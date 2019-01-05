@@ -8,6 +8,7 @@
 #include <devices/GPSInterface/GPSPacket.h>
 
 namespace eLSA {
+namespace sensors {
 
 GPSPacket::GPSPacket(float longitude, float latitude) {
 	 this->longitude = longitude;
@@ -22,4 +23,5 @@ float GPSPacket::getLatitude() {
 	 return latitude;
 }
 
+} //namespace sensors
 } /* namespace eLSA */
