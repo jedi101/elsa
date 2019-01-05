@@ -10,7 +10,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2018 STMicroelectronics
+  * COPYRIGHT(c) 2019 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -66,6 +66,8 @@
 #define ADC_GeneralPurpose_2_GPIO_Port GPIOA
 #define ADC_GeneralPurpose_1_Pin GPIO_PIN_7
 #define ADC_GeneralPurpose_1_GPIO_Port GPIOA
+#define GPIO_LoRa_ExtIRQ_Pin GPIO_PIN_0
+#define GPIO_LoRa_ExtIRQ_GPIO_Port GPIOB
 #define GPIO_Input_1_Pin GPIO_PIN_1
 #define GPIO_Input_1_GPIO_Port GPIOB
 #define GPIO_Input_2_Pin GPIO_PIN_2
