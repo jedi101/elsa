@@ -66,10 +66,6 @@ std::string GPSSensorL80M39::recieve() {
 
 eLSA::sensors::GPSPacket GPSSensorL80M39::getGPSPacket() {
 
-	nmea::NMEAParser parser;
-	nmea::GPSService gpsservice(parser);
-
-
 
 	float longitude = 0.0f;
 	float latitude = 0.0f;
