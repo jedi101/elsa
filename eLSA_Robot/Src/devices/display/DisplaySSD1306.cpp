@@ -14,7 +14,7 @@ eLSA::DISPLAY::DisplaySSD1306::DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16
 	if(_i2cPort && _i2cAddress) {
 
 		//retrieve new i2c interface object
-		_i2cInterface = new eLSA::hwInterfaces::StmI2cDevice(_i2cPort, _i2cAddress);
+		_i2cInterface = new eLSA::comDevices::StmI2cDevice(_i2cPort, _i2cAddress);
 
 		if(_i2cInterface) {
 

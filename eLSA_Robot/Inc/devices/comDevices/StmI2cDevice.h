@@ -7,7 +7,7 @@
 #include "i2c.h"
 
 namespace eLSA {
-namespace hwInterfaces{
+namespace comDevices{
 
 /**
  * @author Tobias Koppmann
@@ -17,7 +17,7 @@ namespace hwInterfaces{
  *  A device object is bound to a specific bus address and therefore representing a single device.
  *  The class provides standard read/write methods for common I2C operations.
  */
-class StmI2cDevice : public hwInterfaces::IComDriver {
+class StmI2cDevice : public comDevices::IComDriver {
 public:
 
 	//delete the standard constructor, so that it is impossible to create unusable objects

@@ -12,7 +12,7 @@
 
 namespace eLSA {
 
-namespace hwInterfaces{
+namespace comDevices{
 
 class IComDriver {
 
