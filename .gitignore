@@ -1,5 +1,8 @@
 #### General ####
 
+# Files
+eLSA_Robot/Src/main.cpp
+
 # Directories
 eLSA_Robot/Debug
 documentation/source_code
@@ -49,7 +52,7 @@ local.properties
 .externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+./*.elf.launch
 
 # CDT-specific (C/C++ Development Tooling)
 .cproject
