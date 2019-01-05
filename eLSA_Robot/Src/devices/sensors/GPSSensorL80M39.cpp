@@ -6,7 +6,6 @@
  */
 
 #include "sensors/GPSSensorL80M39.h"
-#include "lib/nematode/nmeaparse/nmea.h"
 #include <sstream>
 #include <iomanip>
 
