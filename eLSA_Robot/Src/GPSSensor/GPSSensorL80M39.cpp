@@ -41,7 +41,7 @@ void GPSSensorL80M39::send(std::string pmtkCommand) {
 		transmittingData[i] = transmittingDataString[i];
 	}
 
-	HAL_StatusTypeDef in = HAL_UART_Transmit(handle, transmittingData, transmittingDataStringSize, 6000);
+	HAL_UART_Transmit(handle, transmittingData, transmittingDataStringSize, 6000);
 }
 
 std::string GPSSensorL80M39::recieve() {
@@ -50,7 +50,7 @@ std::string GPSSensorL80M39::recieve() {
 	bool end = false;
 
 	while(!end) {
-		HAL_StatusTypeDef in = HAL_UART_Receive(handle, &recievedCharacter, 1, 6000);
+		HAL_UART_Receive(handle, &recievedCharacter, 1, 6000);
 
 		if(recievedCharacter == 10) {
 			end = true;
