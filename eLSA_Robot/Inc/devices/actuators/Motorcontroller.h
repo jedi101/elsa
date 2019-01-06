@@ -87,14 +87,15 @@ public:
 	void runMotorWithSpeed(uint8_t motor, MotorDirection dir, uint8_t speed);
 
 private:
-	static constexpr Motorcontroller* _instance = 0;
-	Motorcontroller();
+	static Motorcontroller* _instance;
+	Motorcontroller(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
 	Motorcontroller(const Motorcontroller&);
 	~Motorcontroller();
 
 	eLSA::comDevices::StmI2cDevice* _i2cInterface;
-	struct MotorDC _motor[4];
-
+	I2C_HandleTypeDef* _i2cPort;
+	uint16_t _i2cAddress = MC_I2C_DEFAULT_ADDR;
+	struct MotorDC _motor[MC_MOTOR_COUNT];
 };
 
 } /* namespace actuators */
