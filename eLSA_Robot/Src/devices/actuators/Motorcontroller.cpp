@@ -10,8 +10,8 @@
 namespace eLSA {
 namespace actuators {
 
-Motorcontroller::Motorcontroller() {
-	// TODO Auto-generated constructor stub
+// initialize singleton instance
+Motorcontroller* Motorcontroller::_instance = 0;
 
 }
 
