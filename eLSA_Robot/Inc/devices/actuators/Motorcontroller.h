@@ -57,8 +57,11 @@ class Motorcontroller {
 public:
 	/**
 	 * @brief The method that returns a Motorcontroller instance allocated on the heap
+	 *
+	 * @param i2c_port A STM32 HAL handle describing the used I2C interface
+	 * @param deviceAddress The I2C address of the display controller
 	 */
-	static Motorcontroller* instance();
+	static Motorcontroller* instance(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
 
 	/**
 	 * @brief This method runs a certain motor.
@@ -67,7 +70,7 @@ public:
 	 * @param motor The index of the motor
 	 * @param dir The desired rotation direction of the motor
 	 */
-	void runMotor(uint8_t motor, MotorDirection dir);
+	unsigned int runMotor(uint8_t motorIdx, MotorDirection dir);
 
 	/**
 	 * @brief This method sets the desired speed for a certain motor
@@ -75,7 +78,7 @@ public:
 	 * @param motor The index of the motor
 	 * @param speed The desired speed for that motor in a range of 0 to 255
 	 */
-	void setMotorSpeed(uint8_t motor, uint8_t speed);
+	unsigned int setMotorSpeed(uint8_t motorIdx, uint8_t speed);
 
 	/**
 	 * @brief This method runs a certain motor with a given speed
@@ -84,7 +87,13 @@ public:
 	 * @param dir The desired rotation direction of the motor
 	 * @param speed The desired speed for that motor in a range of 0 to 255
 	 */
-	void runMotorWithSpeed(uint8_t motor, MotorDirection dir, uint8_t speed);
+	unsigned int runMotorWithSpeed(uint8_t motorIdx, MotorDirection dir, uint8_t speed);
+
+	/**
+	 * @brief This method resets the pwm controller
+	 *
+	 */
+	unsigned int reset();
 
 private:
 	static Motorcontroller* _instance;
