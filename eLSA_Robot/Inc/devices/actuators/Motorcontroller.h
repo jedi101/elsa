@@ -11,6 +11,23 @@
 #include <cstdint>
 #include <comDevices/StmI2cDevice.h>
 
+// I2C constants
+#define MC_I2C_DEFAULT_ADDR 				0x40	///< The standard i2c address used for the pwm motorcontroller
+#define MC_I2C_TIMEOUT						100		///< The Standard timeout for the I2C interface
+#define MC_I2C_ADDRESS_LENGTH				1		/**< The length of the register addresses of the PC9685 pwm controller in byte
+													* The PC9685 uses 7Bit addressing -> 1 Byte
+													*/
+#define MC_I2C_COMMAND_LENGTH				1		///< The length of the commands used by the PC9685 pwm controller in byte
+
+// PC9685 constants
+#define MC_I2C_PC9685_MODE1					0x00	///< mode register for standard modes of the PC9685
+#define MC_I2C_PCA9685_PRESCALE				0xFE	///< prescaler register
+#define MC_I2C_PWM_DRIVER_BASE_REGISTER		0x06	///< register address of pwm driver 0 -> next driver 4 bytes further
+#define MC_I2C_PWM_PIN_MAX_VALUE			4096	///< maximum value for pwm on or off cycle
+
+//general constants
+#define MC_MOTOR_COUNT						4		///< count of controllable motors
+
 namespace eLSA {
 namespace actuators {
 
