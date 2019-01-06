@@ -43,5 +43,45 @@ Motorcontroller* Motorcontroller::instance(I2C_HandleTypeDef* i2cPort, uint16_t 
 
 	return _instance;
 }
+
+unsigned int Motorcontroller::runMotor(uint8_t motorIdx, MotorDirection dir) {
+	unsigned int _status = HAL_ERROR;
+	uint8_t _buffer[10] = {0}; // 10 Byte for 2 Pins which use 5 Bytes each
+
+	if(motorIdx < MC_MOTOR_COUNT) {
+
+		_buffer[0] = MC_I2C_PWM_DRIVER_BASE_REGISTER + (4*_motor[motorIdx].directionalPin1); //write to 1st directional pin
+		_buffer[5] = MC_I2C_PWM_DRIVER_BASE_REGISTER + (4*_motor[motorIdx].directionalPin2); //write to 2nd directional pin
+
+		switch(dir) {
+			case STOP:
+				//nothing to do here since only 0 values are necessary to stop
+			  break;
+
+			case FORWARD:
+				_buffer[1] = MC_I2C_PWM_PIN_MAX_VALUE & 0xFF; //get low byte
+				_buffer[2] = (MC_I2C_PWM_PIN_MAX_VALUE >> 8) & 0xFF; //get high byte
+				//buffer[3..4] and [6..9] have to stay 0
+			  break;
+
+			case BACKWARDS:
+				//buffer[1..5] have to stay 0
+				_buffer[6] = MC_I2C_PWM_PIN_MAX_VALUE & 0xFF; //get low byte
+				_buffer[7] = (MC_I2C_PWM_PIN_MAX_VALUE >> 8) & 0xFF; //get high byte
+				//buffer[8..9] have to stay 0
+			  break;
+
+			default:
+			  break;
+		}
+
+		_i2cInterface->setDeviceRegisterParams(MC_I2C_PC9685_MODE1, MC_I2C_ADDRESS_LENGTH);
+		_status = _i2cInterface->writeData(_buffer, sizeof(_buffer));
+
+	}
+
+	return (unsigned int)_status;
+}
+
 } /* namespace actuators */
 } /* namespace eLSA */
