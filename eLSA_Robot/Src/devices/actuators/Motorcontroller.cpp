@@ -36,5 +36,12 @@ Motorcontroller::~Motorcontroller() {
 
 }
 
+Motorcontroller* Motorcontroller::instance(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress) {
+	if (!_instance) {
+		_instance = new Motorcontroller(i2cPort, deviceAddress);
+	}
+
+	return _instance;
+}
 } /* namespace actuators */
 } /* namespace eLSA */
