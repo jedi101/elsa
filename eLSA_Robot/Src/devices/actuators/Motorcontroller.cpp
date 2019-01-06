@@ -111,5 +111,23 @@ unsigned int Motorcontroller::setMotorSpeed(uint8_t motorIdx, uint8_t speed) {
 
 }
 
+unsigned int Motorcontroller::runMotorWithSpeed(uint8_t motorIdx, MotorDirection dir, uint8_t speed) {
+	unsigned int _status = HAL_ERROR;
+
+	_status = Motorcontroller::setMotorSpeed(motorIdx, speed);
+
+	if(_status != HAL_ERROR)
+		_status = Motorcontroller::runMotor(motorIdx, dir);
+
+	return _status;
+}
+
+unsigned int Motorcontroller::reset() {
+	uint8_t command = 0x00; //value to reset PCA9685
+
+	_i2cInterface->setDeviceRegisterParams(MC_I2C_PC9685_MODE1, MC_I2C_ADDRESS_LENGTH);
+	return _i2cInterface->writeData(&command, MC_I2C_COMMAND_LENGTH);
+}
+
 } /* namespace actuators */
 } /* namespace eLSA */
