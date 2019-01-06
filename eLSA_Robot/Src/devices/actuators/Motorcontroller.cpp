@@ -83,5 +83,33 @@ unsigned int Motorcontroller::runMotor(uint8_t motorIdx, MotorDirection dir) {
 	return (unsigned int)_status;
 }
 
+unsigned int Motorcontroller::setMotorSpeed(uint8_t motorIdx, uint8_t speed) {
+	unsigned int _status = HAL_ERROR;
+	uint8_t _buffer[3] = {0}; // 1 address byte, 2 value bytes
+
+	uint16_t _calculatedSpeed = speed * 16;
+
+	if(motorIdx < MC_MOTOR_COUNT) {
+
+		_buffer[0] = MC_I2C_PWM_DRIVER_BASE_REGISTER + (4*_motor[motorIdx].pwmPin);
+
+		//check if "all on" is more sensible
+		 if (speed > 4095) {
+			 _buffer[1] = MC_I2C_PWM_PIN_MAX_VALUE & 0xFF; //get low byte
+			 _buffer[2] = (MC_I2C_PWM_PIN_MAX_VALUE >> 8) & 0xFF; //get high byte
+		 } else {
+			 _buffer[1] = _calculatedSpeed & 0xFF; //get low byte
+			 _buffer[2] = (_calculatedSpeed>>8) & 0xFF; // get high byte
+		 }
+
+		_i2cInterface->setDeviceRegisterParams(MC_I2C_PC9685_MODE1, MC_I2C_ADDRESS_LENGTH);
+		_status = _i2cInterface->writeData(_buffer, sizeof(_buffer));
+
+	}
+
+	return (unsigned int)_status;
+
+}
+
 } /* namespace actuators */
 } /* namespace eLSA */
