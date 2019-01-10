@@ -11,10 +11,9 @@
 namespace eLSA {
 namespace sensors {
 
-struct GPSPoint {
-	public:
-		float longitude;
-		float latitude;
+struct GPSPoint_t {
+	float longitude;
+	float latitude;
 };
 
 }//namespace sensors

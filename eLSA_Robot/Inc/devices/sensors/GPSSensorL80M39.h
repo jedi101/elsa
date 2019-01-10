@@ -22,7 +22,7 @@ class GPSSensorL80M39 : public eLSA::sensors::IGPSSensor {
 	public:
 		GPSSensorL80M39(UART_HandleTypeDef* handle);
 		virtual ~GPSSensorL80M39();
-		eLSA::sensors::GPSPoint getGPSPoint();
+		eLSA::sensors::GPSPoint_t getGPSPoint();
 		std::string recieve();
 		void send(std::string dataString);
 		std::vector<std::string> split(std::string dataString);

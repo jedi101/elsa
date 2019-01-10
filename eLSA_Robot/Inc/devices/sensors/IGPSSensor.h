@@ -15,7 +15,7 @@ namespace sensors {
 
 class IGPSSensor {
 public:
-	virtual GPSPoint getGPSPoint() = 0;
+	virtual GPSPoint_t getGPSPoint() = 0;
 };
 
 }//namespace sensors

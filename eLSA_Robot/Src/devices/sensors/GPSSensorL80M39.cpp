@@ -63,13 +63,13 @@ std::string GPSSensorL80M39::recieve() {
 	return data;
 }
 
-eLSA::sensors::GPSPoint GPSSensorL80M39::getGPSPoint() {
+eLSA::sensors::GPSPoint_t GPSSensorL80M39::getGPSPoint() {
 
 
 	float longitude = 0.0f;
 	float latitude = 0.0f;
 
-	eLSA::sensors::GPSPoint packet;
+	eLSA::sensors::GPSPoint_t packet;
 	return packet;
 }
 
