@@ -30,6 +30,7 @@ void stm_system_init(void){
 	MX_I2C2_Init();
 	MX_I2C3_Init();
 	MX_SPI2_Init();
+	MX_USART2_UART_Init();
 	MX_USART6_UART_Init();
 	MX_ADC1_Init();
 
