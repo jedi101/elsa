@@ -5,7 +5,7 @@
  *      Author: Richard
  */
 
-#include "sensors/GPSPacket.h"
+#include <sensors/GPSPoint.h>
 
 #ifndef IGPSSENSOR_H_
 #define IGPSSENSOR_H_
@@ -15,7 +15,7 @@ namespace sensors {
 
 class IGPSSensor {
 public:
-	virtual GPSPacket getGPSPacket() = 0;
+	virtual GPSPoint getGPSPoint() = 0;
 };
 
 }//namespace sensors

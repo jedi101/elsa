@@ -8,7 +8,7 @@
 #ifndef GPSSENSORL80M39_H_
 #define GPSSENSORL80M39_H_
 
-#include "sensors/GPSPacket.h"
+#include <sensors/GPSPoint.h>
 #include "sensors/IGPSSensor.h"
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_uart.h"
@@ -22,13 +22,13 @@ class GPSSensorL80M39 : public eLSA::sensors::IGPSSensor {
 	public:
 		GPSSensorL80M39(UART_HandleTypeDef* handle);
 		virtual ~GPSSensorL80M39();
-		eLSA::sensors::GPSPacket getGPSPacket();
+		eLSA::sensors::GPSPoint getGPSPoint();
 		std::string recieve();
 		void send(std::string dataString);
+		std::vector<std::string> split(std::string dataString);
 
 	private:
 		UART_HandleTypeDef* handle;
-		vector<std::string> split(std::string dataString);
 };
 
 }//namespace sensors

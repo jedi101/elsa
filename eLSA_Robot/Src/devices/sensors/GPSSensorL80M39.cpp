@@ -63,19 +63,19 @@ std::string GPSSensorL80M39::recieve() {
 	return data;
 }
 
-eLSA::sensors::GPSPacket GPSSensorL80M39::getGPSPacket() {
+eLSA::sensors::GPSPoint GPSSensorL80M39::getGPSPoint() {
 
 
 	float longitude = 0.0f;
 	float latitude = 0.0f;
 
-	eLSA::sensors::GPSPacket packet(longitude, latitude);
+	eLSA::sensors::GPSPoint packet;
 	return packet;
 }
 
-vector<std::string> GPSSensorL80M39::split(std::string dataString) {
+std::vector<std::string> GPSSensorL80M39::split(std::string dataString) {
 
-	vector<std::string> splittedStrings;
+	std::vector<std::string> splittedStrings;
 	const char* c_dataString = dataString.c_str();
 	uint8_t dataStringLength = dataString.size();
 	uint8_t start = 0;
