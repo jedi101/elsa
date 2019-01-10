@@ -13,6 +13,7 @@
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_uart.h"
 #include <string>
+#include <vector>
 
 namespace eLSA {
 namespace sensors {
@@ -27,6 +28,7 @@ class GPSSensorL80M39 : public eLSA::sensors::IGPSSensor {
 
 	private:
 		UART_HandleTypeDef* handle;
+		vector<std::string> split(std::string dataString);
 };
 
 }//namespace sensors

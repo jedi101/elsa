@@ -73,5 +73,39 @@ eLSA::sensors::GPSPacket GPSSensorL80M39::getGPSPacket() {
 	return packet;
 }
 
+vector<std::string> GPSSensorL80M39::split(std::string dataString) {
+
+	vector<std::string> splittedStrings;
+	const char* c_dataString = dataString.c_str();
+	uint8_t dataStringLength = dataString.size();
+	uint8_t start = 0;
+	uint8_t length;
+
+	for(int i = 0; i < dataStringLength; i++) {
+		if(c_dataString[i] == ',') {
+
+			length = i - start;
+
+			if(length == 0) {
+				splittedStrings.push_back(std::string());
+			}
+			else {
+				splittedStrings.push_back(std::string(&c_dataString[start], length));
+			}
+
+			start = i + 1;
+		}
+	}
+
+	length = dataStringLength - start;
+
+	//Append the end of the string to the vector
+	if(dataStringLength != start) {
+		splittedStrings.push_back(std::string(&c_dataString[start], length));
+	}
+
+	return splittedStrings;
+}
+
 }//namespace sensors
 }//namespace eLSA
