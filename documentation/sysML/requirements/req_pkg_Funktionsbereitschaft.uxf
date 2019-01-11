@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>350</y>
+      <w>320</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;functionalRequirement&gt;&gt;
+Erkennung von Funktionsbereitschaft
+--
+id="REQ2.1"
+text="Der Roboter soll seine Einsatzfähigkeit
+selbstständig erkennen können."
+
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>440</y>
+      <w>170</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;deriveReqt&gt;&gt;
+layer=2</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;100.0;10.0;100.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>570</y>
+      <w>320</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;functionalRequirement&gt;&gt;
+Ladezustandsüberwachung
+--
+id="REQ2.4"
+text="Der Roboter soll den Zustand
+seiner Akkus überwachen."
+
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>570</y>
+      <w>390</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;functionalRequirement&gt;&gt;
+Bewegungserkennung
+--
+id="REQ2.2"
+text="Der Roboter soll seine Bewegung in 
+Abhängigkeit von der Ansteuerung der Motoren überwachen."
+
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>570</y>
+      <w>320</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;functionalRequirement&gt;&gt;
+Überschlagserkennung
+--
+id="REQ2.3"
+text="Der Roboter soll erkennen, wenn er auf der
+Seite oder auf dem Kopf liegt."
+
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>570</y>
+      <w>320</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;functionalRequirement&gt;&gt;
+Kommunikationsüberwachung
+--
+id="REQ2.5"
+text="Der Roboter soll erkennen, wenn seine
+Kommunikation abgeschnitten ist."
+
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>440</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;deriveReqt&gt;&gt;
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;200.0;100.0;200.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>440</y>
+      <w>520</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;deriveReqt&gt;&gt;
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;500.0;80.0;500.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>390</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>440</y>
+      <w>760</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;deriveReqt&gt;&gt;
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;740.0;60.0;740.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>70</x>
+      <y>250</y>
+      <w>1410</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>req [package] Funktionsbereitschaft
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>640</x>
+      <y>350</y>
+      <w>300</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>derivedFrom
+&lt;&lt;functionRequirement&gt;&gt; Wegpunkte anfahren
+
+tracedFrom
+&lt;&lt;functionalRequirement&gt;&gt; Störungsmeldung
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
