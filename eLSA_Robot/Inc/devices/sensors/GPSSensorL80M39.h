@@ -8,7 +8,6 @@
 #ifndef GPSSENSORL80M39_H_
 #define GPSSENSORL80M39_H_
 
-#include <sensors/GPSPoint.h>
 #include "sensors/IGPSSensor.h"
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_uart.h"

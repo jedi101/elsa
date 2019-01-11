@@ -5,8 +5,6 @@
  *      Author: Richard
  */
 
-#include <sensors/GPSPoint.h>
-
 #ifndef IGPSSENSOR_H_
 #define IGPSSENSOR_H_
 
