@@ -1,3 +1,3 @@
 * [Project](/)
 * [Manual](/manual.md)
-* [Code](/doxygen)
+* [Code](/doxygen/html)
