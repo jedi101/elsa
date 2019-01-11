@@ -10,7 +10,7 @@ namespace sensors {
  * @author Tobias Koppmann
  * @date 23.12.2018
  *
- * @brief This interface is used to generalise a distance sensor and provide basic functionality as specified for
+ * @brief This interface is used to generalise a distance sensor and provide unified hardware abstraction as specified for
  * the eLSA system
  */ 
 class IDistanceSensor {
