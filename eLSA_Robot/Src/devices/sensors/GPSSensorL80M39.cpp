@@ -12,8 +12,22 @@
 namespace eLSA {
 namespace sensors {
 
+const std::string GPSSensorL80M39::PMTK_SET_NMEA_OUTPUT("PMTK314,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
+const std::string GPSSensorL80M39::PMTK_TXT_MSG("PMTK011,MTKGPS");
+const std::string GPSSensorL80M39::PMTK_FULL_COLD_START("PMTK104");
+const std::string GPSSensorL80M39::PMTK_COLD_START("PMTK103");
+const std::string GPSSensorL80M39::PMTK_WARM_START("PMTK102");
+const std::string GPSSensorL80M39::PMTK_HOT_START("PMTK101");
+const uint8_t GPSSensorL80M39::GPRMC_LATITUDE_FIELD_INDEX = 3;
+const uint8_t GPSSensorL80M39::GPRMC_LONGITUDE_FIELD_INDEX = 5;
+
 GPSSensorL80M39::GPSSensorL80M39(UART_HandleTypeDef* handle) {
 	this->handle = handle;
+
+	send(PMTK_SET_NMEA_OUTPUT);
+	std::string acknowledgementString = recieve();
+
+	send(PMTK_WARM_START);
 }
 
 GPSSensorL80M39::~GPSSensorL80M39() {
@@ -64,12 +78,28 @@ std::string GPSSensorL80M39::recieve() {
 }
 
 eLSA::sensors::GPSPoint_t GPSSensorL80M39::getGPSPoint() {
+	std::string dataString = recieve();
 
+	std::vector<std::string> splittedDataString = split(dataString);
+	int size = splittedDataString.size();
 
-	float longitude = 0.0f;
-	float latitude = 0.0f;
+	std::string test = splittedDataString[0];
+	std::string latitudeString = splittedDataString[GPRMC_LATITUDE_FIELD_INDEX];
+	std::string longitudeString = splittedDataString[GPRMC_LONGITUDE_FIELD_INDEX];
 
 	eLSA::sensors::GPSPoint_t packet;
+
+	if(latitudeString.size() == 0) {
+		packet.latitude = 0.0f;
+		packet.longitude = 0.0f;
+	}
+	else {
+		std::stringstream stream;
+		stream << latitudeString << longitudeString;
+		stream >> packet.latitude;
+		stream >> packet.longitude;
+	}
+
 	return packet;
 }
 
