@@ -9,21 +9,7 @@
 #define DEVICES_ACTUATORS_MOTORCONTROLLER_H_
 
 #include <cstdint>
-#include <comDevices/StmI2cDevice.h>
-
-// I2C constants
-#define MC_I2C_DEFAULT_ADDR 				0x40	///< The standard i2c address used for the pwm motorcontroller
-#define MC_I2C_TIMEOUT						100		///< The Standard timeout for the I2C interface
-#define MC_I2C_ADDRESS_LENGTH				1		/**< The length of the register addresses of the PC9685 pwm controller in byte
-													* The PC9685 uses 7Bit addressing -> 1 Byte
-													*/
-#define MC_I2C_COMMAND_LENGTH				1		///< The length of the commands used by the PC9685 pwm controller in byte
-
-// PC9685 constants
-#define MC_I2C_PC9685_MODE1					0x00	///< mode register for standard modes of the PC9685
-#define MC_I2C_PCA9685_PRESCALE				0xFE	///< prescaler register
-#define MC_I2C_PWM_DRIVER_BASE_REGISTER		0x06	///< register address of pwm driver 0 -> next driver 4 bytes further
-#define MC_I2C_PWM_PIN_MAX_VALUE			4096	///< maximum value for pwm on or off cycle
+#include <actuators/PWMDriver.h>
 
 //general constants
 #define MC_MOTOR_COUNT						4		///< count of controllable motors
@@ -55,13 +41,8 @@ typedef enum {
  */
 class Motorcontroller {
 public:
-	/**
-	 * @brief The method that returns a Motorcontroller instance allocated on the heap
-	 *
-	 * @param i2c_port A STM32 HAL handle describing the used I2C interface
-	 * @param deviceAddress The I2C address of the display controller
-	 */
-	static Motorcontroller* instance(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
+	Motorcontroller(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
+	~Motorcontroller();
 
 	/**
 	 * @brief This method runs a certain motor.
@@ -69,16 +50,20 @@ public:
 	 *
 	 * @param motor The index of the motor
 	 * @param dir The desired rotation direction of the motor
+	 *
+	 * @throws Exception Is thrown if invalid motor index is passed as parameter
 	 */
-	unsigned int runMotor(uint8_t motorIdx, MotorDirection dir);
+	void runMotor(uint8_t motorIdx, MotorDirection_t dir);
 
 	/**
 	 * @brief This method sets the desired speed for a certain motor
 	 *
 	 * @param motor The index of the motor
 	 * @param speed The desired speed for that motor in a range of 0 to 255
+	 *
+	 * @throws Exception Is thrown if invalid motor index is passed as parameter or passes an exception thrown by the pwm controller functions
 	 */
-	unsigned int setMotorSpeed(uint8_t motorIdx, uint8_t speed);
+	void setMotorSpeed(uint8_t motorIdx, uint8_t speed);
 
 	/**
 	 * @brief This method runs a certain motor with a given speed
@@ -86,25 +71,17 @@ public:
 	 * @param motor The index of the motor
 	 * @param dir The desired rotation direction of the motor
 	 * @param speed The desired speed for that motor in a range of 0 to 255
-	 */
-	unsigned int runMotorWithSpeed(uint8_t motorIdx, MotorDirection dir, uint8_t speed);
-
-	/**
-	 * @brief This method resets the pwm controller
 	 *
+	 * @throws Exception Passes an exception thrown by functions setMotorSpeed or runMotor
 	 */
-	unsigned int reset();
+	void runMotorWithSpeed(uint8_t motorIdx, MotorDirection_t dir, uint8_t speed);
 
 private:
-	static Motorcontroller* _instance;
-	Motorcontroller(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
-	Motorcontroller(const Motorcontroller&);
-	~Motorcontroller();
+	PWMDriverPC9685* _pwm;
+	MotorDC_t _motor[MC_MOTOR_COUNT];
 
-	eLSA::comDevices::StmI2cDevice* _i2cInterface;
-	I2C_HandleTypeDef* _i2cPort;
-	uint16_t _i2cAddress = MC_I2C_DEFAULT_ADDR;
-	struct MotorDC _motor[MC_MOTOR_COUNT];
+    void setPWM(uint8_t pin, uint16_t val);
+    void setPin(uint8_t pin, uint16_t val);
 };
 
 } /* namespace actuators */
