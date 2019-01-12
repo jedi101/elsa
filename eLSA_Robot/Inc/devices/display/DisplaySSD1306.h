@@ -83,7 +83,7 @@ public:
 	DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress);
 
 	/**
-	 * The Destructor deletes the internally used STM_I2C_Device
+	 * @brief The Destructor deletes the internally used STM_I2C_Device
 	 */
 	virtual ~DisplaySSD1306();
 
@@ -137,8 +137,8 @@ public:
 	void testFps(void);
 
 private:
-	unsigned int _writeI2cCommand(uint8_t command);
-	unsigned int _writeI2cData(uint8_t* data, uint16_t data_size);
+	void _writeI2cCommand(uint8_t command);
+	void _writeI2cData(uint8_t* data, uint16_t data_size);
 
 	eLSA::comDevices::StmI2cDevice* _i2cInterface;
 	I2C_HandleTypeDef* _i2cPort;

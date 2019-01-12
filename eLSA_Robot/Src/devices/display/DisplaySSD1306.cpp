@@ -7,6 +7,7 @@
 
 #include "display/DisplaySSD1306.h"
 #include <cstring>
+#include <exception>
 
 eLSA::display::DisplaySSD1306::DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)
 	:_i2cPort{i2cPort}, _i2cAddress{deviceAddress}
@@ -187,17 +188,36 @@ void eLSA::display::DisplaySSD1306::testFps(void) {
 /* private methods*/
 
 // write a I2C command to the controller
-unsigned int eLSA::display::DisplaySSD1306::_writeI2cCommand(uint8_t command)
+void eLSA::display::DisplaySSD1306::_writeI2cCommand(uint8_t command)
 {
-	_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_COMMAND_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
-	return _i2cInterface->writeData(&command, DISPLAY_SSD1306_I2C_COMMAND_LENGTH);
+	try {
+		_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_COMMAND_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
+	} catch(...) {
+		throw;
+	}
+
+	try {
+		_i2cInterface->writeData(&command, DISPLAY_SSD1306_I2C_COMMAND_LENGTH);
+	} catch(...) {
+		throw;
+	}
 }
 
 // write data via I2C to the display
-unsigned int eLSA::display::DisplaySSD1306::_writeI2cData(uint8_t* p_data, uint16_t data_size)
+void eLSA::display::DisplaySSD1306::_writeI2cData(uint8_t* p_data, uint16_t data_size)
 {
-	_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_DATA_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
-	return _i2cInterface->writeData(p_data, data_size);
+	try {
+		_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_DATA_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
+	} catch(...) {
+		throw;
+	}
+
+	try {
+		_i2cInterface->writeData(p_data, data_size);
+	} catch(...) {
+		throw;
+	}
+
 }
 
 
