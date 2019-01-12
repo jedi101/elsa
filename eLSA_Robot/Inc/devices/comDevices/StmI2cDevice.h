@@ -35,25 +35,33 @@ public:
 	virtual ~StmI2cDevice();
 
 	/**
-	 * @param pRegisterAddress Pointer to a variable containing the address value to which is written
+	 * @param registerAddress Pointer to a variable containing the address value to which is written
 	 * @param sizeRegisterAddress Size of the given address value. This value is explicit to make 11Bit I2C adressing available
+	 *
+	 * @throws Exception Is thrown if a invalid parameter is passed
 	 */
 	void setDeviceRegisterParams(uint16_t registerAddress, uint16_t sizeRegisterAddress);
 
 	/**
 	 * @param time Desired connection timeout in milliseconds
+	 *
+	 * @throws Exception Is thrown if a invalid parameter is passed
 	 */
 	void setConnectionTimeout(uint32_t time);
 
 	/**
 	 * @param pData Pointer to the start address of the data which is written
 	 * @param sizeData Size of the data block which is written
+	 *
+	 * @throws Exception Is thrown if one of the I2C functions fail
 	 */
 	void writeData(uint8_t* pData, uint16_t sizeData);
 
 	/**
 	 * @param pData Pointer to the start address of the data buffer to which the read data is written
 	 * @param sizeData Size of the data block which is read
+	 *
+	 * @throws Exception Is thrown if one of the used I2C functions fail
 	 */
 	void readData(uint8_t* pData, uint16_t sizeData);
 
@@ -65,7 +73,7 @@ private:
 	uint32_t _timeout = 100;
 };
 
-} /* namespace hwInterfaces */
+} /* namespace comDevices */
 } /* namespace eLSA */
 
 #endif /* ELSA_I2CDEVICE_H_ */
