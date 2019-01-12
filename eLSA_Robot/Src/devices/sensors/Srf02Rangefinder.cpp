@@ -14,50 +14,69 @@ namespace sensors {
 
 unsigned int ISrf02Rangefinder::getDistanceInInches(void)
 {
+	try {
+		return getDistance(&_cmdQueryMeasurementInches);
+	} catch(...) {
+		throw;
+	}
 
-	return getDistance(&_cmdQueryMeasurementInches);
 }
 
 unsigned int ISrf02Rangefinder::getDistanceInCentimeters(void)
 {
-	return getDistance(&_cmdQueryMeasurementCentimeters);
+	try {
+		return getDistance(&_cmdQueryMeasurementCentimeters);
+	} catch(...) {
+		throw;
+	}
 }
 
 unsigned int ISrf02Rangefinder::getDistanceInMicroseconds(void)
 {
-	return getDistance(&_cmdQueryMeasurementMicroseconds);
+	try {
+		return getDistance(&_cmdQueryMeasurementMicroseconds);
+	} catch(...) {
+		throw;
+	}
 }
 
-uint8_t ISrf02Rangefinder::isDistanceLowerInCentimeters(int threshold)
+uint8_t ISrf02Rangefinder::isDistanceLowerInCentimeters(unsigned int threshold)
 {
-	return 0;
+	try {
+		return (getDistanceInCentimeters() < threshold);
+	} catch(...) {
+		throw;
+	}
 }
 
-uint8_t ISrf02Rangefinder::isDistanceLowerInInches(int threshold)
+uint8_t ISrf02Rangefinder::isDistanceLowerInInches(unsigned int threshold)
 {
-	return 0;
+	try {
+		return (getDistanceInInches() < threshold);
+	} catch(...) {
+		throw;
+	}
 }
 
-uint8_t ISrf02Rangefinder::isDistanceLowerInMicroseconds(int threshold)
+uint8_t ISrf02Rangefinder::isDistanceLowerInMicroseconds(unsigned int threshold)
 {
-	return 0;
+	try {
+		return (getDistanceInMicroseconds() < threshold);
+	} catch(...) {
+		throw;
+	}
 }
 
-void ISrf02Rangefinder::forceAutotune(void)
+Srf02RangefinderI2C::Srf02RangefinderI2C(comDevices::StmI2cDevice* hwInterface)
+	: _i2cInterface{hwInterface}
 {
 
-}
-
-void ISrf02Rangefinder::emitBurst(void)
-{
-
-}
+};
 
 unsigned int Srf02RangefinderI2C::getDistance(const uint8_t* queryType)
 {
-	unsigned short sensorData = 0;
+	uint16_t sensorData = 0;
 
-	// if object uses i2c interface
 	try {
 		_i2cInterface->setDeviceRegisterParams(_i2cCmdRegister, 1);
 		_i2cInterface->writeData((uint8_t*)queryType, 1);

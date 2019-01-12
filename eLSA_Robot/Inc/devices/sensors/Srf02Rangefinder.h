@@ -44,32 +44,21 @@ public:
 	unsigned int getDistanceInMicroseconds(void);
 
 	/**
-	 * @brief This method shall force an autotune of the sensor (which the SRF02 usually automatically runs during init)
-	 */
-	virtual void forceAutotune(void) = 0;
-
-	/**
-	 * @brief This method shall use the burst functionality of the SRF02.
-	 * This emits a short 40kHz burst without using it to measure a distance (quasi an ultrasonic beacon)
-	 */
-	virtual void emitBurst(void) = 0;
-
-	/**
 	 * @brief This method determines wether the measured distance falls below given threshold (given in inches)
 	 * @param threshold The threshold against which the measurement is checked
 	 * @return 0 if distance is greater or equal, 1 if distance is lower
 	 */
-	uint8_t isDistanceLowerInInches(int threshold);
+	uint8_t isDistanceLowerInInches(unsigned int threshold);
 
 	/**
 	 * @brief This method shall return the measured distance to a possible object in imperial inches (rounded)
 	 */
-	uint8_t isDistanceLowerInCentimeters(int threshold);
+	uint8_t isDistanceLowerInCentimeters(unsigned int threshold);
 
 	/**
 	 * @brief This method shall return the measured distance to a possible object in imperial inches (rounded)
 	 */
-	uint8_t isDistanceLowerInMicroseconds(int threshold);
+	uint8_t isDistanceLowerInMicroseconds(unsigned int threshold);
 
 protected:
 	virtual unsigned int getDistance(const uint8_t* queryType) = 0;
@@ -86,7 +75,7 @@ protected:
 
 class Srf02RangefinderI2C : public ISrf02Rangefinder {
 public:
-	Srf02RangefinderI2C(comDevices::IComDriver* hwInterface);
+	Srf02RangefinderI2C(comDevices::StmI2cDevice* hwInterface);
 
 private:
 	unsigned int getDistance(const uint8_t* queryType);
