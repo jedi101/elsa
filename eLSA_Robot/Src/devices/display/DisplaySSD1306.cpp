@@ -50,7 +50,7 @@ eLSA::display::DisplaySSD1306::~DisplaySSD1306()
 /*public methods*/
 
 // fill the whole display with one color
-void eLSA::display::DisplaySSD1306::fill(DISPLAY_SSD1306_COLOR color)
+void eLSA::display::DisplaySSD1306::fill(Color_t color)
 {
 	/* Set complete screen to one color */
 	uint32_t i;
@@ -72,7 +72,7 @@ void eLSA::display::DisplaySSD1306::updateScreen(void) {
 }
 
 //draw single pixel to display
-void eLSA::display::DisplaySSD1306::drawPixel(uint8_t x, uint8_t y, DISPLAY_SSD1306_COLOR color) {
+void eLSA::display::DisplaySSD1306::drawPixel(uint8_t x, uint8_t y, Color_t color) {
     if(x >= DISPLAY_SSD1306_WIDTH || y >= DISPLAY_SSD1306_HEIGHT) {
         // Don't write outside the buffer
         return;
@@ -80,7 +80,7 @@ void eLSA::display::DisplaySSD1306::drawPixel(uint8_t x, uint8_t y, DISPLAY_SSD1
 
     // Check if pixel should be inverted
     if(_screenObject.Inverted) {
-        color = (DISPLAY_SSD1306_COLOR)!color;
+        color = (Color_t)!color;
     }
 
     // Draw in the right color
@@ -92,38 +92,38 @@ void eLSA::display::DisplaySSD1306::drawPixel(uint8_t x, uint8_t y, DISPLAY_SSD1
 }
 
 //write character to display
-char eLSA::display::DisplaySSD1306::writeChar(char ch, FontDef Font, DISPLAY_SSD1306_COLOR color) {
+char eLSA::display::DisplaySSD1306::writeChar(char ch, FontDef_t Font, Color_t color) {
     uint32_t i, b, j;
 
     // Check remaining space on current line
-    if (DISPLAY_SSD1306_WIDTH <= (_screenObject.CurrentX + Font.FontWidth) ||
-    		DISPLAY_SSD1306_HEIGHT <= (_screenObject.CurrentY + Font.FontHeight))
+    if (DISPLAY_SSD1306_WIDTH <= (_screenObject.CurrentX + Font.fontWidth) ||
+    		DISPLAY_SSD1306_HEIGHT <= (_screenObject.CurrentY + Font.fontHeight))
     {
         // Not enough space on current line
         return 0;
     }
 
     // Use the font to write
-    for(i = 0; i < Font.FontHeight; i++) {
-        b = Font.data[(ch - 32) * Font.FontHeight + i];
-        for(j = 0; j < Font.FontWidth; j++) {
+    for(i = 0; i < Font.fontHeight; i++) {
+        b = Font.data[(ch - 32) * Font.fontHeight + i];
+        for(j = 0; j < Font.fontWidth; j++) {
             if((b << j) & 0x8000)  {
-            	drawPixel(_screenObject.CurrentX + j, (_screenObject.CurrentY + i), (DISPLAY_SSD1306_COLOR) color);
+            	drawPixel(_screenObject.CurrentX + j, (_screenObject.CurrentY + i), (Color_t) color);
             } else {
-            	drawPixel(_screenObject.CurrentX + j, (_screenObject.CurrentY + i), (DISPLAY_SSD1306_COLOR)!color);
+            	drawPixel(_screenObject.CurrentX + j, (_screenObject.CurrentY + i), (Color_t)!color);
             }
         }
     }
 
     // The current space is now taken
-    _screenObject.CurrentX += Font.FontWidth;
+    _screenObject.CurrentX += Font.fontWidth;
 
     // Return written char for validation
     return ch;
 }
 
 // Write full string to screenbuffer
-char eLSA::display::DisplaySSD1306::writeString(char* str, FontDef Font, DISPLAY_SSD1306_COLOR color) {
+char eLSA::display::DisplaySSD1306::writeString(char* str, FontDef_t Font, Color_t color) {
     // Write until null-byte
     while (*str) {
         if (eLSA::display::DisplaySSD1306::writeChar(*str, Font, color) != *str) {
