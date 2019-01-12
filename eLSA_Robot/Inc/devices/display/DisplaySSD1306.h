@@ -145,7 +145,7 @@ private:
 	uint16_t _i2cAddress = DISPLAY_SSD1306_I2C_DEFAULT_ADDR;
 	uint8_t _screenBuffer[(DISPLAY_SSD1306_WIDTH * DISPLAY_SSD1306_HEIGHT)/8];
 	eLSA::display::Display_t _screenObject;
-	static constexpr uint8_t ssd1306InitCommands[28] = {
+	uint8_t ssd1306InitCommands[28] = {
 		0xAE, //display off
 		0x20, //Set Memory Addressing Mode
 		0x10, // 00,Horizontal Addressing Mode; 01,Vertical Addressing Mode;
