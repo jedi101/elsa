@@ -27,17 +27,15 @@ public:
     * @brief This method is used to read data from a hardware communication interface
     * @param pData Pointer a data buffer where the read data is stored
 	* @param sizeData Size of the data buffer given on pData
-    * @return  -1 on error or 0 if operation is ok
     */
-	virtual int readData(uint8_t* pData, uint16_t sizeData) = 0;
+	virtual void readData(uint8_t* pData, uint16_t sizeData) = 0;
 	
 	/**
     * @brief This method is used to write data to a remote device via the communication interface
     * @param pData Pointer to a data buffer where the write data is stored
 	* @param sizeData Size of the data buffer given on pData
-    * @return  -1 on error or 0 if operation is ok
     */
-	virtual int writeData(uint8_t* pData, uint16_t sizeData) = 0;
+	virtual void writeData(uint8_t* pData, uint16_t sizeData) = 0;
 
 	/**
     * @brief This method is used to set the timeout of the communication interface

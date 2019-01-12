@@ -17,7 +17,7 @@ namespace comDevices{
  *  A device object is bound to a specific bus address and therefore representing a single device.
  *  The class provides standard read/write methods for common I2C operations.
  */
-class StmI2cDevice : public comDevices::IComDriver {
+class StmI2cDevice : public IComDriver {
 public:
 
 	//delete the standard constructor, so that it is impossible to create unusable objects
@@ -38,7 +38,7 @@ public:
 	 * @param pRegisterAddress Pointer to a variable containing the address value to which is written
 	 * @param sizeRegisterAddress Size of the given address value. This value is explicit to make 11Bit I2C adressing available
 	 */
-	int setDeviceRegisterParams(uint16_t pRegisterAddress, uint16_t sizeRegisterAddress);
+	void setDeviceRegisterParams(uint16_t registerAddress, uint16_t sizeRegisterAddress);
 
 	/**
 	 * @param time Desired connection timeout in milliseconds
@@ -49,18 +49,18 @@ public:
 	 * @param pData Pointer to the start address of the data which is written
 	 * @param sizeData Size of the data block which is written
 	 */
-	int writeData(uint8_t* pData, uint16_t sizeData);
+	void writeData(uint8_t* pData, uint16_t sizeData);
 
 	/**
 	 * @param pData Pointer to the start address of the data buffer to which the read data is written
 	 * @param sizeData Size of the data block which is read
 	 */
-	int readData(uint8_t* pData, uint16_t sizeData);
+	void readData(uint8_t* pData, uint16_t sizeData);
 
 private:
 	I2C_HandleTypeDef* _i2cPort;
 	uint16_t _deviceAddress;
-	uint16_t _pRegisterAddress;
+	uint16_t _registerAddress;
 	uint16_t _sizeRegisterAddress;
 	uint32_t _timeout = 100;
 };
