@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <comDevices/IComDriver.h>
+
 namespace eLSA {
 namespace sensors {
 
