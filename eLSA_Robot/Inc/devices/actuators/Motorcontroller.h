@@ -8,8 +8,8 @@
 #ifndef DEVICES_ACTUATORS_MOTORCONTROLLER_H_
 #define DEVICES_ACTUATORS_MOTORCONTROLLER_H_
 
+#include <actuators/PWMDriverPC9685.h>
 #include <cstdint>
-#include <actuators/PWMDriver.h>
 
 //general constants
 #define MC_MOTOR_COUNT						4		///< count of controllable motors
