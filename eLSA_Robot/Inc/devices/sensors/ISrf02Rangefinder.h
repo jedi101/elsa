@@ -1,10 +1,8 @@
 
-#ifndef DEVICES_SENSORS_SRF02RANGEFINDER_H_
-#define DEVICES_SENSORS_SRF02RANGEFINDER_H_
+#ifndef DEVICES_SENSORS_ISRF02RANGEFINDER_H_
+#define DEVICES_SENSORS_ISRF02RANGEFINDER_H_
 
 #include <cstdint>
-#include <comDevices/IComDriver.h>
-#include <comDevices/StmI2cDevice.h>
 #include <sensors/IDistanceSensor.h>
 
 namespace eLSA {
@@ -68,22 +66,9 @@ protected:
 	const uint8_t _cmdQueryMeasurementMicroseconds = 0x52;
 	const uint8_t _cmdSerialGetMeasurement = 0x5E;
 	const uint32_t _delayMeasurementMilliseconds = 70;
-	const uint8_t _i2cCmdRegister = 0x00;
-	const uint8_t _i2cRangeHighByte = 0x02;
-	const uint8_t _i2cRangeLowByte = 0x03;
-};
-
-class Srf02RangefinderI2C : public ISrf02Rangefinder {
-public:
-	Srf02RangefinderI2C(comDevices::StmI2cDevice* hwInterface);
-
-private:
-	unsigned int getDistance(const uint8_t* queryType);
-	comDevices::StmI2cDevice* _i2cInterface;
-
 };
 
 } /* namespace sensors */
 } /* namespace eLSA */
 
-#endif /* DEVICES_SENSORS_SRF02RANGEFINDER_H_ */
+#endif /* DEVICES_SENSORS_ISRF02RANGEFINDER_H_ */
