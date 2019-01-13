@@ -5,8 +5,8 @@
  *      Author: Tobias
  */
 
-#ifndef MOTIONPLANNER_MOTIONPLANNER_H_
-#define MOTIONPLANNER_MOTIONPLANNER_H_
+#ifndef MOTIONPLANNER_MOTIONPLANNERGENERAL_H_
+#define MOTIONPLANNER_MOTIONPLANNERGENERAL_H_
 
 #include <sensors/IGPSSensor.h>
 
@@ -48,4 +48,4 @@ typedef struct {
 } //namespace motionplanner
 } //namespace eLSA
 
-#endif /* MOTIONPLANNER_MOTIONPLANNER_H_ */
+#endif /* MOTIONPLANNER_MOTIONPLANNERGENERAL_H_ */
