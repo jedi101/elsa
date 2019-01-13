@@ -9,9 +9,10 @@
 #define MOTIONPLANNER_MOTIONPLANNERGENERAL_H_
 
 #include <sensors/IGPSSensor.h>
+#include <cstdint>
 
 namespace eLSA {
-namespace motionplanner {
+namespace motionPlanner {
 
 /**
  * @author Tobias Koppmann
