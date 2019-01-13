@@ -5,7 +5,7 @@
  *      Author: Tobias
  */
 
-#include <actuators/PWMDriver.h>
+#include <actuators/PWMDriverPC9685.h>
 #include <cstdint>
 #include <comDevices/StmI2cDevice.h>
 #include <cmath>

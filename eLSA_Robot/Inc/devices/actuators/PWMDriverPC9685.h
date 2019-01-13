@@ -5,8 +5,8 @@
  *      Author: Tobias
  */
 
-#ifndef DEVICES_ACTUATORS_PWMDRIVER_H_
-#define DEVICES_ACTUATORS_PWMDRIVER_H_
+#ifndef DEVICES_ACTUATORS_PWMDRIVERPC9685_H_
+#define DEVICES_ACTUATORS_PWMDRIVERPC9685_H_
 
 #include <cstdint>
 #include <comDevices/StmI2cDevice.h>
@@ -86,4 +86,4 @@ class PWMDriverPC9685 {
 } /* namespace actuators */
 } /* namespace eLSA */
 
-#endif /* DEVICES_ACTUATORS_PWMDRIVER_H_ */
+#endif /* DEVICES_ACTUATORS_PWMDRIVERPC9685_H_ */
