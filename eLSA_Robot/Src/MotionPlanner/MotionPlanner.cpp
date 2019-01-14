@@ -10,13 +10,33 @@
 namespace eLSA {
 namespace motionPlanner {
 
-MotionPlanner::MotionPlanner() {
-	// TODO Auto-generated constructor stub
+MotionPlanner& MotionPlanner::instance(void) {
+	static MotionPlanner _instance;
+	return _instance;
+}
+
+void MotionPlanner::addWaypoint(sensors::GPSPoint_t waypoint){
 
 }
 
-MotionPlanner::~MotionPlanner() {
-	// TODO Auto-generated destructor stub
+void MotionPlanner::addListOfWaypoints(std::deque<sensors::GPSPoint_t> waypoints){
+
+}
+
+void MotionPlanner::resetWaypointQueue(void){
+
+}
+
+void MotionPlanner::reset(void){
+
+}
+
+void MotionPlanner::pause(void){
+
+}
+
+void MotionPlanner::run(void){
+
 }
 
 } /* namespace sensors */
