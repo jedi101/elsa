@@ -1,7 +1,7 @@
 /*
  * Bug2.h
  *
- *  Created on: 13.01.2019
+ *  Created on: 28.12.2018
  *      Author: Tobias
  */
 
@@ -13,10 +13,30 @@
 namespace eLSA {
 namespace motionPlanner {
 
+/**
+ * @author Tobias Koppmann
+ * @date 28.12.2018
+ *
+ */
 class Bug2: public IPathfinding {
 public:
-	Bug2();
-	virtual ~Bug2();
+
+	/**
+	 * @brief The constructor sets the datainterface on which the Pathfinder communicates with the MotionPlanner
+	 * @param dataInterface Pointer to the data interface
+	 */
+	Bug2(pathfindingData_t* dataInterface);
+
+	/**
+	 * @brief Invoking this method runs the algorithm
+	 */
+	void runAlgorithm(void);
+
+	/**
+	 * @brief This method sets the datainterface on which the Pathfinder communicates with the MotionPlanner
+	 * @param dataInterface Pointer to the data interface
+	 */
+	void resetAlgorithm(void);
 };
 
 } /* namespace motionPlanner */

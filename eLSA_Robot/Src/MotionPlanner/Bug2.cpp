@@ -10,13 +10,18 @@
 namespace eLSA {
 namespace motionPlanner {
 
-Bug2::Bug2() {
-	// TODO Auto-generated constructor stub
+Bug2::Bug2(pathfindingData_t* dataInterface)
+	: IPathfinding{dataInterface}
+{
 
 }
 
-Bug2::~Bug2() {
-	// TODO Auto-generated destructor stub
+void Bug2::runAlgorithm(void){
+
+}
+
+void Bug2::resetAlgorithm(void){
+
 }
 
 } /* namespace motionPlanner */
