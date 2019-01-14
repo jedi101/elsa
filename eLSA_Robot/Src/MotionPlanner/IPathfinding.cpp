@@ -10,6 +10,14 @@
 namespace eLSA {
 namespace motionPlanner {
 
+	IPathfinding::IPathfinding(pathfindingData_t* dataInterface) {
+		if(dataInterface) {
+			_dataInterface = dataInterface;
+		} else {
+			throw "invalid parameter";
+		}
+	}
+
 	void IPathfinding::setDataInterface(pathfindingData_t* dataInterface) {
 		if(dataInterface) {
 			_dataInterface = dataInterface;
