@@ -58,12 +58,12 @@ typedef enum {
  * @date 17.11.2018
  * This struct stores information of the display state
  */
-typedef struct {
+struct Display_t {
     uint16_t CurrentX; ///< The current x position of the cursor on the screen
     uint16_t CurrentY; ///< The current y position of the cursor on the screen
     uint8_t Inverted; ///< Flag which sets color inversion
     uint8_t Initialized; ///< Flag which tells if the display is already initialized
-} Display_t;
+};
 
 /**
  * @author Tobias Koppmann
@@ -144,7 +144,7 @@ private:
 	I2C_HandleTypeDef* _i2cPort;
 	uint16_t _i2cAddress = DISPLAY_SSD1306_I2C_DEFAULT_ADDR;
 	uint8_t _screenBuffer[(DISPLAY_SSD1306_WIDTH * DISPLAY_SSD1306_HEIGHT)/8];
-	eLSA::display::Display_t _screenObject;
+	struct eLSA::display::Display_t _screenObject;
 	uint8_t ssd1306InitCommands[28] = {
 		0xAE, //display off
 		0x20, //Set Memory Addressing Mode

@@ -16,11 +16,36 @@ namespace sensors {
  * @date 03.01.2019
  * This struct stores a 3 dimensional vector in accordance to the three main axes of the robot
  */
-typedef struct {
+struct vector_t{
 	float x;	///< The partial vector value related to the X-axis
 	float y;	///< The partial vector value related to the Y-axis
 	float z;	///< The partial vector value related to the Z-axis
-} vector_t;
+
+	vector_t(float x=0.0, float y=0.0, float z=0.0)
+			:x{x}, y{y}, z{z}
+	{}
+
+	// assignment operator modifies object, therefore non-const
+	vector_t& operator=(const vector_t& other)
+	{
+		x=other.x;
+		y=other.y;
+		z=other.z;
+		return *this;
+	}
+
+	// add operation doesn't modify object, therefore const
+	vector_t operator+(const vector_t& other) const
+	{
+		return vector_t(other.x+x, other.y+y, other.z+z);
+	}
+
+	// equality comparison doesn't modify object, therefore const.
+	 bool operator==(const vector_t& other) const
+	 {
+		 return (x == other.x && y == other.y && z == other.z);
+	 }
+};
 
 /**
  * @author Tobias Koppmann
