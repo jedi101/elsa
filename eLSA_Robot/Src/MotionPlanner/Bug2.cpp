@@ -20,10 +20,34 @@ Bug2::Bug2(pathfindingData_t* dataInterface)
 
 void Bug2::runAlgorithm(void){
 
+	switch (_currentState) {
+		case IDLE:
+			//NOP
+			break;
+
+		case MOVE_ON_MLINE:
+			moveAlongMline();
+			break;
+
+		case FOLLOW_BOUNDARY:
+			followBoundary();
+
+		case ERROR:
+			if(1/*quit error*/) {
+				resetAlgorithm();
+			}
+			break;
+
+		default:
+			break;
+	}
+
 }
 
 void Bug2::resetAlgorithm(void){
-
+	_currentState = IDLE;
+	_encounteredObstaclesPositions.clear();
+	_mLineReentrancePositions.clear();
 }
 
 uint16_t Bug2::getBearingBetweenTwoCoordinates(sensors::GPSPoint_t point_1, sensors::GPSPoint_t point_2) {

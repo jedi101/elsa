@@ -18,7 +18,8 @@ namespace motionPlanner {
 
 typedef enum {
 	IDLE,
-	RUNNING,
+	MOVE_ON_MLINE,
+	FOLLOW_BOUNDARY,
 	ERROR
 } bug2State_t;
 
@@ -57,6 +58,7 @@ private:
 	uint8_t isCurrentPositionOnMLine(void);
 	int isCurrentPositionLeftOrRightOfMLine(void);
 	void moveAlongMline(void);
+	void followBoundary(void);
 
 };
 
