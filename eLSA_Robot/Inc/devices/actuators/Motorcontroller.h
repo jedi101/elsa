@@ -18,11 +18,11 @@ namespace eLSA {
 namespace actuators {
 
 /// This struct holds the pin configuration of the pwm controller for a single motor
-typedef struct {
+struct MotorDC_t{
 	uint8_t pwmPin; ///< This value describes the outpin on the pwm controller which is connected to the pwm input on the motor driver chip
 	uint8_t directionalPin1; ///< This value describes the outpin on the pwm controller which is connected to the directional port A on the motor driver chip
 	uint8_t directionalPin2; ///< This value describes the outpin on the pwm controller which is connected to the directional port B on the motor driver chip
-}  MotorDC_t;
+};
 
 /// This enum describes the three possible motor states
 typedef enum {
@@ -78,7 +78,7 @@ public:
 
 private:
 	PWMDriverPC9685* _pwm;
-	MotorDC_t _motor[MC_MOTOR_COUNT];
+	struct MotorDC_t _motor[MC_MOTOR_COUNT];
 
     void setPWM(uint8_t pin, uint16_t val);
     void setPin(uint8_t pin, uint16_t val);
