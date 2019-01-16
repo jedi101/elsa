@@ -17,9 +17,27 @@ namespace sensors {
  * This struct is used to represent a GPS position
  */
 typedef struct {
-	float longitude; ///< The longitude given in dddmm.mmmmmm where d=degree and m=minutes
-	float latitude; ///< ///< The latitude given in ddmm.mmmmmm where d=degree and m=minutes
+	double longitude; ///< The longitude given in dddmm.mmmmmm where d=degree and m=minutes
+	double latitude; ///< ///< The latitude given in ddmm.mmmmmm where d=degree and m=minutes
 } GPSPoint_t;
+
+/**
+ * @author Tobias Koppmann
+ * @date 16.01.2019
+ * This type trait is used to check if variable is of GPSPoint_t -> wrong type
+ */
+template <typename T>
+struct is_GPSPoint
+{static const bool value = false;};
+
+/**
+ * @author Tobias Koppmann
+ * @date 16.01.2019
+ * This type trait is used to check if variable is of GPSPoint_t -> right type
+ */
+template <>
+struct is_GPSPoint<GPSPoint_t>
+{static const bool value = true;};
 
 /**
  * @author Richard Leikam
