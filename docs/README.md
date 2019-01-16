@@ -36,6 +36,19 @@ like RTOS.
 
 This is the hardware layer with all the possible hardware components for the application and their communication protocols and interfaces.
 
+## Tools
+
+The list represents the used tools within the project.
+
+Name                         | Description
+-----------------------------|-----------------------------------------------------------------------------
+Visual Paradigm Community    | All-in-one modelling tool, which was used in the project for SysML-Modeling
+Pencil Project               | Diagram modelling tool for simple diagrams
+Docsify                      | JavaScript application to display markdown written documenmts on GitHub Pages
+Doxygen                      | Documentation site generator for C++-Code
+Atollic TrueSTUDIO for STM32 | Eclipse based IDE for embedded systems development in use for C++-Coding and debug
+STM32CubeMX                  | TrueStudio-Plugin: C code generator and configurator for STM32 microcontroller platform
+
 ## Requirement Diagrams
 
 ## Block Diagrams
