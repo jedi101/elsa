@@ -9,9 +9,18 @@
 #define MOTIONPLANNER_BUG2_H_
 
 #include <MotionPlanner/IPathfinding.h>
+#include <cstdint>
+#include <sensors/IGPSSensor.h>
+#include <vector>
 
 namespace eLSA {
 namespace motionPlanner {
+
+typedef enum {
+	IDLE,
+	RUNNING,
+	ERROR
+} bug2State_t;
 
 /**
  * @author Tobias Koppmann
@@ -37,6 +46,18 @@ public:
 	 * @param dataInterface Pointer to the data interface
 	 */
 	void resetAlgorithm(void);
+
+private:
+	bug2State_t _currentState;
+	std::vector<sensors::GPSPoint_t> _encounteredObstaclesPositions;
+	std::vector<sensors::GPSPoint_t> _mLineReentrancePositions;
+
+	uint16_t getBearingBetweenTwoCoordinates(sensors::GPSPoint_t point_1, sensors::GPSPoint_t point_2);
+	double crossProductCurrentPosAndMline(void);
+	uint8_t isCurrentPositionOnMLine(void);
+	int isCurrentPositionLeftOrRightOfMLine(void);
+	void moveAlongMline(void);
+
 };
 
 } /* namespace motionPlanner */
