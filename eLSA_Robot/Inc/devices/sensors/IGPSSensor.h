@@ -16,10 +16,34 @@ namespace sensors {
  * @date 04.12.2018
  * This struct is used to represent a GPS position
  */
-typedef struct {
+struct GPSPoint_t {
 	double longitude; ///< The longitude given in dddmm.mmmmmm where d=degree and m=minutes
 	double latitude; ///< ///< The latitude given in ddmm.mmmmmm where d=degree and m=minutes
-} GPSPoint_t;
+
+	GPSPoint_t(double longitude=0.0, double latitude=0.0)
+		:longitude{longitude}, latitude{latitude} {}
+
+	// assignment operator modifies object, therefore non-const
+	GPSPoint_t& operator=(const GPSPoint_t& other)
+	{
+		longitude=other.longitude;
+		latitude=other.latitude;
+		return *this;
+	}
+
+    // add operation doesn't modify object, therefore const
+	GPSPoint_t operator+(const GPSPoint_t& other) const
+    {
+        return GPSPoint_t(other.longitude+longitude, other.latitude+latitude);
+    }
+
+    // equality comparison doesn't modify object, therefore const.
+     bool operator==(const GPSPoint_t& other) const
+     {
+         return (longitude == other.longitude && latitude == other.latitude);
+     }
+
+} ;
 
 /**
  * @author Tobias Koppmann
