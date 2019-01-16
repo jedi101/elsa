@@ -128,3 +128,11 @@ I2C Domain 2 (Output)  | simple I2C devices, simple outputs
 I2C Domain 3 (Display) | i2c devices for display specific output
 SPI Domain             | spi devices with more complex functions (e.g. protocols)
 UART Domain            | uart devices with more complex functions (e.g. protocols)
+
+### Configuration
+
+The configuration of the microcontroller was done with the STM32CubeMX plugin, which generated this document.
+
+```pdf
+	hardware/mcuBoard/eLSA_RobotHwConfig.pdf
+```
