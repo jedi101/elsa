@@ -58,3 +58,23 @@ STM32CubeMX                  | TrueStudio-Plugin: C code generator and configura
 ## State Diagrams
 
 ## Class Diagrams
+
+## Hardware - eLSA Robot
+
+This section shows the used hardware and their configurations in detail.
+
+### Domains
+
+The hardware is split into 5 domains, while the microcontroller holds a special place as the central hardware component.
+It shows the logical relations and their interfaces to the microcontroller. It helps to have an overview of all the used
+components in general.
+
+![eLSA Hardware Peripherals](hardware/peripherals/elsa_peripherals.png)
+
+Domain                 | Function
+-----------------------|-----------
+I2C Domain 1 (Input)   | simple I2C devices, simple inputs
+I2C Domain 2 (Output)  | simple I2C devices, simple outputs
+I2C Domain 3 (Display) | i2c devices for display specific output
+SPI Domain             | spi devices with more complex functions (e.g. protocols)
+UART Domain            | uart devices with more complex functions (e.g. protocols)
