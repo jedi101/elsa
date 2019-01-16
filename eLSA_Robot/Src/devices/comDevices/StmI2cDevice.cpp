@@ -19,27 +19,27 @@ namespace comDevices {
 	StmI2cDevice::~StmI2cDevice(){}
 
 	//set register address used for writing or reading
-	int StmI2cDevice::setDeviceRegisterParams(uint16_t pRegisterAddress, uint16_t sizeRegisterAddress){
-		int returnValue = -1;
+	void StmI2cDevice::setDeviceRegisterParams(uint16_t registerAddress, uint16_t sizeRegisterAddress){
 
-		if(pRegisterAddress && sizeRegisterAddress) {
-			this->_pRegisterAddress = pRegisterAddress;
+		if(sizeRegisterAddress) {
+			this->_registerAddress = registerAddress;
 			this->_sizeRegisterAddress = sizeRegisterAddress;
-			returnValue = 0;
+		} else {
+			throw "invalid parameter";
 		}
-
-		return returnValue;
 	}
 
 	//set connection timeout
 	void StmI2cDevice::setConnectionTimeout(uint32_t time){
 		if(time) {
 			this->_timeout = time;
+		} else {
+			throw "invalid parameter";
 		}
 	}
 
 	// write data to I2C device
-	int StmI2cDevice::writeData(uint8_t* pData, uint16_t sizeData)
+	void StmI2cDevice::writeData(uint8_t* pData, uint16_t sizeData)
 	{
 		HAL_StatusTypeDef _status = HAL_BUSY;
 
@@ -51,15 +51,20 @@ namespace comDevices {
 		//only try to send data, when device is ready
 		if(_status == HAL_OK) {
 			do {
-				_status = HAL_I2C_Mem_Write(_i2cPort, _deviceAddress, _pRegisterAddress, _sizeRegisterAddress, pData, sizeData, _timeout);
+				_status = HAL_I2C_Mem_Write(_i2cPort, _deviceAddress, _registerAddress, _sizeRegisterAddress, pData, sizeData, _timeout);
 			} while(_status == HAL_BUSY);
+
+			if(_status != HAL_OK) {
+				throw "I2C writing failed";
+			}
+		} else {
+			throw "I2C device is not ready";
 		}
 
-		return (int)_status;
 	}
 
 	// read data from I2C device
-	int StmI2cDevice::readData(uint8_t* pData, uint16_t sizeData)
+	void StmI2cDevice::readData(uint8_t* pData, uint16_t sizeData)
 	{
 		HAL_StatusTypeDef _status = HAL_BUSY;
 
@@ -71,11 +76,15 @@ namespace comDevices {
 		//only try to read data, when device is ready
 		if(_status == HAL_OK) {
 			do {
-				_status = HAL_I2C_Mem_Read(_i2cPort, _deviceAddress, _pRegisterAddress, _sizeRegisterAddress, pData, sizeData, _timeout);
+				_status = HAL_I2C_Mem_Read(_i2cPort, _deviceAddress, _registerAddress, _sizeRegisterAddress, pData, sizeData, _timeout);
 			} while(_status == HAL_BUSY);
-		}
 
-		return (int)_status;
+			if(_status != HAL_OK) {
+				throw "I2C writing failed";
+			}
+		} else {
+			throw "I2C device is not ready";
+		}
 	}
 
 } /* namespace hw_interfaces*/

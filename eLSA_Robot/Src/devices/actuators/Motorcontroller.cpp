@@ -5,30 +5,31 @@
  *      Author: Tobias
  */
 
-#include "actuators/Motorcontroller.h"
+#include <actuators/Motorcontroller.h>
 
 namespace eLSA {
 namespace actuators {
 
-// initialize singleton instance
-Motorcontroller* Motorcontroller::_instance = 0;
+Motorcontroller::Motorcontroller(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress) {
+	if(i2cPort && deviceAddress) {
+		_pwm = new PWMDriverPC9685(i2cPort, deviceAddress);
 
-//Constructor which is called in instance()
-Motorcontroller::Motorcontroller(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)
-	: _i2cPort{i2cPort}, _i2cAddress{deviceAddress}
-{
-	if(_i2cPort && _i2cAddress) {
+		_pwm->reset();
+		_pwm->setPWMFreq(PWM_DRIVER_PC9685_MAX_FREQUENCY);
 
-		//retrieve new i2c interface object
-		_i2cInterface = new eLSA::comDevices::StmI2cDevice(_i2cPort, _i2cAddress);
-
-		if(_i2cInterface) {
-
-			//set display standard timeout for i2c device
-			_i2cInterface->setConnectionTimeout(MC_I2C_TIMEOUT);
-
-		}
+		for (uint8_t i=0; i<16; i++)
+		    _pwm->setPWM(i, 0, 0);
+	} else {
+		throw "invalid parameter";
 	}
+
+	_motor[0].directionalPin1 = 10;
+	_motor[0].directionalPin2 = 9;
+	_motor[0].pwmPin = 8;
+
+	_motor[1].directionalPin1 = 11;
+	_motor[1].directionalPin2 = 12;
+	_motor[1].pwmPin = 13;
 
 }
 
@@ -36,97 +37,97 @@ Motorcontroller::~Motorcontroller() {
 
 }
 
-Motorcontroller* Motorcontroller::instance(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress) {
-	if (!_instance) {
-		_instance = new Motorcontroller(i2cPort, deviceAddress);
-	}
-
-	return _instance;
-}
-
-unsigned int Motorcontroller::runMotor(uint8_t motorIdx, MotorDirection dir) {
-	unsigned int _status = HAL_ERROR;
-	uint8_t _buffer[10] = {0}; // 10 Byte for 2 Pins which use 5 Bytes each
+void Motorcontroller::runMotor(uint8_t motorIdx, MotorDirection_t dir) {
 
 	if(motorIdx < MC_MOTOR_COUNT) {
 
-		_buffer[0] = MC_I2C_PWM_DRIVER_BASE_REGISTER + (4*_motor[motorIdx].directionalPin1); //write to 1st directional pin
-		_buffer[5] = MC_I2C_PWM_DRIVER_BASE_REGISTER + (4*_motor[motorIdx].directionalPin2); //write to 2nd directional pin
-
 		switch(dir) {
 			case STOP:
-				//nothing to do here since only 0 values are necessary to stop
-			  break;
+				try {
+					setPin(_motor[motorIdx].directionalPin1, 0);
+					setPin(_motor[motorIdx].directionalPin2, 0);
+				} catch(...) {
+					throw;
+				}
+				break;
 
 			case FORWARD:
-				_buffer[1] = MC_I2C_PWM_PIN_MAX_VALUE & 0xFF; //get low byte
-				_buffer[2] = (MC_I2C_PWM_PIN_MAX_VALUE >> 8) & 0xFF; //get high byte
-				//buffer[3..4] and [6..9] have to stay 0
-			  break;
+				try {
+					setPin(_motor[motorIdx].directionalPin1, 1);
+					setPin(_motor[motorIdx].directionalPin2, 0);
+				} catch(...) {
+					throw;
+				}
+			    break;
 
 			case BACKWARDS:
-				//buffer[1..5] have to stay 0
-				_buffer[6] = MC_I2C_PWM_PIN_MAX_VALUE & 0xFF; //get low byte
-				_buffer[7] = (MC_I2C_PWM_PIN_MAX_VALUE >> 8) & 0xFF; //get high byte
-				//buffer[8..9] have to stay 0
-			  break;
+				try {
+					setPin(_motor[motorIdx].directionalPin2, 1);
+					setPin(_motor[motorIdx].directionalPin1, 0);
+				} catch(...) {
+					throw;
+				}
+			    break;
 
 			default:
 			  break;
 		}
 
-		_i2cInterface->setDeviceRegisterParams(MC_I2C_PC9685_MODE1, MC_I2C_ADDRESS_LENGTH);
-		_status = _i2cInterface->writeData(_buffer, sizeof(_buffer));
-
+	} else {
+		throw "invalid parameter => motorIdx too big";
 	}
 
-	return (unsigned int)_status;
 }
 
-unsigned int Motorcontroller::setMotorSpeed(uint8_t motorIdx, uint8_t speed) {
-	unsigned int _status = HAL_ERROR;
-	uint8_t _buffer[3] = {0}; // 1 address byte, 2 value bytes
-
-	uint16_t _calculatedSpeed = speed * 16;
+void Motorcontroller::setMotorSpeed(uint8_t motorIdx, uint8_t speed) {
 
 	if(motorIdx < MC_MOTOR_COUNT) {
-
-		_buffer[0] = MC_I2C_PWM_DRIVER_BASE_REGISTER + (4*_motor[motorIdx].pwmPin);
-
 		//check if "all on" is more sensible
-		 if (speed > 4095) {
-			 _buffer[1] = MC_I2C_PWM_PIN_MAX_VALUE & 0xFF; //get low byte
-			 _buffer[2] = (MC_I2C_PWM_PIN_MAX_VALUE >> 8) & 0xFF; //get high byte
-		 } else {
-			 _buffer[1] = _calculatedSpeed & 0xFF; //get low byte
-			 _buffer[2] = (_calculatedSpeed>>8) & 0xFF; // get high byte
-		 }
-
-		_i2cInterface->setDeviceRegisterParams(MC_I2C_PC9685_MODE1, MC_I2C_ADDRESS_LENGTH);
-		_status = _i2cInterface->writeData(_buffer, sizeof(_buffer));
-
+		setPWM(_motor[motorIdx].pwmPin, speed*16);
+	} else {
+		throw "invalid parameter => motorIdx too big";
 	}
 
-	return (unsigned int)_status;
+}
+
+void Motorcontroller::runMotorWithSpeed(uint8_t motorIdx, MotorDirection_t dir, uint8_t speed) {
+
+	//set motor speed
+	try {
+		setMotorSpeed(motorIdx, speed);
+	} catch(...) {
+		throw;
+	}
+
+	//run motor
+	try {
+		runMotor(motorIdx, dir);
+	} catch(...) {
+		throw;
+	}
 
 }
 
-unsigned int Motorcontroller::runMotorWithSpeed(uint8_t motorIdx, MotorDirection dir, uint8_t speed) {
-	unsigned int _status = HAL_ERROR;
-
-	_status = Motorcontroller::setMotorSpeed(motorIdx, speed);
-
-	if(_status != HAL_ERROR)
-		_status = Motorcontroller::runMotor(motorIdx, dir);
-
-	return _status;
+void Motorcontroller::setPin(uint8_t pin, uint16_t value) {
+	try {
+		if (value == 0)
+			_pwm->setPWM(pin, 0, 0);
+		else
+			_pwm->setPWM(pin, 4096, 0);
+	} catch(...) {
+		throw;
+	}
 }
 
-unsigned int Motorcontroller::reset() {
-	uint8_t command = 0x00; //value to reset PCA9685
-
-	_i2cInterface->setDeviceRegisterParams(MC_I2C_PC9685_MODE1, MC_I2C_ADDRESS_LENGTH);
-	return _i2cInterface->writeData(&command, MC_I2C_COMMAND_LENGTH);
+void Motorcontroller::setPWM(uint8_t pin, uint16_t value) {
+	try {
+		if (value > 4095) {
+			_pwm->setPWM(pin, 4096, 0);
+		} else
+			_pwm->setPWM(pin, 0, value);
+	} catch(...) {
+		throw;
+	}
 }
 
 } /* namespace actuators */
