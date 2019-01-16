@@ -9,13 +9,21 @@
 
 namespace eLSA {
 
-eLSASystem::eLSASystem() {
+System::System(struct eLSAEnvironment_t env) {
 	// TODO Auto-generated constructor stub
 
 }
 
-eLSASystem::~eLSASystem() {
+System::~System() {
 	// TODO Auto-generated destructor stub
+}
+
+void System::reset(void) {
+
+}
+
+void System::run(void) {
+
 }
 
 } /* namespace eLSA */
