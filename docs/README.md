@@ -115,7 +115,7 @@ This section shows the used hardware and their configurations in detail.
 
 ### Domains
 
-The hardware is split into 5 domains, while the microcontroller holds a special place as the central hardware component.
+The hardware is split into 5 bus domains, while the microcontroller holds a special place as the central hardware component.
 It shows the logical relations and their interfaces to the microcontroller. It helps to have an overview of all the used
 components in general.
 
@@ -131,8 +131,118 @@ UART Domain            | uart devices with more complex functions (e.g. protocol
 
 ### Configuration
 
-The configuration of the microcontroller was done with the STM32CubeMX plugin, which generated this document.
+The configuration of the microcontroller was done with the STM32CubeMX plugin, which generated this document. The document contains the pinout,
+clock tree and middleware configuration.
 
 ```pdf
 	hardware/mcuBoard/eLSA_RobotHwConfig.pdf
+```
+
+#### Bus domains and address tables
+
+The following tables are describing the bus domains and address usage for the multiple peripherals used on eLSA.
+Since the standard hardware implementation uses a STM32 Nucleo-F411RE Board the given interfaces are specific to this board respectively the STM32F411RETx MCU.
+The same applies to the bus addresses which are specific to the used devices.
+
+##### I2C Domain 1 (Input)
+
+| Peripheral / Functionality | Device                                                    | AddressBYTE (Read/Write) |
+| -------------------------- | :-------------------------------------------------------- | :----------------------: |
+| Accelerometer              | Analog Devices ADXL345 (on Sparkfun 9DoF Stick SEN-10724) |        0x3A/0x3B         |
+| Magnetometer (Compass)     | Honeywell HMC5883L (on Sparkfun 9DoF Stick SEN-10724)     |        0x3D/0x3C         |
+| Gyroscope                  | InvenSense ITG-3200 (on Sparkfun 9DoF Stick SEN-10724)    |        0xD0/0xD1         |
+| supersonic distance 1      | Robot Electronics SRF02                                   |        0xE0/0xE1         |
+| supersonic distance 2      | Robot Electronics SRF02                                   |        0xE2/0xE3         |
+| supersonic distance 3      | Robot Electronics SRF02                                   |        0xE4/0xE5         |
+
+##### I2C Domain 2 (Output)
+
+| Peripheral / Functionality | Device                    | AddressBYTE (Read/Write) |
+| -------------------------- | ------------------------- | :----------------------: |
+| Motordrivers               | Adafruit Motorshield v2.3 |        0x60/0x61         |
+
+##### I2C Domain 3 (Display)
+
+| Peripheral / Functionality | Device                   | AddressBYTE (Read/Write) |
+| -------------------------- | ------------------------ | :----------------------: |
+| Display                    | Adafruit 128x32 I2C OLED |        0x78/0x79         |
+
+##### SPI Domain
+
+| Peripheral / Functionality | Device                       |                Address                 |
+| -------------------------- | ---------------------------- | :------------------------------------: |
+| LoRa Communication         | Dragino LoRa/GPS Shield v1.3 | [p2p connection - no slave select pin] |
+
+##### UART Domain
+
+| Peripheral / Functionality | Device                       |     Address      |
+| -------------------------- | ---------------------------- | :--------------: |
+| GPS                        | Dragino LoRa/GPS Shield v1.3 | [p2p connection] |
+
+### Datasheets
+
+This section contains relevant datasheets for the used hardware.
+
+#### Adafruit Monochrome 128x32 I2C OLED
+
+```pdf
+	hardware/peripherals/datasheets/Adafruit_Monochrome_128x32_I2C_OLED/SSD1306_DisplayController.pdf
+```
+
+#### Adafruit MotorShield v2_3
+
+##### PCA9685 PWM Controller
+```pdf
+	hardware/peripherals/datasheets/Adafruit_MotorShield_v2_3/PCA9685_PWM_Controller.pdf
+```
+
+##### TB6612FNG MotorDriver
+```pdf
+	hardware/peripherals/datasheets/Adafruit_MotorShield_v2_3/TB6612FNG_MotorDriver.pdf
+```
+
+#### Dragino LoRa GPS Shield
+
+##### Quectel L80 GPSSensor
+
+Documentation for hardware design and PMTK protocol specification.
+
+```pdf
+	hardware/peripherals/datasheets/Dragino_LoRa_GPS_Shield/Quectel_L80_Hardware_Design_V1.1_GPSSensor.pdf
+```
+
+```pdf
+	hardware/peripherals/datasheets/Dragino_LoRa_GPS_Shield/Quectel_L80_GPS_Protocol_Specification.pdf
+```
+
+#### RobotElectronics SRF02 Ultrasonic Distance Measurement
+
+Documentation file and beam pattern of the sensor.
+
+```pdf
+	hardware/peripherals/datasheets/RobotElectronics_SRF02_UltrasonicDistanceMeasurement/srf02.pdf
+```
+
+![Beam pattern SRF02](hardware/peripherals/datasheets/RobotElectronics_SRF02_UltrasonicDistanceMeasurement/SRF02_Beampattern.gif)
+
+#### Sparkfun SEN10724 9DOF
+
+##### ADXL345 Accelerometer
+```pdf
+	hardware/peripherals/datasheets/Sparkfun_SEN10724_9DOF/ADXL345_Accelerometer.pdf
+```
+
+##### HMC5883L FDS Digital Compass
+```pdf
+	hardware/peripherals/datasheets/Sparkfun_SEN10724_9DOF/HMC5883L_FDS_DigitalCompass.pdf
+```
+
+##### ITG 3200 rev1_4 Gyroscope
+```pdf
+	hardware/peripherals/datasheets/Sparkfun_SEN10724_9DOF/ITG_3200_rev1_4_Gyroscope.pdf
+```
+
+##### SEN10724 9DoF Stick v13 Circuit
+```pdf
+	hardware/peripherals/datasheets/Sparkfun_SEN10724_9DOF/SEN10724_9DoF_Stick_v13_Circuit.pdf
 ```
