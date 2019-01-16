@@ -26,11 +26,31 @@ void Bug2::runAlgorithm(void){
 			break;
 
 		case MOVE_ON_MLINE:
-			moveAlongMline();
+
+			if(_dataInterface->in.currentPosition == _dataInterface->in.targetPosition) {
+				_currentState = IDLE;
+			} else if(_dataInterface->in.isObstacleAhead) {
+				_encounteredObstaclesPositions.push_back(_dataInterface->in.currentPosition);
+				_currentState = FOLLOW_BOUNDARY;
+			} else {
+				moveAlongMline();
+			}
 			break;
 
 		case FOLLOW_BOUNDARY:
-			followBoundary();
+
+			if(_dataInterface->in.currentPosition == _dataInterface->in.targetPosition) {
+				_currentState = IDLE;
+			} else if(_dataInterface->in.currentPosition == _encounteredObstaclesPositions.back()) {
+				_currentState = MOVE_ON_MLINE;
+			} else if(isCurrentPositionOnMLine()) {
+				_currentState = MOVE_ON_MLINE;
+			} else if(1) {
+
+			} else {
+				followBoundary();
+			}
+			break;
 
 		case ERROR:
 			if(1/*quit error*/) {
@@ -42,6 +62,7 @@ void Bug2::runAlgorithm(void){
 			break;
 	}
 
+	return;
 }
 
 void Bug2::resetAlgorithm(void){
