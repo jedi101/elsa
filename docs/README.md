@@ -49,6 +49,8 @@ Doxygen                      | Documentation site generator for C++-Code
 Atollic TrueSTUDIO for STM32 | Eclipse based IDE for embedded systems development in use for C++-Coding and debug
 STM32CubeMX                  | TrueStudio-Plugin: C code generator and configurator for STM32 microcontroller platform
 
+
+
 ## Requirement Diagrams
 
 ## Block Diagrams
