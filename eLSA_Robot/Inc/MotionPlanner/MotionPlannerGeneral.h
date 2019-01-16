@@ -19,22 +19,22 @@ namespace motionPlanner {
  * @date 28.12.2018
  * This struct is used to provide data to a pathfinding algorithm
  */
-typedef struct {
+struct pathfindingDataIn_t {
     sensors::GPSPoint_t currentPosition; 	///< The current GPS position of the robot
     float currentHeading; 					///< The current heading of the robot
     sensors::GPSPoint_t startPosition; 		///< The position from which the pathfinding starts
     sensors::GPSPoint_t targetPosition; 	///< The position to which the robot is meant to move
     uint8_t isObstacleAhead;				///< Boolean value telling if a obstacle is sensed
-} pathfindingDataIn_t;
+};
 
 /**
  * @author Tobias Koppmann
  * @date 28.12.2018
  * This struct is used to get commands and states from a pathfinding algorithm
  */
-typedef struct {
+struct pathfindingDataOut_t{
 
-}pathfindingDataOut_t;
+};
 
 /**
  * @author Tobias Koppmann
@@ -42,8 +42,8 @@ typedef struct {
  * This struct is used to share data between a pathfinding algorithm and a superordinate instance
  */
 typedef struct {
-	pathfindingDataIn_t in; ///< data TO the pathfinding algorithm
-	pathfindingDataOut_t out; ///< data FROM the pathfinding algorithm
+	struct pathfindingDataIn_t in; ///< data TO the pathfinding algorithm
+	struct pathfindingDataOut_t out; ///< data FROM the pathfinding algorithm
 }pathfindingData_t;
 
 } //namespace motionplanner
