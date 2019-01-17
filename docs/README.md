@@ -69,6 +69,24 @@ This is the hardware layer with all the possible hardware components for the app
 
 ### Class Diagrams
 
+#### eLSA System Class
+![SysML Class: eLSA System Class](sysML/class/eLSA_system_class.png)
+
+#### Motion Planner Class
+![SysML Class: Motion Planner Class](sysML/class/motion_planner_class.png)
+
+#### Motor Controller Class
+![SysML Class: Motor Controller Class](sysML/class/motor_controller_class.png)
+
+#### Environment Surveillance Class
+![SysML Class: Environment Surveillance Class](sysML/class/environment_surveillance_class.png)
+
+#### Positioning Class
+![SysML Class: Positioning Class](sysML/class/positioning_class.png)
+
+#### Signaler Class
+![SysML Class: Signaler Class](sysML/class/signaler_class.png)
+
 ## Hardware - eLSA Robot
 
 This section shows the used hardware and their configurations in detail.
