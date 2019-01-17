@@ -6,6 +6,32 @@ The eLSA platform is a software solution for user specific land surveying applic
 hazard detection, malfunction report and communication with an operator. The platform can be used to extend the capability of an eLSA Robot through the given eLSA Layer, while
 it still provides access to hardware components.
 
+### Characteristics
+
+An eLSA robot has certain characteristics or requirements of the hardware that must be fulfilled before it can be used with the eLSA platform.
+
+#### Tracks and motor drivers
+
+The eLSA robot must have tracks and 2 motor drivers to control each track independently. The reason why tracks are choosen for the mobility of an eLSA robot is,
+because tracks can cross dirty and wet ground more easily than any other mobile solution.
+
+#### Communication link
+
+A communication link must be provided, so that the robot can transfer and recieve messages across a network or a point-to-point link. The choice of the
+communication link lies in the hands of the user.
+
+#### GPS Sensor
+
+The robot needs to detect its own global position. The robot is driving along waypoints, so it should know on which location it actually is.
+
+#### Accelerometer/Gyroscope/Magnetometer
+
+The robot also needs to know its orientation, because it needs to set it to the next waypoint.
+
+#### Distance Measurement Sensors
+
+To avoid collision with objects, the robot shall detect objects in front of it. The robot will try to find an other way to reach the waypoint.
+
 ### Architecture
 
 In this section we want to take a detailed look at the eLSA Layer Architecture, which consists of 5 layers. 
