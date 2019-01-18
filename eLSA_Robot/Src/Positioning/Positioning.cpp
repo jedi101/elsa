@@ -8,14 +8,7 @@
 #include <Positioning/Positioning.h>
 
 namespace eLSA {
+namespace positioning {
 
-Positioning::Positioning() {
-	// TODO Auto-generated constructor stub
-
-}
-
-Positioning::~Positioning() {
-	// TODO Auto-generated destructor stub
-}
-
+} /* namespace positioning*/
 } /* namespace eLSA */

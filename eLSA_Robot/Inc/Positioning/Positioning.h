@@ -9,13 +9,10 @@
 #define POSITIONING_POSITIONING_H_
 
 namespace eLSA {
+//! representing SysML system block Positioning
+namespace positioning {
 
-class Positioning {
-public:
-	Positioning();
-	virtual ~Positioning();
-};
-
-} /* namespace eLSA */
+} /* namespace positioning*/
+} /* namespace eLSA*/
 
 #endif /* POSITIONING_POSITIONING_H_ */
