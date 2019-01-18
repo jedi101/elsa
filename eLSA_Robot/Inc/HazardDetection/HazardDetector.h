@@ -9,13 +9,10 @@
 #define HAZARDDETECTION_HAZARDDETECTOR_H_
 
 namespace eLSA {
+//! representing SysML system block HazardDetector
+namespace hazardDetector {
 
-class HazardDetector {
-public:
-	HazardDetector();
-	virtual ~HazardDetector();
-};
-
+} /* namespace hazardDetector*/
 } /* namespace eLSA */
 
 #endif /* HAZARDDETECTION_HAZARDDETECTOR_H_ */

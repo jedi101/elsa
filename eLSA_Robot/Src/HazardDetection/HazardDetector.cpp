@@ -8,14 +8,8 @@
 #include <HazardDetection/HazardDetector.h>
 
 namespace eLSA {
+//! representing SysML system block HazardDetector
+namespace hazardDetector {
 
-HazardDetector::HazardDetector() {
-	// TODO Auto-generated constructor stub
-
-}
-
-HazardDetector::~HazardDetector() {
-	// TODO Auto-generated destructor stub
-}
-
+} /* namespace hazardDetector*/
 } /* namespace eLSA */
