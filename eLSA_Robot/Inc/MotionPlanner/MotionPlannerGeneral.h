@@ -12,6 +12,7 @@
 #include <cstdint>
 
 namespace eLSA {
+//! representing SysML block MotionPlanner
 namespace motionPlanner {
 
 /**
