@@ -9,13 +9,10 @@
 #define SIGNALING_SIGNALER_H_
 
 namespace eLSA {
+//! representing SysML system block Signaler
+namespace signaler {
 
-class Signaler {
-public:
-	Signaler();
-	virtual ~Signaler();
-};
-
+} /* namespace signaler*/
 } /* namespace eLSA */
 
 #endif /* SIGNALING_SIGNALER_H_ */

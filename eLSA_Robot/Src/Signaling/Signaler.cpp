@@ -8,14 +8,7 @@
 #include <Signaling/Signaler.h>
 
 namespace eLSA {
+namespace signaler {
 
-Signaler::Signaler() {
-	// TODO Auto-generated constructor stub
-
-}
-
-Signaler::~Signaler() {
-	// TODO Auto-generated destructor stub
-}
-
+} /* namespace signaler*/
 } /* namespace eLSA */
