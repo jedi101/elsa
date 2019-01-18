@@ -1,3 +1,3 @@
 * [Project](/)
 * [Manual](/manual.md)
-* [Code](./doxygen/html/index.html)
+* [Code](./doxygen/html/index.html ':include')
