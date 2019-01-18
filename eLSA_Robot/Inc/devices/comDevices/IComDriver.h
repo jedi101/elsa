@@ -11,6 +11,7 @@
 #include <cstdint>
 
 namespace eLSA {
+//! wrapping all comDevices used for eLSA
 namespace comDevices{
 
 /**

@@ -27,6 +27,7 @@
 #define PWM_DRIVER_PC9685_MAX_FREQUENCY			 200	///< maximum pwm frequency for the PCA9685
 
 namespace eLSA {
+//! wrapping all actuators used for eLSA
 namespace actuators {
 
 /**

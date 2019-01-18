@@ -22,6 +22,7 @@
 													*/
 
 namespace eLSA {
+//! wrapping all display functionality used by eLSA
 namespace display {
 
 /**

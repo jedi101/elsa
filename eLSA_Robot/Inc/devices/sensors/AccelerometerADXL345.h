@@ -11,6 +11,7 @@
 #include <sensors/ISensor3Axis.h>
 
 namespace eLSA {
+//! wrapping all sensors used by eLSA
 namespace sensors {
 
 class AccelerometerADXL345 : public ISensor3Axis {

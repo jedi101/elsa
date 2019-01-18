@@ -7,6 +7,7 @@
 #include <cstdint>
 
 namespace eLSA {
+//! wrapping all sensors used by eLSA
 namespace sensors {
 
 /**

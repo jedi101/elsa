@@ -15,6 +15,7 @@
 #include <vector>
 
 namespace eLSA {
+//! wrapping all sensors used by eLSA
 namespace sensors {
 
 class GPSSensorL80M39 : public eLSA::sensors::IGPSSensor {

@@ -6,6 +6,7 @@
 #include <sensors/IDistanceSensor.h>
 
 namespace eLSA {
+//! wrapping all sensors used by eLSA
 namespace sensors {
 
 static const uint32_t I2C_DEFAULT_TIMEOUT = 1000;

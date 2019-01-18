@@ -9,6 +9,7 @@
 #define IGPSSENSOR_H_
 
 namespace eLSA {
+//! wrapping all sensors used by eLSA
 namespace sensors {
 
 /**

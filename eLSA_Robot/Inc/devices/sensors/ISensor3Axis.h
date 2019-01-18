@@ -9,6 +9,7 @@
 #define DEVICES_SENSORS_ISENSOR3AXIS_H_
 
 namespace eLSA {
+//! wrapping all sensors used by eLSA
 namespace sensors {
 
 /**

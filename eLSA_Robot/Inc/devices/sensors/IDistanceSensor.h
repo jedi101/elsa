@@ -5,6 +5,7 @@
 #include <comDevices/IComDriver.h>
 
 namespace eLSA {
+//! wrapping all sensors used by eLSA
 namespace sensors {
 
 /**

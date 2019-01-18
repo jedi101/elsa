@@ -15,6 +15,7 @@
 #define MC_MOTOR_COUNT						4		///< count of controllable motors
 
 namespace eLSA {
+//! wrapping all actuators used for eLSA
 namespace actuators {
 
 /// This struct holds the pin configuration of the pwm controller for a single motor
