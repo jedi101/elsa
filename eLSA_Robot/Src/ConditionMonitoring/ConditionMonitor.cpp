@@ -8,14 +8,7 @@
 #include <ConditionMonitoring/ConditionMonitor.h>
 
 namespace eLSA {
+namespace conditionMonitor {
 
-ConditionMonitor::ConditionMonitor() {
-	// TODO Auto-generated constructor stub
-
-}
-
-ConditionMonitor::~ConditionMonitor() {
-	// TODO Auto-generated destructor stub
-}
-
+} /* namespace conditionMonitor*/
 } /* namespace eLSA */
