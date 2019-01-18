@@ -8,14 +8,7 @@
 #include <EnvironmentSurveillance/EnvironmentMonitor.h>
 
 namespace eLSA {
+namespace environmentSurveillance {
 
-EnvironmentMonitor::EnvironmentMonitor() {
-	// TODO Auto-generated constructor stub
-
-}
-
-EnvironmentMonitor::~EnvironmentMonitor() {
-	// TODO Auto-generated destructor stub
-}
-
+} /* namespace environmentSurveillance*/
 } /* namespace eLSA */

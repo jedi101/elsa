@@ -9,13 +9,10 @@
 #define ENVIRONMENTSURVEILLANCE_ENVIRONMENTMONITOR_H_
 
 namespace eLSA {
+//! representing SysML system block EnvironmentSurveillance
+namespace environmentSurveillance {
 
-class EnvironmentMonitor {
-public:
-	EnvironmentMonitor();
-	virtual ~EnvironmentMonitor();
-};
-
+} /* namespace environmentSurveillance*/
 } /* namespace eLSA */
 
 #endif /* ENVIRONMENTSURVEILLANCE_ENVIRONMENTMONITOR_H_ */
