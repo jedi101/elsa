@@ -9,13 +9,16 @@
 #include <cstring>
 #include <exception>
 
-eLSA::display::DisplaySSD1306::DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)
+namespace eLSA {
+namespace display {
+
+DisplaySSD1306::DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16_t deviceAddress)
 	:_i2cPort{i2cPort}, _i2cAddress{deviceAddress}
 {
 	if(_i2cPort && _i2cAddress) {
 
 		//retrieve new i2c interface object
-		_i2cInterface = new eLSA::comDevices::StmI2cDevice(_i2cPort, _i2cAddress);
+		_i2cInterface = new comDevices::StmI2cDevice(_i2cPort, _i2cAddress);
 
 		if(_i2cInterface) {
 
@@ -43,7 +46,7 @@ eLSA::display::DisplaySSD1306::DisplaySSD1306(I2C_HandleTypeDef* i2cPort, uint16
 	}
 }
 
-eLSA::display::DisplaySSD1306::~DisplaySSD1306()
+DisplaySSD1306::~DisplaySSD1306()
 {
 	delete _i2cInterface;
 }
@@ -51,18 +54,18 @@ eLSA::display::DisplaySSD1306::~DisplaySSD1306()
 /*public methods*/
 
 // fill the whole display with one color
-void eLSA::display::DisplaySSD1306::fill(Color_t color)
+void DisplaySSD1306::fill(Color_t color)
 {
 	/* Set complete screen to one color */
 	uint32_t i;
 
 	for(i = 0; i < sizeof(_screenBuffer); i++) {
-		_screenBuffer[i] = (color == eLSA::display::Black) ? 0x00 : 0xFF;;
+		_screenBuffer[i] = (color == Black) ? 0x00 : 0xFF;;
 	}
 }
 
 // update the screen after set commands
-void eLSA::display::DisplaySSD1306::updateScreen(void) {
+void DisplaySSD1306::updateScreen(void) {
     uint8_t i;
     for(i = 0; i < 8; i++) {
     	_writeI2cCommand(0xB0 + i);
@@ -73,7 +76,7 @@ void eLSA::display::DisplaySSD1306::updateScreen(void) {
 }
 
 //draw single pixel to display
-void eLSA::display::DisplaySSD1306::drawPixel(uint8_t x, uint8_t y, Color_t color) {
+void DisplaySSD1306::drawPixel(uint8_t x, uint8_t y, Color_t color) {
     if(x >= DISPLAY_SSD1306_WIDTH || y >= DISPLAY_SSD1306_HEIGHT) {
         // Don't write outside the buffer
         return;
@@ -93,7 +96,7 @@ void eLSA::display::DisplaySSD1306::drawPixel(uint8_t x, uint8_t y, Color_t colo
 }
 
 //write character to display
-char eLSA::display::DisplaySSD1306::writeChar(char ch, FontDef_t Font, Color_t color) {
+char DisplaySSD1306::writeChar(char ch, FontDef_t Font, Color_t color) {
     uint32_t i, b, j;
 
     // Check remaining space on current line
@@ -124,10 +127,10 @@ char eLSA::display::DisplaySSD1306::writeChar(char ch, FontDef_t Font, Color_t c
 }
 
 // Write full string to screenbuffer
-char eLSA::display::DisplaySSD1306::writeString(char* str, FontDef_t Font, Color_t color) {
+char DisplaySSD1306::writeString(char* str, FontDef_t Font, Color_t color) {
     // Write until null-byte
     while (*str) {
-        if (eLSA::display::DisplaySSD1306::writeChar(*str, Font, color) != *str) {
+        if (writeChar(*str, Font, color) != *str) {
             // Char could not be written
             return *str;
         }
@@ -141,14 +144,14 @@ char eLSA::display::DisplaySSD1306::writeString(char* str, FontDef_t Font, Color
 }
 
 // Position the cursor
-void eLSA::display::DisplaySSD1306::setCursor(uint8_t x, uint8_t y) {
+void DisplaySSD1306::setCursor(uint8_t x, uint8_t y) {
 	_screenObject.CurrentX = x;
 	_screenObject.CurrentY = y;
 }
 
 // test the possible screen refresh rate
-void eLSA::display::DisplaySSD1306::testFps(void) {
-	fill(eLSA::display::White);
+void DisplaySSD1306::testFps(void) {
+	fill(White);
 
     uint32_t start = HAL_GetTick();
     uint32_t end = start;
@@ -157,12 +160,12 @@ void eLSA::display::DisplaySSD1306::testFps(void) {
     char initText[] = "Testing...";
 
     setCursor(2,0);
-    writeString(initText, eLSA::display::Font_11x18, eLSA::display::Black);
+    writeString(initText, Font_11x18, Black);
 
     //write chars for 5 seconds
     do {
     	setCursor(2, 18);
-    	writeString(message, eLSA::display::Font_11x18, eLSA::display::Black);
+    	writeString(message, Font_11x18, Black);
     	updateScreen();
 
         char ch = message[0];
@@ -179,16 +182,16 @@ void eLSA::display::DisplaySSD1306::testFps(void) {
     fps = (float)fps / ((end - start) / 1000.0);
     snprintf(buff, sizeof(buff), "~%d FPS", fps);
 
-    fill(eLSA::display::White);
+    fill(White);
     setCursor(2, 18);
-    writeString(buff, eLSA::display::Font_11x18, eLSA::display::Black);
+    writeString(buff, Font_11x18, Black);
     updateScreen();
 }
 
 /* private methods*/
 
 // write a I2C command to the controller
-void eLSA::display::DisplaySSD1306::_writeI2cCommand(uint8_t command)
+void DisplaySSD1306::_writeI2cCommand(uint8_t command)
 {
 	try {
 		_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_COMMAND_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
@@ -204,7 +207,7 @@ void eLSA::display::DisplaySSD1306::_writeI2cCommand(uint8_t command)
 }
 
 // write data via I2C to the display
-void eLSA::display::DisplaySSD1306::_writeI2cData(uint8_t* p_data, uint16_t data_size)
+void DisplaySSD1306::_writeI2cData(uint8_t* p_data, uint16_t data_size)
 {
 	try {
 		_i2cInterface->setDeviceRegisterParams(DISPLAY_SSD1306_I2C_DATA_REGISTER, DISPLAY_SSD1306_I2C_ADDRESS_LENGTH);
@@ -220,4 +223,6 @@ void eLSA::display::DisplaySSD1306::_writeI2cData(uint8_t* p_data, uint16_t data
 
 }
 
+} /* namespace display*/
+} /* namespace eLSA*/
 
