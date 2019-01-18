@@ -1,12 +1,21 @@
 var searchData=
 [
-  ['readdata',['readData',['../classe_l_s_a_1_1com_devices_1_1_i_com_driver.html#aa783ca97862b16a89f9faa586be2086d',1,'eLSA::comDevices::IComDriver::readData()'],['../classe_l_s_a_1_1com_devices_1_1_stm_i2c_device.html#a682e1e604b845c0460f6b8909cb735bf',1,'eLSA::comDevices::StmI2cDevice::readData()']]],
-  ['recieve',['recieve',['../classe_l_s_a_1_1sensors_1_1_g_p_s_sensor_l80_m39.html#a15c398b6a4c96ebf7eb84925168188e3',1,'eLSA::sensors::GPSSensorL80M39']]],
-  ['reset',['reset',['../classe_l_s_a_1_1actuators_1_1_p_w_m_driver_p_c9685.html#a5964388b1ec247c6ce2c94ad810fe34c',1,'eLSA::actuators::PWMDriverPC9685::reset()'],['../classe_l_s_a_1_1_system.html#ab3943d968b1cf18a17dad11629769f74',1,'eLSA::System::reset()'],['../classe_l_s_a_1_1motion_planner_1_1_motion_planner.html#affcb61ae99b263f58c77f207187b5883',1,'eLSA::motionPlanner::MotionPlanner::reset()']]],
-  ['resetalgorithm',['resetAlgorithm',['../classe_l_s_a_1_1motion_planner_1_1_bug1.html#ab27e955e54e24c2bfea5a38e4c109c72',1,'eLSA::motionPlanner::Bug1::resetAlgorithm()'],['../classe_l_s_a_1_1motion_planner_1_1_bug2.html#a3de4cdc027cb8ea67d4d46c823eae996',1,'eLSA::motionPlanner::Bug2::resetAlgorithm()'],['../classe_l_s_a_1_1motion_planner_1_1_i_pathfinding.html#aec355a5721e2e9d37d0d52a072de95aa',1,'eLSA::motionPlanner::IPathfinding::resetAlgorithm()']]],
-  ['resetwaypointqueue',['resetWaypointQueue',['../classe_l_s_a_1_1motion_planner_1_1_motion_planner.html#af84bf88eae873501a15bd57849352761',1,'eLSA::motionPlanner::MotionPlanner']]],
-  ['run',['run',['../classe_l_s_a_1_1_system.html#af269298a4691a500734f199d0e699374',1,'eLSA::System::run()'],['../classe_l_s_a_1_1motion_planner_1_1_motion_planner.html#ad6664f5f27333ec8a25662b4c58b93f7',1,'eLSA::motionPlanner::MotionPlanner::run()']]],
-  ['runalgorithm',['runAlgorithm',['../classe_l_s_a_1_1motion_planner_1_1_bug1.html#a40dfd65b168b3f1ed5498ffba745322c',1,'eLSA::motionPlanner::Bug1::runAlgorithm()'],['../classe_l_s_a_1_1motion_planner_1_1_bug2.html#a0420ab3482e245ea38812f61ab020b2f',1,'eLSA::motionPlanner::Bug2::runAlgorithm()'],['../classe_l_s_a_1_1motion_planner_1_1_i_pathfinding.html#a2ac8d196ff7afe2ab2360c4120de2993',1,'eLSA::motionPlanner::IPathfinding::runAlgorithm()']]],
-  ['runmotor',['runMotor',['../classe_l_s_a_1_1actuators_1_1_motorcontroller.html#a0d598ba3903c9d0dda33e31804bbbfa7',1,'eLSA::actuators::Motorcontroller']]],
-  ['runmotorwithspeed',['runMotorWithSpeed',['../classe_l_s_a_1_1actuators_1_1_motorcontroller.html#a1c7cc8cc1bf78c59384b1a33c86e0d4c',1,'eLSA::actuators::Motorcontroller']]]
+  ['pathfindingdata_5ft',['pathfindingData_t',['../structe_l_s_a_1_1motion_planner_1_1pathfinding_data__t.html',1,'eLSA::motionPlanner']]],
+  ['pathfindingdatain_5ft',['pathfindingDataIn_t',['../structe_l_s_a_1_1motion_planner_1_1pathfinding_data_in__t.html',1,'eLSA::motionPlanner']]],
+  ['pathfindingdataout_5ft',['pathfindingDataOut_t',['../structe_l_s_a_1_1motion_planner_1_1pathfinding_data_out__t.html',1,'eLSA::motionPlanner']]],
+  ['pause',['pause',['../classe_l_s_a_1_1motion_planner_1_1_motion_planner.html#a845b99c3d72075d54f35dcbf869552df',1,'eLSA::motionPlanner::MotionPlanner']]],
+  ['positioning_2ecpp',['Positioning.cpp',['../_positioning_8cpp.html',1,'']]],
+  ['positioning_2eh',['Positioning.h',['../_positioning_8h.html',1,'']]],
+  ['pwm_5fdriver_5fpc9685_5fbase_5fregister',['PWM_DRIVER_PC9685_BASE_REGISTER',['../_p_w_m_driver_p_c9685_8h.html#a6106f0f0dd6ee39a4a3a20ce0d415447',1,'PWMDriverPC9685.h']]],
+  ['pwm_5fdriver_5fpc9685_5fi2c_5faddress_5flength',['PWM_DRIVER_PC9685_I2C_ADDRESS_LENGTH',['../_p_w_m_driver_p_c9685_8h.html#a625c613759ab03b87e59601a468d23dc',1,'PWMDriverPC9685.h']]],
+  ['pwm_5fdriver_5fpc9685_5fi2c_5fdefault_5faddr',['PWM_DRIVER_PC9685_I2C_DEFAULT_ADDR',['../_p_w_m_driver_p_c9685_8h.html#ae9929f1a7dc58eb38fb826f7b759543f',1,'PWMDriverPC9685.h']]],
+  ['pwm_5fdriver_5fpc9685_5fi2c_5ftimeout',['PWM_DRIVER_PC9685_I2C_TIMEOUT',['../_p_w_m_driver_p_c9685_8h.html#aae3edaaac0ea2607f1e3ce9f66d07910',1,'PWMDriverPC9685.h']]],
+  ['pwm_5fdriver_5fpc9685_5fmax_5ffrequency',['PWM_DRIVER_PC9685_MAX_FREQUENCY',['../_p_w_m_driver_p_c9685_8h.html#aa1cbbcb8684fd47a2bc6ad108e0d8c29',1,'PWMDriverPC9685.h']]],
+  ['pwm_5fdriver_5fpc9685_5fmode1',['PWM_DRIVER_PC9685_MODE1',['../_p_w_m_driver_p_c9685_8h.html#a7f50430ffdf2b26fa07cd2d565ed31d7',1,'PWMDriverPC9685.h']]],
+  ['pwm_5fdriver_5fpc9685_5fpin_5fmax_5fvalue',['PWM_DRIVER_PC9685_PIN_MAX_VALUE',['../_p_w_m_driver_p_c9685_8h.html#a1f09f541d7ba5ecc9997079f5012a330',1,'PWMDriverPC9685.h']]],
+  ['pwm_5fdriver_5fpc9685_5fprescale',['PWM_DRIVER_PC9685_PRESCALE',['../_p_w_m_driver_p_c9685_8h.html#a6580e061498c45b80dc7712c20beda62',1,'PWMDriverPC9685.h']]],
+  ['pwmdriverpc9685',['PWMDriverPC9685',['../classe_l_s_a_1_1actuators_1_1_p_w_m_driver_p_c9685.html',1,'eLSA::actuators::PWMDriverPC9685'],['../classe_l_s_a_1_1actuators_1_1_p_w_m_driver_p_c9685.html#a896459c7dd0d84740a9d2cd0dcb729c0',1,'eLSA::actuators::PWMDriverPC9685::PWMDriverPC9685()']]],
+  ['pwmdriverpc9685_2ecpp',['PWMDriverPC9685.cpp',['../_p_w_m_driver_p_c9685_8cpp.html',1,'']]],
+  ['pwmdriverpc9685_2eh',['PWMDriverPC9685.h',['../_p_w_m_driver_p_c9685_8h.html',1,'']]],
+  ['pwmpin',['pwmPin',['../structe_l_s_a_1_1actuators_1_1_motor_d_c__t.html#acaa162ddcc281e1237d8d967c0343a45',1,'eLSA::actuators::MotorDC_t']]]
 ];

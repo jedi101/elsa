@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['value',['value',['../structe_l_s_a_1_1sensors_1_1is___g_p_s_point.html#afcc90c4d737d9d2ee1b83cd84aadd42f',1,'eLSA::sensors::is_GPSPoint::value()'],['../structe_l_s_a_1_1sensors_1_1is___g_p_s_point_3_01_g_p_s_point__t_01_4.html#aa31f212ff86ec7a954ca3db0d2935e76',1,'eLSA::sensors::is_GPSPoint&lt; GPSPoint_t &gt;::value()']]]
+  ['uartdomain',['uartDomain',['../structe_l_s_a_1_1e_l_s_a_environment__t.html#a06fc94e4a33ac114760eeeeda2fea705',1,'eLSA::eLSAEnvironment_t']]],
+  ['ultrasonic',['ultrasonic',['../structe_l_s_a_1_1_i2c_domain_input__t.html#acf7fecb491f2ebe345f46073fe1e05f7',1,'eLSA::I2cDomainInput_t']]]
 ];
