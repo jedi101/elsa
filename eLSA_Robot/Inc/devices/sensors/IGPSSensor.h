@@ -20,10 +20,15 @@ struct GPSPoint_t {
 	double longitude; ///< The longitude given in dddmm.mmmmmm where d=degree and m=minutes
 	double latitude; ///< ///< The latitude given in ddmm.mmmmmm where d=degree and m=minutes
 
+	/**
+	 * @brief constructor which assigns both member values
+	 */
 	GPSPoint_t(double longitude=0.0, double latitude=0.0)
 		:longitude{longitude}, latitude{latitude} {}
 
-	// assignment operator modifies object, therefore non-const
+	/**
+	 * @brief assignment operator
+	 */
 	GPSPoint_t& operator=(const GPSPoint_t& other)
 	{
 		longitude=other.longitude;
@@ -31,13 +36,17 @@ struct GPSPoint_t {
 		return *this;
 	}
 
-    // add operation doesn't modify object, therefore const
+	/**
+	 * @brief add operator
+	 */
 	GPSPoint_t operator+(const GPSPoint_t& other) const
     {
         return GPSPoint_t(other.longitude+longitude, other.latitude+latitude);
     }
 
-    // equality comparison doesn't modify object, therefore const.
+	/**
+	 * @brief equality comparison operator
+	 */
      bool operator==(const GPSPoint_t& other) const
      {
          return (longitude == other.longitude && latitude == other.latitude);
